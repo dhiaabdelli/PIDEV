@@ -17,4 +17,6 @@ public interface IAliment{
     
     public List<aliment> listerAliments();
     
+    public List<aliment> listerAlimentsTriParCalorie(); 
+        
 }

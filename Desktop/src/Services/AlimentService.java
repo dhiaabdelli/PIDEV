@@ -12,7 +12,6 @@ import DataStorage.MyDB;
 import IServices.IAliment;
 import Entities.aliment;
 
-
 public class AlimentService implements IAliment{
     
     Connection connexion;
@@ -125,7 +124,31 @@ public class AlimentService implements IAliment{
                 a.setFats(rs.getInt("fats"));
                 a.setCarbs(rs.getInt("carbs"));
                 a.setProteins(rs.getInt("proteins"));
-                a.setCalories(rs.getInt("caloris"));
+                a.setCalories(rs.getInt("calories"));
+                aliments.add(a);
+            }
+        }catch(SQLException ex){
+            Logger.getLogger(AlimentService.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Echec : Lister Aliments");
+        }
+        return aliments;
+    }
+    
+    @Override
+    public List<aliment> listerAlimentsTriParCalorie(){
+        List<aliment> aliments = new ArrayList();
+        try{
+            String req = "SELECT * FROM aliment ORDER BY calories ASC";
+            ps = connexion.prepareStatement(req);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                aliment a = new aliment();
+                a.setId(rs.getString("id"));
+                a.setNom(rs.getString("nom"));
+                a.setFats(rs.getInt("fats"));
+                a.setCarbs(rs.getInt("carbs"));
+                a.setProteins(rs.getInt("proteins"));
+                a.setCalories(rs.getInt("calories"));
                 aliments.add(a);
             }
         }catch(SQLException ex){

@@ -71,7 +71,7 @@ public class aliment{
     
     @Override
     public String toString(){
-        return "Id : " + id + "\nNom : " + nom + "\nFats : " + fats + "\nCarbs : " + carbs + "\nProteins : " + proteins;
+        return "\nId : " + id + "\nNom : " + nom + "\nFats : " + fats + "\nCarbs : " + carbs + "\nProteins : " + proteins + "\nCalories : " + calories + "\n";
     }
     
 }

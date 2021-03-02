@@ -3,10 +3,10 @@ package main;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Statement;
-import Entities.aliment;
-import Services.AlimentService;
+import Entities.programmeAlimentaire;
+import Services.ProgrammeAlimentaireService;
 
-public class mainAliment{
+public class mainProgrammeAlimentaire{
     
     static Connection connexion;
     static Statement state;
@@ -15,8 +15,8 @@ public class mainAliment{
     final static String password = "";
 
     public static void main(String[] args) throws IOException{
-        aliment a = new aliment("id", "nom", 1, 2, 3, 4);
-        AlimentService as = new AlimentService();
-        as.ajouterAliment(a);  
+        programmeAlimentaire p = new programmeAlimentaire("idProfile", 2500, 1, 2, 3, 4);
+        ProgrammeAlimentaireService ps = new ProgrammeAlimentaireService();
+        ps.ajouterProgrammeAlimentaire(p);  
     }
 }
