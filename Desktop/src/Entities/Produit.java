@@ -81,6 +81,6 @@ public class Produit {
     
     @Override
     public String toString(){
-        return "Les information du produit sont : " + "L'id est " + this.id +" ,l'id de la Categorie est ,"+this.idCategorie+" ,libelle est " + this.libelle+ " , le prix est "+this.prix+" , la description est "+this.description;
+        return "Les information du produit sont : " + "L'id est " + this.id +" ,l'id de la Categorie est ,"+this.idCategorie+" ,libelle est " + this.libelle+ " , le prix est "+this.prix+" , la description est "+this.description+"\n";
     }
 }

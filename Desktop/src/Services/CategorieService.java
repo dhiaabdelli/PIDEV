@@ -6,6 +6,7 @@
 package Services;
 import DataStorage.MyDB;
 import Entities.Categorie;
+import Entities.Produit;
 import IServices.ICategorie;
 
 import java.sql.Connection;
@@ -30,9 +31,10 @@ public class CategorieService implements ICategorie{
     public boolean ajouterCategorie(Categorie c) {
         try {
 
-            String req = "INSERT INTO `categorie`(`nom`) VALUES (?)";                                              
+            String req = "INSERT INTO `categorie`(`id`,`nom`) VALUES (?,?)";                                              
             ps = connexion.prepareStatement(req);
-            ps.setString(1, c.getNom());
+            ps.setInt(1, c.getId());
+            ps.setString(2, c.getNom());
             
             if(ps.executeUpdate() == 1){
                 System.out.println("Ajout effectué");
@@ -99,6 +101,29 @@ public class CategorieService implements ICategorie{
         }
         return categorie;
     }
+    
+    @Override
+    public List<Produit> remplirProduitsParCategorie(int id) {
+        List<Produit> produits = new ArrayList();
+        try {
+            String req = "SELECT * FROM produit WHERE idCategorie = '"+id+"';";
+            ps = connexion.prepareStatement(req);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Produit p = new Produit();
+                p.setId(rs.getInt("id"));
+                p.setIdCategorie(rs.getInt("idCategorie"));
+                p.setLibelle(rs.getString("libelle"));
+                p.setPrix(rs.getFloat("prix"));
+                p.setDescription(rs.getString("description"));
+                produits.add(p);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Echec");
+        }
+        return produits;
+    }
+    
     @Override
     public List<Categorie> listeCategorie() {
         List<Categorie> categories = new ArrayList();
@@ -110,6 +135,7 @@ public class CategorieService implements ICategorie{
                 Categorie c = new Categorie();
                 c.setId(rs.getInt("id"));
                 c.setNom(rs.getString("nom"));
+                c.setListProduit(remplirProduitsParCategorie(rs.getInt("id")));
                 categories.add(c);
             }
         } catch (SQLException ex) {
@@ -121,7 +147,7 @@ public class CategorieService implements ICategorie{
     public String getNextId() {
         String nextid = "";
         try {
-            String req = "SHOW TABLE STATUS LIKE 'categorie'";
+            String req = "1";
             ps = connexion.prepareStatement(req);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {

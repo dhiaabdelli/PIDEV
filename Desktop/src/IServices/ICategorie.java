@@ -6,6 +6,7 @@
 package IServices;
 
 import Entities.Categorie;
+import Entities.Produit;
 import java.util.List;
 
 /**
@@ -17,6 +18,7 @@ public interface ICategorie {
    public boolean supprimerCategorie(int id);
    public boolean modifierCategorie(Categorie c);
    public Categorie chercherCategorieParID(int id);
+   public List<Produit> remplirProduitsParCategorie(int id);
    public List<Categorie> listeCategorie();
    public String getNextId();
 

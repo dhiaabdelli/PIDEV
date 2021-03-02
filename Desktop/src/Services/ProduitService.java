@@ -129,7 +129,27 @@ public class ProduitService implements IProduit {
         }
         return produits;
     }
-    
+    @Override
+    public List<Produit> listeProduitsParIdCategorie(int id) {
+        List<Produit> produits = new ArrayList();
+        try {
+            String req = "SELECT * FROM produit WHERE idCategorie = '"+id+"';";
+            ps = connexion.prepareStatement(req);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Produit p = new Produit();
+                p.setId(rs.getInt("id"));
+                p.setIdCategorie(rs.getInt("idCategorie"));
+                p.setLibelle(rs.getString("libelle"));
+                p.setPrix(rs.getFloat("prix"));
+                p.setDescription(rs.getString("description"));
+                produits.add(p);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Echec");
+        }
+        return produits;
+    }
     @Override
     public String getNextId() {
         String nextid = "";

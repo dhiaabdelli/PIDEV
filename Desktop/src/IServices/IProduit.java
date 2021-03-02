@@ -17,5 +17,7 @@ public interface IProduit {
     public boolean modifierProduit(Produit p);
     public Produit chercherProduitParID(int id);
     public List<Produit> listeProduits();
+    public List<Produit> listeProduitsParIdCategorie(int id);
+
     public String getNextId();
 }
