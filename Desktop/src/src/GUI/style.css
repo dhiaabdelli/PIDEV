@@ -46,31 +46,7 @@ FontAwesomeIcon:hover{
     -fx-background-image: url("../images/elixir.png");
     -fx-background-size: 100%;
 }
-.background_color{
-    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, rgb(90, 50, 165),rgb(179, 94, 188));   
-    -fx-background-size:cover;
-}
 
-.background{
-    -fx-background-image: url("../images/background.jpg");
-    -fx-background-size: 100%;
+.backgroundcolor{
+     -fx-background-color: #202249;
 }
-
-.shadow{
-    -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 ,10.0);
-}
-
-.search-box{
-    -fx-background-color:#FFFFFF;
-    -fx-background-radius: 100;
-}
-
-.transparent{
-    -fx-background-color: rgba(0,0,0,0);
-}
-
-.chosen-Exercice{
-    -fx-background-color: #F16C31;
-    -fx-background-radius: 30;
-}
-
