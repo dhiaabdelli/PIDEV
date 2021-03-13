@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="304.0" style="-fx-border-color: #9e4be7; -fx-border-radius: 30; -fx-background-radius: 30;" styleClass="shadow" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.JouritemController">
+   <children>
+      <HBox layoutX="-2.0" layoutY="-6.0" prefHeight="86.0" prefWidth="708.0">
+         <children>
+            <Label stylesheets="@style.css" text="Jour" textFill="#71719f">
+               <font>
+                  <Font name="Bell MT Italic" size="40.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="60.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="contjour" text="3" textFill="#71719f">
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Bell MT Bold" size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

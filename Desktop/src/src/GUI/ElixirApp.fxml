@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ElixirAppController">
+   <top>
+      <VBox prefHeight="90.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_RIGHT" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="20.0" prefWidth="1280.0" style="-fx-background-color: rgb(15, 15, 49);">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIcon fill="#71719f" iconName="MINUS" onMouseClicked="#min">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </FontAwesomeIcon>
+                  <FontAwesomeIcon fill="#71719f" iconName="CIRCLE" onMouseClicked="#max">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </FontAwesomeIcon>
+                  <FontAwesomeIcon fill="#71719f" iconName="CLOSE" onMouseClicked="#close">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </FontAwesomeIcon>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="1280.0" style="-fx-background-color: rgb(35, 35, 59);">
+               <children>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="9999.0">
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                     <children>
+                        <Pane prefHeight="29.0" prefWidth="95.0" styleClass="elixirLogo">
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                        </Pane>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="9999.0">
+                     <children>
+                        <FontAwesomeIcon fill="#71719f" iconName="CART_ARROW_DOWN" size="2em">
+                           <HBox.margin>
+                              <Insets left="15.0" right="30.0" />
+                           </HBox.margin>
+                        </FontAwesomeIcon>
+                        <Pane prefHeight="29.0" prefWidth="29.0" styleClass="pictureIcon">
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                        </Pane>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children></HBox>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <VBox alignment="TOP_CENTER" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="9999.0" prefWidth="100.0" style="-fx-background-color: rgb(40,40,64);">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="33.0" prefWidth="100.0" styleClass="buttonBox">
+                     <children>
+                        <FontAwesomeIcon fill="#71719f" iconName="HOME" onMouseClicked="#HomeClicked" size="2.5em">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </FontAwesomeIcon>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="-65.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="41.0" prefWidth="100.0" styleClass="buttonBox">
+                     <children>
+                        <FontAwesomeIcon fill="#71719f" iconName="SHOPPING_CART" size="2.5em">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </FontAwesomeIcon>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="41.0" prefWidth="100.0" styleClass="buttonBox">
+                     <children>
+                        <FontAwesomeIcon fill="#71719f" iconName="LIST_ALT" onMouseClicked="#ProgramClicked" size="2.5em">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </FontAwesomeIcon>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="41.0" prefWidth="100.0" styleClass="buttonBox">
+                     <children>
+                        <FontAwesomeIcon fill="#71719f" iconName="CUTLERY" size="2.5em">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </FontAwesomeIcon>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <VBox alignment="BOTTOM_CENTER" prefHeight="9999.0" prefWidth="100.0" style="-fx-background-color: rgb(40,40,64);">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="41.0" prefWidth="100.0" styleClass="buttonBoxBottom">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon fill="#71719f" iconName="USER" size="2.5em" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="41.0" prefWidth="100.0" styleClass="buttonBoxBottom">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon fill="#71719f" iconName="SIGN_OUT" size="2.5em" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <Pane prefHeight="628.0" prefWidth="1178.0" styleClass="background" stylesheets="@style.css">
+               <children>
+                  <Pane layoutX="195.0" layoutY="160.0" prefHeight="200.0" prefWidth="753.0" styleClass="elixirLogo" stylesheets="@style.css" />
+               </children></Pane>
+         </content></ScrollPane>
+   </center>
+</BorderPane>
