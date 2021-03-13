@@ -12,9 +12,13 @@ package Entities;
 public class Produit {
     protected int id;
     protected int idCategorie;
+    protected String nomcategorie;
     protected String libelle;
     protected float prix;
     protected String description;
+    protected int qt;
+    protected String img;
+    protected boolean testimg;
     public Produit(){
     }
     
@@ -37,6 +41,26 @@ public class Produit {
         this.description = description;
     }
     
+    public Produit(int id,int idCategorie,String libelle,float prix,String description,int qt,String img){
+        this.id = id;
+        this.idCategorie = idCategorie;
+        this.libelle = libelle;
+        this.prix = prix;
+        this.description = description;
+        this.qt = qt;
+        this.img = img;
+    }
+    
+    public Produit(int id,int idCategorie,String libelle,float prix,String description,int qt,String img,boolean testimg){
+        this.id = id;
+        this.idCategorie = idCategorie;
+        this.libelle = libelle;
+        this.prix = prix;
+        this.description = description;
+        this.qt = qt;
+        this.img = img;
+    }
+    
     public int getId(){
         return this.id;
     }
@@ -51,6 +75,14 @@ public class Produit {
     
     public void setIdCategorie(int idCategorie){
         this.idCategorie = idCategorie;
+    }
+    
+    public String getNomcategorie(){
+        return this.nomcategorie;
+    }
+    
+    public void setnomCategorie(String nomcategorie){
+        this.nomcategorie = nomcategorie;
     }
     
     public String getLibelle(){
@@ -77,10 +109,32 @@ public class Produit {
         this.description = description;
     }
     
+    public int getQt(){
+        return this.qt;
+    }
     
-    @Override
+    public void setQt(int qt){
+        this.qt = qt;
+    }
+    
+    public String getImg(){
+        return this.img;
+    }
+    
+    public void setImg(String img){
+        this.img = img;
+    }
+    
+    public boolean getTestimg(){
+        return this.testimg;
+    }
+   /* @Override
     public String toString(){
         return "\nId: " + this.id +"\nId Categorie: "+this.idCategorie+"\nLibelle: " + this.libelle+ "\nPrix: "+this.prix+"\ndescription:"+this.description+"\n";
     }
-    
+    */
+    @Override
+    public String toString(){
+        return this.libelle;
+    }
 }

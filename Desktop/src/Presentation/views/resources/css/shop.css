@@ -1,0 +1,77 @@
+.shopinput{
+	-fx-background-color: #171636;
+	-fx-border-width: 2; 
+        -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 12;
+}
+
+.pagetitle{
+	-fx-font-family: "Montserrat ExtraBold";
+	-fx-text-fill: #ffffff; 
+	-fx-font-size: 24;
+}
+
+.resultstext{
+	-fx-font-family: "Montserrat ExtraBold";
+	-fx-text-fill: #86939E; 
+	-fx-font-size: 13;
+}
+
+.labelrech{
+	-fx-font-family: "Play";
+	-fx-text-fill: #86939E; 
+	-fx-font-size: 12;
+}
+
+.clickhover:hover{
+	-fx-cursor: hand;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+.scroll-pane {
+   -fx-background-color: transparent;
+}
+
+.choice-box .context-menu { -fx-background-color: #171636; }
+.choice-box .menu-item:focused { -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243)); }
+.choice-box .menu-item > .label { -fx-text-fill: white; }
+.choice-box .menu-item:focused > .label { -fx-text-fill: white; }
+
+.choice-box {
+  -fx-background-color: #171636;
+  -fx-border-width: 2; 
+  -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+  -fx-mark-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.choice-box > .label { -fx-text-fill: white; }
+
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+    -fx-background-radius: 5em;
+}

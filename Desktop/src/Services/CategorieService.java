@@ -31,11 +31,11 @@ public class CategorieService implements ICategorie{
     public boolean ajouterCategorie(Categorie c) {
         try {
 
-            String req = "INSERT INTO `categorie`(`id`,`nom`) VALUES (?,?)";                                              
+            String req = "INSERT INTO `categorie`(`id`,`nom`,`description`) VALUES (?,?,?)";                                              
             ps = connexion.prepareStatement(req);
             ps.setInt(1, c.getId());
             ps.setString(2, c.getNom());
-            
+            ps.setString(3, c.getDesc());
             if(ps.executeUpdate() == 1){
                 System.out.println("Ajout effectué");
                 return true;
@@ -52,10 +52,11 @@ public class CategorieService implements ICategorie{
     @Override
     public boolean modifierCategorie(Categorie c) {
         try {
-            String req = "UPDATE categorie SET  nom=? WHERE id=?";
+            String req = "UPDATE categorie SET  nom=?,description=? WHERE id=?";
             ps = connexion.prepareStatement(req);
             ps.setString(1, c.getNom());
-            ps.setInt(2, c.getId());
+            ps.setInt(3, c.getId());
+            ps.setString(2, c.getDesc());
             if(ps.executeUpdate() == 1){
                 System.out.println("Modification effectué");
                 return true;
@@ -90,7 +91,7 @@ public class CategorieService implements ICategorie{
         Categorie categorie = null;
         try {
             ResultSet result = connexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
-                    .executeQuery("SELECT * FROM produit WHERE id = " + id);
+                    .executeQuery("SELECT * FROM categorie WHERE id = " + id);
             if (result.first()) {
 
                 categorie = new Categorie(result.getInt("id"), result.getString("nom"));
@@ -113,6 +114,26 @@ public class CategorieService implements ICategorie{
                 Categorie c = new Categorie();
                 c.setId(rs.getInt("id"));
                 c.setNom(rs.getString("nom"));
+				c.setDesc(rs.getString("description"));
+                categories.add(c);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Echec");
+        }
+        return categories;
+    }
+    @Override
+    public List<Categorie> listeCategorieRech(String str) {
+        List<Categorie> categories = new ArrayList();
+        try {
+            String req = "SELECT * FROM categorie where nom Like '%"+str+"%' or description like '%"+str+"%';";
+            ps = connexion.prepareStatement(req);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Categorie c = new Categorie();
+                c.setId(rs.getInt("id"));
+                c.setNom(rs.getString("nom"));
+		c.setDesc(rs.getString("description"));
                 categories.add(c);
             }
         } catch (SQLException ex) {
@@ -124,7 +145,7 @@ public class CategorieService implements ICategorie{
     public String getNextId() {
         String nextid = "";
         try {
-            String req = "1";
+            String req = "SHOW TABLE STATUS LIKE 'categorie'";
             ps = connexion.prepareStatement(req);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {

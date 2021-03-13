@@ -1,0 +1,108 @@
+
+@font-face
+{
+    src: url('resources/fonts/Montserrat-ExtraBold.ttf');
+}
+
+@font-face
+{
+    src: url('resources/fonts/Poppins-Black.ttf');
+}
+
+@font-face
+{
+    src: url('resources/fonts/Play-Regular.ttf');
+}
+
+ .mainFxmlClass { 
+
+}
+
+.shopinput{
+	-fx-background-color: #171636;
+	-fx-border-width: 2; 
+        -fx-border-color: #FF3160;
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 12;
+}
+
+.pagetitle{
+	-fx-font-family: "Montserrat ExtraBold";
+	-fx-text-fill: #ffffff; 
+	-fx-font-size: 24;
+}
+
+
+.buttonBox{
+    -fx-border-width: 0 0 0 4;
+    -fx-border-color: transparent transparent transparent #464859;
+}
+
+.buttonBox:hover{
+    -fx-cursor: hand;
+    -fx-border-width: 0 0 0 4; 
+    -fx-border-color: transparent transparent transparent linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+    -fx-background-color: linear-gradient(to right, rgb(43, 41, 73), transparent);
+}
+
+.buttonBox:focused{
+    -fx-cursor: hand;
+    -fx-border-width: 0 0 0 4; 
+    -fx-border-color: transparent transparent transparent linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+    -fx-background-color: linear-gradient(to right, rgb(43, 41, 73), transparent);
+}
+
+.buttonBox:focused FontAwesomeIcon{
+    -fx-cursor: hand;
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+.buttonBox:hover FontAwesomeIcon{
+    -fx-cursor: hand;
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+FontAwesomeIcon:hover{
+    -fx-cursor: hand;
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.buttonBoxBottom:hover{
+    -fx-cursor: hand;
+}
+
+.buttonBoxBottom:hover FontAwesomeIcon{
+    -fx-cursor: hand;
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.pictureIcon{
+    -fx-background-image: url("../images/testPicture.jpg");
+    -fx-background-size: 100%;
+}
+
+.elixirLogo{
+    -fx-background-image: url("../images/elixir.png");
+    -fx-background-size: 100%;
+}
+
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+.scroll-pane {
+   -fx-background-color: transparent;
+}
+
+.choice-box .context-menu { -fx-background-color: #171636; }
+.choice-box .menu-item:focused { -fx-background-color: #FF3160; }
+.choice-box .menu-item > .label { -fx-text-fill: white; }
+.choice-box .menu-item:focused > .label { -fx-text-fill: white; }
+
+.choice-box {
+  -fx-background-color: #171636;
+  -fx-border-width: 2; 
+  -fx-border-color: #FF3160;
+  -fx-mark-color: #FF3160;
+}
+
+.choice-box > .label { -fx-text-fill: white; }

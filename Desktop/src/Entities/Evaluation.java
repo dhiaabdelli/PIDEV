@@ -13,6 +13,7 @@ public class Evaluation {
     protected int id;
     protected int id_produit;
     protected int id_user;
+    protected String nomProduit;
     protected int note;
     
     public Evaluation(){
@@ -46,15 +47,23 @@ public class Evaluation {
     }
     
     public void setId_User(int id_user){
-        this.id_produit = id_user;
+        this.id_user = id_user;
     }
     
     public int getNote(){
         return this.note;
     }
     
-    public void setNote(int id_user){
-        this.id_produit = note;
+    public void setNote(int note){
+        this.note = note;
+    }
+    
+    public String getNomProduit(){
+        return this.nomProduit;
+    }
+    
+    public void setNomProduit(String nomProduit){
+        this.nomProduit = nomProduit;
     }
     
     @Override

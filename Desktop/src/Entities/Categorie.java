@@ -11,7 +11,7 @@ package Entities;
 public class Categorie {
     protected int id;
     protected String nom;
-    
+    protected String desc;
     public Categorie(){
     }
     
@@ -27,7 +27,13 @@ public class Categorie {
         this.id = id;
         this.nom = nom;
     }
-   
+    
+    public Categorie(int id,String nom,String desc){
+        this.id = id;
+        this.nom = nom;
+        this.desc = desc;
+    }
+    
     public int getId(){
         return this.id;
     }
@@ -44,10 +50,21 @@ public class Categorie {
         this.nom = nom;
     }
     
-    @Override
-    public String toString(){
-        return "\nCategorie: \n" + "ID:" + this.id +" , Nom:"+this.nom+"\n";
+     public String getDesc(){
+        return this.desc;
     }
     
-
+    public void setDesc(String desc){
+        this.desc = desc;
+    }
+    
+    /*@Override
+    public String toString(){
+        return "\nCategorie: \n" + "ID:" + this.id +" , Nom:"+this.nom+"\n";
+    }*/
+    
+    @Override
+    public String toString(){
+        return this.nom;
+    }
 }

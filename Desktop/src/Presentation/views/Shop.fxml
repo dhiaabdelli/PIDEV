@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="AnchorPane" minHeight="652.0" minWidth="1207.0" style="-fx-background-color: linear-gradient(from 10% 10% to 100% 100%, rgb(23, 21, 53), rgb(43, 41, 73));" stylesheets="@resources/css/shop.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.controllers.ShopController">
+   <children>
+      <Label fx:id="totalresults" prefHeight="76.0" prefWidth="202.0" styleClass="resultstext" text="Resultats found (0)" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="30.0" />
+      <HBox alignment="CENTER_RIGHT" prefHeight="76.0" prefWidth="1207.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <TextField fx:id="rechinput" prefHeight="25.0" prefWidth="173.0" promptText="Nom du produit" styleClass="shopinput">
+               <HBox.margin>
+                  <Insets right="15.0" top="20.0" />
+               </HBox.margin>
+            </TextField>
+            <Label styleClass="labelrech" text="Trier par">
+               <HBox.margin>
+                  <Insets right="15.0" top="22.0" />
+               </HBox.margin>
+            </Label>
+            <ChoiceBox fx:id="tridData" prefHeight="25.0" prefWidth="182.0">
+               <HBox.margin>
+                  <Insets right="15.0" top="20.0" />
+               </HBox.margin>
+            </ChoiceBox>
+            <Label styleClass="labelrech" text="Catégorie ">
+               <HBox.margin>
+                  <Insets right="10.0" top="22.0" />
+               </HBox.margin>
+            </Label>
+            <ChoiceBox fx:id="categorieData" prefHeight="25.0" prefWidth="182.0">
+               <HBox.margin>
+                  <Insets right="15.0" top="20.0" />
+               </HBox.margin>
+            </ChoiceBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="76.0" prefWidth="536.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="671.0">
+         <children>
+            <Label minHeight="56.0" minWidth="110.0" prefHeight="56.0" prefWidth="110.0" styleClass="pagetitle" text=" Shop">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="SHOPPING_CART" />
+               </graphic>
+               <HBox.margin>
+                  <Insets left="40.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <ScrollPane layoutY="88.0" prefHeight="571.0" prefWidth="1207.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <content>
+            <GridPane fx:id="shopgrid" alignment="CENTER" prefHeight="31.0" prefWidth="1195.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+            </GridPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

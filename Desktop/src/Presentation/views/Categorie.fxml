@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" minHeight="652.0" minWidth="1207.0" style="-fx-background-color: linear-gradient(from 10% 10% to 100% 100%, rgb(23, 21, 53), rgb(43, 41, 73));" stylesheets="@resources/css/categorie.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.controllers.CategorieController">
+   <children>
+      <TableView fx:id="tablecat" layoutY="139.0" prefHeight="496.0" prefWidth="1208.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="nom" prefWidth="394.0" text="Nom" />
+            <TableColumn fx:id="desc" prefWidth="812.0" text="Description" />
+        </columns>
+      </TableView>
+      <HBox alignment="CENTER_LEFT" layoutX="-1.0" prefHeight="76.0" prefWidth="1207.0">
+         <children>
+            <Label styleClass="pagetitle" text="Gestion Catégorie">
+               <HBox.margin>
+                  <Insets left="40.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" layoutY="95.0" prefHeight="29.0" prefWidth="1208.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="modbtn" onMouseClicked="#edititembtn" prefHeight="13.0" prefWidth="155.0" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243)); -fx-border-width: 4; -fx-border-radius: 0;" styleClass="btnclick">
+               <children>
+                  <FontAwesomeIcon fill="#7963fa" iconName="PENCIL" layoutX="43.0" layoutY="24.0" />
+                  <Label layoutX="65.0" layoutY="11.0" prefHeight="15.0" prefWidth="96.0" style="-fx-text-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243)); -fx-font-family: &quot;Montserrat ExtraBold&quot;;;" text="Modifier" />
+               </children>
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </AnchorPane>
+            <AnchorPane fx:id="supbtn" onMouseClicked="#removeitembtn" prefHeight="13.0" prefWidth="155.0" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243)); -fx-border-width: 4; -fx-border-radius: 0;" styleClass="btnclick">
+               <children>
+                  <Label layoutX="51.0" layoutY="10.0" prefHeight="15.0" prefWidth="70.0" style="-fx-text-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243)); -fx-font-family: &quot;Montserrat ExtraBold&quot;;;" text="Supprimer" />
+                  <FontAwesomeIcon fill="#7963fa" iconName="MINUS" layoutX="34.0" layoutY="23.0" text="" />
+               </children>
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </AnchorPane>
+            <AnchorPane onMouseClicked="#additembtn" prefHeight="36.0" prefWidth="155.0" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243)); -fx-border-width: 4; -fx-border-radius: 0;" styleClass="btnclick">
+               <children>
+                  <Label layoutX="60.0" layoutY="10.0" prefHeight="12.0" prefWidth="56.0" style="-fx-text-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243)); -fx-font-family: &quot;Montserrat ExtraBold&quot;;;" text="Ajouter" />
+                  <FontAwesomeIcon fill="#7963fa" iconName="PLUS" layoutX="45.0" layoutY="24.0" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets right="30.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutY="95.0" prefHeight="29.0" prefWidth="521.0">
+         <padding>
+            <Insets left="30.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="237.0" styleClass="Inputsearch">
+               <children>
+                  <FontAwesomeIcon fill="#71719f" iconName="SEARCH" size="1.2em">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </FontAwesomeIcon>
+                  <TextField fx:id="strrech" prefHeight="29.0" prefWidth="211.0" promptText="Chercher" styleClass="Inputsearchbox" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox fx:id="addPane" prefHeight="652.0" prefWidth="1207.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Pane opacity="0.2" prefHeight="652.0" prefWidth="909.0" style="-fx-background-color: black;" />
+            <Pane prefHeight="652.0" prefWidth="690.0" style="-fx-background-color: #282840; -fx-border-width: 0 0 0 2; -fx-border-color: transparent transparent transparent #464859;">
+               <children>
+                  <VBox layoutY="44.0" prefHeight="611.0" prefWidth="494.0">
+                     <children>
+                        <Label prefHeight="51.0" prefWidth="278.0" styleClass="Labelsidebar" text="Nom Categorie:" />
+                        <TextField fx:id="inputnomadd" prefHeight="25.0" prefWidth="441.0" styleClass="Inputsidebar" />
+                        <Label prefHeight="51.0" prefWidth="278.0" styleClass="Labelsidebar" text="Description Categorie:" />
+                        <TextArea fx:id="inputdescadd" prefHeight="200.0" prefWidth="200.0" styleClass="Inputsidebar" />
+                        <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#ajouterdb" prefHeight="25.0" prefWidth="453.0" styleClass="btnsidebar" text="Ajouter">
+                           <VBox.margin>
+                              <Insets top="35.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets left="25.0" right="25.0" />
+                     </padding>
+                  </VBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="494.0">
+                     <children>
+                        <AnchorPane onMouseClicked="#backBtn" prefHeight="44.0" prefWidth="60.0" style="-fx-border-color: #464859; -fx-border-width: 2;">
+                           <children>
+                              <FontAwesomeIcon fill="#71719f" iconName="ARROW_LEFT" layoutX="16.0" layoutY="30.0" size="2em" wrappingWidth="21.571428298950195" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="44.0" prefWidth="444.0" style="-fx-border-color: #464859; -fx-border-width: 2 2 2 0;" />
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <HBox fx:id="editPane" prefHeight="652.0" prefWidth="1207.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Pane opacity="0.2" prefHeight="652.0" prefWidth="909.0" style="-fx-background-color: black;" />
+            <Pane prefHeight="652.0" prefWidth="690.0" style="-fx-background-color: #282840; -fx-border-width: 0 0 0 2; -fx-border-color: transparent transparent transparent #464859;">
+               <children>
+                  <VBox layoutY="44.0" prefHeight="611.0" prefWidth="494.0">
+                     <children>
+                        <Label prefHeight="51.0" prefWidth="278.0" styleClass="Labelsidebar" text="Nom Categorie:" />
+                        <TextField fx:id="inputnommod" prefHeight="25.0" prefWidth="441.0" styleClass="Inputsidebar" />
+                        <Label prefHeight="51.0" prefWidth="278.0" styleClass="Labelsidebar" text="Description Categorie:" />
+                        <TextArea fx:id="inputdescmod" prefHeight="200.0" prefWidth="200.0" styleClass="Inputsidebar" />
+                        <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#modifierdb" prefHeight="25.0" prefWidth="453.0" styleClass="btnsidebar" text="Modifier">
+                           <VBox.margin>
+                              <Insets top="35.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets left="25.0" right="25.0" />
+                     </padding>
+                  </VBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="494.0">
+                     <children>
+                        <AnchorPane onMouseClicked="#backBtn" prefHeight="44.0" prefWidth="60.0" style="-fx-border-color: #464859; -fx-border-width: 2;">
+                           <children>
+                              <FontAwesomeIcon fill="#71719f" iconName="ARROW_LEFT" layoutX="16.0" layoutY="30.0" size="2em" wrappingWidth="21.571428298950195" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="44.0" prefWidth="444.0" style="-fx-border-color: #464859; -fx-border-width: 2 2 2 0;" />
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
