@@ -19,7 +19,7 @@ public class mainProduit {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         
         Scanner myInput = new Scanner(System.in);
         Scanner myInputStr = new Scanner(System.in);
@@ -266,7 +266,7 @@ public class mainProduit {
                 default : System.out.println("entrez un choix enter 1 et 3"); break;
             }
         }
-        
+        */
         /*Produit p = new Produit(4,5,"ttttt", 2.5f, "ttt");
 
        
@@ -280,6 +280,6 @@ public class mainProduit {
         listCategorie = cs.listeCategorie();
         System.out.println(listCategorie);
         */
-    }
+    //}
     
 }

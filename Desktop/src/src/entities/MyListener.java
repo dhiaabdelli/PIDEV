@@ -7,8 +7,8 @@ package entities;
 
 /**
  *
- * @author dorra
+ * @author dell
  */
 public interface MyListener {
-    public void onClickListener(Livreur li);
+    public void onClickListener(Exercice ex);
 }

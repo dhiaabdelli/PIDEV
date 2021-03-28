@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@resources/css/ex.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.controllers.ExerciceController">
+   <children>
+      <BorderPane prefHeight="645.0" prefWidth="1176.0" stylesheets="@style.css">
+         <left>
+            <VBox prefHeight="530.0" prefWidth="297.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="37.0" prefWidth="297.0">
+                     <children>
+                        <FontAwesomeIcon fill="#71719f" iconName="SEARCH" size="1.75em">
+                           <HBox.margin>
+                              <Insets left="30.0" top="5.0" />
+                           </HBox.margin>
+                        </FontAwesomeIcon>
+                        <Pane prefHeight="96.0" prefWidth="6.0" />
+                        <TextField fx:id="searchbar" onKeyReleased="#searchEx" prefHeight="33.0" prefWidth="211.0" promptText="Search" style="-fx-border-radius: 50; -fx-background-color: transparent; -fx-border-color: #b086ba;" styleClass="shadow" stylesheets="@style.css">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="15.0" prefWidth="297.0" />
+                  <VBox alignment="CENTER" prefHeight="397.0" prefWidth="297.0" style="-fx-border-color: #9e4be7; -fx-border-radius: 30;" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ImageView fx:id="imgchosen" fitHeight="146.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets top="60.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Pane prefHeight="20.0" prefWidth="280.0" />
+                        <Label fx:id="libchosen" text="Libelle" textFill="#a7a7ee">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <Pane prefHeight="44.0" prefWidth="280.0" />
+                        <Label fx:id="descchosen" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="144.0" prefWidth="274.0" text="Description" textFill="#aaaaab">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets left="10.0" right="5.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <Pane prefHeight="40.0" prefWidth="297.0" />
+               </children>
+            </VBox>
+         </left>
+         <top>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="54.0" prefWidth="284.0" text="Exercice" textAlignment="CENTER" textFill="#71719f">
+                     <font>
+                        <Font name="Bodoni MT Black Italic" size="40.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="40.0" top="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <VBox prefHeight="110.0" prefWidth="185.0">
+                     <children>
+                        <Label text="Libelle :" textFill="#71719f">
+                           <VBox.margin>
+                              <Insets left="5.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Bodoni MT Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tflibelle" prefHeight="27.0" prefWidth="190.0" promptText="Libelle" style="-fx-border-radius: 50; -fx-background-color: transparent; -fx-border-color: #b086ba;">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <Pane prefHeight="110.0" prefWidth="55.0" />
+                  <VBox prefHeight="200.0" prefWidth="182.0">
+                     <children>
+                        <Label text="Description :" textFill="#71719f">
+                           <font>
+                              <Font name="Bodoni MT Bold Italic" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="5.0" top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="tfdescription" prefHeight="27.0" prefWidth="237.0" promptText="Description" style="-fx-border-radius: 50; -fx-background-color: transparent; -fx-border-color: #b086ba;">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <Pane prefHeight="110.0" prefWidth="46.0" />
+                  <VBox prefHeight="110.0" prefWidth="111.0">
+                     <children>
+                        <Label prefHeight="0.0" prefWidth="55.0" text="Image :" textFill="#71719f">
+                           <font>
+                              <Font name="Bodoni MT Bold Italic" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="5.0" top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <FontAwesomeIcon fx:id="choose" fill="#b086ba" glyphStyleClass="" iconName="CIRCLE" onMouseClicked="#AjouterPhoto" text="Choose" textAlignment="CENTER">
+                           <VBox.margin>
+                              <Insets left="40.0" top="10.0" />
+                           </VBox.margin>
+                        </FontAwesomeIcon>
+                     </children>
+                  </VBox>
+                  <Pane prefHeight="100.0" prefWidth="18.0" />
+                  <ImageView fx:id="img" fitHeight="90.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Pane prefHeight="100.0" prefWidth="33.0" />
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <FontAwesomeIcon fx:id="btnajouterEx" fill="#71719f" iconName="PLUS" onMouseClicked="#ajouterExercice" size="1.5em">
+                           <VBox.margin>
+                              <Insets left="40.0" top="15.0" />
+                           </VBox.margin>
+                        </FontAwesomeIcon>
+                        <FontAwesomeIcon fx:id="btnmodifierEx" fill="#71719f" iconName="EDIT" onMouseClicked="#modifierExercice" size="1.5em">
+                           <VBox.margin>
+                              <Insets left="40.0" top="10.0" />
+                           </VBox.margin>
+                        </FontAwesomeIcon>
+                        <FontAwesomeIcon fx:id="btnsupprimerEx" fill="#71719f" iconName="TRASH" onMouseClicked="#SupprimerExercice" size="1.5em">
+                           <VBox.margin>
+                              <Insets left="40.0" top="10.0" />
+                           </VBox.margin>
+                        </FontAwesomeIcon>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <HBox prefHeight="382.0" prefWidth="879.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ScrollPane prefHeight="484.0" prefWidth="879.0" style="-fx-background: transparent; -fx-background-color: transparent;" HBox.hgrow="ALWAYS">
+                     <content>
+                        <GridPane fx:id="gridpane" prefHeight="0.0" prefWidth="24.0" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
