@@ -5,7 +5,9 @@
  */
 package GUI;
 
+import cron.MailingEx;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import org.controlsfx.control.Notifications;
 import entities.Exercice;
 import entities.ExerciceAssocie;
 import entities.MyListener;
@@ -15,11 +17,15 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -31,9 +37,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 import services.ExerciceAssocieCRUD;
 import services.ExerciceCRUD;
-
 
 /**
  * FXML Controller class
@@ -51,8 +58,6 @@ public class ExerciceAssocieController implements Initializable {
     private FontAwesomeIcon btnmodifierEx;
     @FXML
     private FontAwesomeIcon btnsupprimerEx;
-    @FXML
-    private TextField searchbar;
     @FXML
     private ImageView imgchosen;
     @FXML
@@ -80,6 +85,8 @@ public class ExerciceAssocieController implements Initializable {
     List<Integer> Jours = new ArrayList<>();
     private MyListener myListener;
     int chosenid;
+    @FXML
+    private FontAwesomeIcon Participate;
 
     /**
      * Initializes the controller class.
@@ -257,10 +264,26 @@ public class ExerciceAssocieController implements Initializable {
     private void AjouterExercice(MouseEvent event) {
     }
 
-    @FXML
-    private void searchEx(KeyEvent event) {
+    public void notification(String text) {
+        Image img = new Image("images/tick_icon.png");
+        Notifications not = Notifications.create()
+                .title("Notification")
+                .text("         " + text)
+                .graphic(new ImageView(img))
+                .hideAfter(Duration.seconds(5))
+                .position(Pos.BOTTOM_LEFT);
+        not.darkStyle();
+        not.show();
+        System.out.println(text);
     }
+
+    @FXML
+    private void SendEmail_Notif(MouseEvent event) {
+        // Thread th = new Thread(() -> {
+        MailingEx m = new MailingEx();
+        m.sendEmails();
+        notification("Congratulation You Have Achived Your Program!");
+        //});
+    }
+
 }
-
-
- 

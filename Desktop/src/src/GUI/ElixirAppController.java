@@ -7,7 +7,6 @@ package GUI;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -19,13 +18,13 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author dorra
+ * @author dell
  */
 public class ElixirAppController implements Initializable {
-        double x, y;
+
+    double x, y;
     @FXML
     private BorderPane mainPane;
-
     /**
      * Initializes the controller class.
      */
@@ -34,58 +33,51 @@ public class ElixirAppController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void min(MouseEvent event) {
-               Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); 
-        stage.setIconified(true);
-    }
-
-    @FXML
-    private void max(MouseEvent event) {
-          Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); 
-        stage.setFullScreenExitHint("");
-        stage.setFullScreen(!stage.isFullScreen());
-    }
-
-    @FXML
-    private void close(MouseEvent event) {
-          Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); 
-        stage.close();
-    }
-
-    @FXML
+      @FXML
     private void dragged(MouseEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();  
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setX(event.getScreenX() - x);
         stage.setY(event.getScreenY() - y);
     }
 
     @FXML
     private void pressed(MouseEvent event) {
-           x = event.getSceneX();
+        x = event.getSceneX();
         y = event.getSceneY();
     }
 
+    @FXML
+    private void min(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setIconified(true);
+    }
 
     @FXML
-    private void livreurclicked(MouseEvent event) {
-                System.out.println("You clicked button Livreur!");
+    private void max(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setFullScreenExitHint("");
+        stage.setFullScreen(!stage.isFullScreen());
+    }
+
+    @FXML
+    private void close(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void HomeClicked(MouseEvent event) {
+        System.out.println("You clicked button Exercice!");
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("livreurbackend1");
+        Pane view = object.getPage("Exercice");
         mainPane.setCenter(view);
     }
 
     @FXML
-    private void clickedL(MouseEvent event) {
-        
-        System.out.println("You clicked button Livraison!");
+    private void ProgramClicked(MouseEvent event) {
+        System.out.println("You clicked button ExerciceAssocie!");
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("livraisonbackend");
+        Pane view = object.getPage("ExerciceAssocie");
         mainPane.setCenter(view);
-    
-
     }
-
-
-
 }

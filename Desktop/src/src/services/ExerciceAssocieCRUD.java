@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Services;
+package services;
 
 import entities.Exercice;
 import entities.ExerciceAssocie;
@@ -15,26 +15,20 @@ import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
-import DataStorage.MyDB;
-import java.sql.Connection;
+import tools.MyConnexion;
 
 /**
  *
  * @author dell
  */
 public class ExerciceAssocieCRUD {
-    
-    Connection connexion;
-    PreparedStatement pst;
-    
-    public ExerciceAssocieCRUD(){
-        connexion = MyDB.getinstance().getConnexion();
-    }
+
     public void addExerciceAssocie(ExerciceAssocie ea) {
         String requette = "INSERT INTO exerciceassocie (idProfile,libelleExercice,nbSeries,nbRepetitions,jour)"
                 + "VALUES (?,?,?,?,?)";
         try {
-            pst = connexion.prepareStatement(requette);
+            PreparedStatement pst
+                    = new MyConnexion().cn.prepareStatement(requette);
             pst.setInt(1, ea.getIdProfile());
             pst.setString(2, ea.getLibelleEx());
             pst.setInt(3, ea.getNbSeries());
@@ -53,11 +47,12 @@ public class ExerciceAssocieCRUD {
         }
     }
 
-    public ObservableList<ExerciceAssocie> AfficheExA() {
+    public static ObservableList<ExerciceAssocie> AfficheExA() {
         String req = "select * from exerciceassocie";
         ObservableList<ExerciceAssocie> list = FXCollections.observableArrayList();
         try {
-            pst = connexion.prepareStatement(req);
+            PreparedStatement pst
+                    = new MyConnexion().cn.prepareStatement(req);
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
@@ -70,11 +65,12 @@ public class ExerciceAssocieCRUD {
         return list;
     }
 
-    public ObservableList<Integer> getJours() {
+    public static ObservableList<Integer> getJours() {
         String req = "select jour from exerciceassocie group by jour order by jour";
         ObservableList<Integer> list = FXCollections.observableArrayList();
         try {
-            pst = connexion.prepareStatement(req);
+            PreparedStatement pst
+                    = new MyConnexion().cn.prepareStatement(req);
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
@@ -87,11 +83,12 @@ public class ExerciceAssocieCRUD {
         return list;
     }
 
-    public Exercice getExParLib(String lib) {
+    public static Exercice getExParLib(String lib) {
         String req = "select * from exercice where libelle like ?";
         Exercice ex = new Exercice();
         try {
-            pst = connexion.prepareStatement(req);
+            PreparedStatement pst
+                    = new MyConnexion().cn.prepareStatement(req);
             pst.setString(1, lib);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
@@ -105,11 +102,12 @@ public class ExerciceAssocieCRUD {
     }
     
 
-    public ObservableList<ExerciceAssocie> AfficheExAperday(int jour) {
+    public static ObservableList<ExerciceAssocie> AfficheExAperday(int jour) {
         String req = "select * from exerciceassocie where jour = ?";
         ObservableList<ExerciceAssocie> list = FXCollections.observableArrayList();
         try {
-            pst = connexion.prepareStatement(req);
+            PreparedStatement pst
+                    = new MyConnexion().cn.prepareStatement(req);
             pst.setInt(1, jour);
             ResultSet rs = pst.executeQuery();
 
@@ -126,7 +124,8 @@ public class ExerciceAssocieCRUD {
     public void modifierExerciceAssocie(ExerciceAssocie ea) {
         String requette = "update exerciceassocie set  idProfile = ?, libelleExercice = ? , nbSeries = ? , nbRepetitions = ? , jour = ? where idExAssocier = ? ";
         try {
-            pst = connexion.prepareStatement(requette);
+            PreparedStatement pst
+                    = new MyConnexion().cn.prepareStatement(requette);
             pst.setInt(1, ea.getIdProfile());
             pst.setString(2, ea.getLibelleEx());
             pst.setInt(3, ea.getNbSeries());
@@ -149,7 +148,8 @@ public class ExerciceAssocieCRUD {
     public void supprimerExerciceAssocie(int idExercice) {
         String requette = "delete from exerciceassocie where idExAssocier = ? ";
         try {
-           pst = connexion.prepareStatement(requette);
+            PreparedStatement pst
+                    = new MyConnexion().cn.prepareStatement(requette);
             pst.setInt(1, idExercice);
             pst.executeUpdate();
 

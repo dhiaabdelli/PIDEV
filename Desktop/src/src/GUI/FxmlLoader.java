@@ -5,20 +5,17 @@
  */
 package GUI;
 
-import java.io.FileNotFoundException;
 import java.net.URL;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 
 /**
  *
- * @author dorra
+ * @author dell
  */
 public class FxmlLoader {
-    private Pane view;
-    
-    
-    public Pane getPage(String fileName){
+        private Pane view;
+        public Pane getPage(String fileName){
         
         try{
             URL fileUrl = StartPoint.class.getResource("/GUI/" + fileName + ".fxml");
@@ -33,7 +30,5 @@ public class FxmlLoader {
            }
         return view;
     }
-
-
     
 }

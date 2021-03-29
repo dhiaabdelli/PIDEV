@@ -8,13 +8,15 @@ package tools;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
- * @author dorra
+ * @author dell
  */
 public class MyConnexion {
-    public String url="jdbc:mysql://localhost:3306/elixir";
+    public String url="jdbc:mysql://localhost:3306/elixirdb";
     public String login="root";
     public String pwd="";
     public Connection cn;
@@ -28,4 +30,7 @@ public class MyConnexion {
             System.out.println(ex.getMessage());
         }
     }
+    
+    
+    
 }

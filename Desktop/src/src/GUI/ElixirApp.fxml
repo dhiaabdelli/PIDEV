@@ -41,7 +41,7 @@
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </HBox.margin>
                      <children>
-                        <Pane prefHeight="29.0" prefWidth="95.0" styleClass="elixirLogo" stylesheets="@style.css">
+                        <Pane prefHeight="29.0" prefWidth="95.0" styleClass="elixirLogo">
                            <padding>
                               <Insets left="15.0" />
                            </padding>
@@ -55,7 +55,7 @@
                               <Insets left="15.0" right="30.0" />
                            </HBox.margin>
                         </FontAwesomeIcon>
-                        <Pane prefHeight="29.0" prefWidth="29.0" styleClass="pictureIcon" stylesheets="@style.css">
+                        <Pane prefHeight="29.0" prefWidth="29.0" styleClass="pictureIcon">
                            <padding>
                               <Insets left="15.0" />
                            </padding>
@@ -76,7 +76,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="33.0" prefWidth="100.0" styleClass="buttonBox">
                      <children>
-                        <FontAwesomeIcon fill="#71719f" iconName="HOME" size="2.5em">
+                        <FontAwesomeIcon fill="#71719f" iconName="HOME" onMouseClicked="#HomeClicked" size="2.5em">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -91,7 +91,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="41.0" prefWidth="100.0" styleClass="buttonBox">
                      <children>
-                        <FontAwesomeIcon fill="#71719f" iconName="USERS" onMouseClicked="#livreurclicked" size="2.5em" wrappingWidth="29.85714340209961">
+                        <FontAwesomeIcon fill="#71719f" iconName="SHOPPING_CART" size="2.5em">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -102,16 +102,16 @@
                      </padding>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="41.0" prefWidth="100.0" styleClass="buttonBox">
-                     <padding>
-                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                     </padding>
                      <children>
-                        <FontAwesomeIcon fill="#71719f" iconName="SHOPPING_CART" onMouseClicked="#clickedL" size="2.5em">
+                        <FontAwesomeIcon fill="#71719f" iconName="LIST_ALT" onMouseClicked="#ProgramClicked" size="2.5em">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
                         </FontAwesomeIcon>
                      </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="41.0" prefWidth="100.0" styleClass="buttonBox">
                      <children>
@@ -154,6 +154,12 @@
       </VBox>
    </left>
    <center>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <Pane prefHeight="628.0" prefWidth="1178.0" styleClass="background" stylesheets="@style.css">
+               <children>
+                  <Pane layoutX="195.0" layoutY="160.0" prefHeight="200.0" prefWidth="753.0" styleClass="elixirLogo" stylesheets="@style.css" />
+               </children></Pane>
+         </content></ScrollPane>
    </center>
 </BorderPane>
