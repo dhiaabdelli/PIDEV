@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="630.0" prefWidth="1207.0" styleClass="background" stylesheets="@azizstyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.controllers.MyAccountController">
+   <children>
+      <VBox prefHeight="630.0" prefWidth="1207.0">
+         <children>
+            <Pane prefHeight="80.0" prefWidth="1207.0">
+               <children>
+                  <Text layoutX="58.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="quizTitle" text="MON COMPTE" />
+                  <FontAwesomeIcon fill="#c8bfe7" iconName="USER" layoutX="28.0" layoutY="49.0" size="1.5em" wrappingWidth="75.28571319580078" />
+               </children>
+            </Pane>
+            <HBox alignment="CENTER" prefHeight="161.0" prefWidth="807.0" styleClass="boxCompte">
+               <VBox.margin>
+                  <Insets left="200.0" right="200.0" />
+               </VBox.margin>
+               <children>
+                  <FontAwesomeIcon fill="#71719f" iconName="USER" size="8em" wrappingWidth="75.28571319580078" />
+                  <VBox alignment="CENTER_LEFT" prefHeight="142.0" prefWidth="555.0">
+                     <HBox.margin>
+                        <Insets bottom="25.0" left="65.0" right="25.0" top="25.0" />
+                     </HBox.margin>
+                     <children>
+                        <Pane prefHeight="30.0" prefWidth="555.0">
+                           <children>
+                              <StackPane fx:id="paneName" prefHeight="33.0" prefWidth="555.0">
+                                 <children>
+                                    <HBox prefHeight="36.0" prefWidth="555.0">
+                                       <children>
+                                          <Text fx:id="nomprenom" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 1.6em;" styleClass="quizTitle" text="AZIZ MRABET" wrappingWidth="218.88671875">
+                                             <HBox.margin>
+                                                <Insets left="180.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Pane onMousePressed="#pressedEditName" prefHeight="36.0" prefWidth="44.0">
+                                             <children>
+                                                <FontAwesomeIcon fill="#585879" iconName="PENCIL" layoutX="4.0" layoutY="21.0" size="1.5em" wrappingWidth="27.28571319580078" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="paneEditName" prefHeight="33.0" prefWidth="555.0" visible="false">
+                                 <children>
+                                    <HBox prefHeight="36.0" prefWidth="555.0">
+                                       <children>
+                                          <TextField fx:id="prenomSaisie" prefHeight="31.0" prefWidth="130.0" promptText="Prenom" styleClass="saisieApt">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="nomSaisie" prefHeight="31.0" prefWidth="130.0" promptText="Nom" styleClass="saisieApt">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Pane onMousePressed="#pressedApplyName" prefHeight="36.0" prefWidth="44.0">
+                                             <children>
+                                                <FontAwesomeIcon fill="#585879" iconName="CHECK" layoutX="8.0" layoutY="22.0" size="1.5em" wrappingWidth="27.28571319580078" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Pane>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets left="180.0" />
+                                 </padding>
+                              </StackPane>
+                           </children>
+                        </Pane>
+                        <HBox prefHeight="38.0" prefWidth="596.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.2em;" styleClass="quizTitle" text="Adresse mail ">
+                                 <HBox.margin>
+                                    <Insets left="8.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <Text fx:id="mail" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #71719f;" styleClass="quizTitle2" text="aziz.mrabet@esprit.tn">
+                                 <HBox.margin>
+                                    <Insets left="40.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="533.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.2em;" styleClass="quizTitle" text="Mot de passe" wrappingWidth="122.6982421875">
+                                 <HBox.margin>
+                                    <Insets left="14.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <StackPane fx:id="paneEditPassword" prefHeight="31.0" prefWidth="573.0" visible="false">
+                                       <children>
+                                          <HBox prefHeight="22.0" prefWidth="573.0">
+                                             <children>
+                                                <PasswordField fx:id="newPassword" prefHeight="18.0" prefWidth="261.0" styleClass="saisieApt" />
+                                                <Pane onMousePressed="#pressedApplyPassword" prefHeight="35.0" prefWidth="41.0">
+                                                   <children>
+                                                      <FontAwesomeIcon fill="#585879" iconName="CHECK" layoutX="8.0" layoutY="25.0" size="1.5em" wrappingWidth="27.28571319580078" />
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets left="8.0" />
+                                                   </HBox.margin>
+                                                </Pane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="panePassword" prefHeight="30.0" prefWidth="402.0">
+                                       <children>
+                                          <HBox prefHeight="30.0" prefWidth="417.0">
+                                             <children>
+                                                <Text fx:id="password" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #71719f;" styleClass="quizTitle2" text="*******************" wrappingWidth="197.29150390625" />
+                                                <Pane onMousePressed="#pressedEditPassword" prefHeight="36.0" prefWidth="44.0">
+                                                   <children>
+                                                      <FontAwesomeIcon fill="#585879" iconName="PENCIL" layoutX="11.0" layoutY="19.0" size="1.5em" wrappingWidth="27.28571319580078" />
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets left="8.0" />
+                                                   </HBox.margin>
+                                                </Pane>
+                                                <Pane onMousePressed="#pressedShowPassword" onMouseReleased="#pressedHidePassword" prefHeight="36.0" prefWidth="44.0">
+                                                   <children>
+                                                      <FontAwesomeIcon fill="#585879" iconName="EYE" layoutX="11.0" layoutY="19.0" size="1.5em" wrappingWidth="27.28571319580078" />
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="44.0" />
+                                 </HBox.margin>
+                              </Pane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="390.0" prefWidth="1207.0">
+               <children>
+                  <GridPane fx:id="gridProf" alignment="CENTER" prefHeight="390.0" prefWidth="900.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="50.0" />
+                     </HBox.margin>
+                  </GridPane>
+                  <Pane onMousePressed="#pressedAddProfile" prefHeight="200.0" prefWidth="200.0">
+                     <HBox.margin>
+                        <Insets bottom="100.0" left="20.0" right="20.0" top="100.0" />
+                     </HBox.margin>
+                     <children>
+                        <FontAwesomeIcon fill="#71719f" iconName="PLUS_CIRCLE" layoutX="53.0" layoutY="137.0" size="8em" wrappingWidth="93.28571319580078" />
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

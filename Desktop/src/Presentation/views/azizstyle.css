@@ -1,0 +1,304 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.buttonBox{
+    -fx-border-width: 0 0 0 4;
+    -fx-border-color: transparent transparent transparent transparent;
+}
+
+.buttonBox:hover{
+    -fx-cursor: hand;
+    -fx-border-width: 0 0 0 4; 
+    -fx-border-color: transparent transparent transparent linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+    -fx-background-color: linear-gradient(to right, rgb(43, 41, 73), transparent);
+}
+
+.buttonBox:hover FontAwesomeIcon{
+    -fx-cursor: hand;
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+FontAwesomeIcon:hover{
+    -fx-cursor: hand;
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.buttonBoxBottom:hover{
+    -fx-cursor: hand;
+}
+
+.buttonBoxBottom:hover FontAwesomeIcon{
+    -fx-cursor: hand;
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.pictureIcon{
+    -fx-background-image: url("../images/testPicture.jpg");
+    -fx-background-size: 100%;
+}
+
+.elixirLogo{
+    -fx-background-image: url("../images/elixir.png");
+    -fx-background-size: 100%;
+}
+
+.background{
+    -fx-background-color: linear-gradient(from 10% 10% to 100% 100%, rgb(23, 21, 53), rgb(43, 41, 73));
+}
+
+.male{
+    -fx-background-image: url("../images/male.jpg");
+    -fx-background-size: 100%;
+    -fx-hgap: 20px;
+    -fx-background-radius: 15px;
+    -fx-border-width: 2px;
+    -fx-border-color: black;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    
+}
+
+.male:hover{
+    -fx-border-width: 2; 
+    -fx-border-color: red;
+    -fx-cursor: hand;
+    -fx-border-width: 4px;
+    -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.female{
+    -fx-background-image: url("../images/female.jpg");
+    -fx-background-size: 100%;
+    -fx-hgap: 20px;
+    -fx-background-radius: 15px;
+    -fx-border-width: 2px;
+    -fx-border-color: black;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+}
+
+.female:hover{
+    -fx-border-width: 2; 
+    -fx-border-color: red;
+    -fx-cursor: hand;
+    -fx-border-width: 4px;
+    -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+
+}
+
+.quizBox{
+    -fx-hgap: 20px;
+    -fx-background-color: rgb(42, 42, 85);
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-width: 2px;
+    -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+}
+
+.quizTitle{
+    -fx-font-size: 1.4em;
+    -fx-fill:  rgb(200, 191, 231);
+    -fx-font-family: Georgia, serif;
+    -fx-font-weight: bold;
+}
+
+.quizTitle2{
+    -fx-fill:  rgb(167, 76, 242);
+    -fx-font-family: Georgia, serif;
+    -fx-font-weight: bold;
+    -fx-border-width: 2 0 0 0; 
+    -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243)) transparent transparent transparent;
+    -fx-font-size: 1.4em;
+}
+
+.buttonSuivant{
+    -fx-background-color:  transparent;
+    -fx-font-size: 1.2em;
+    -fx-text-fill: white;
+    -fx-border-width: 0 0 4 0;
+    -fx-border-color: transparent transparent transparent transparent;
+}
+
+.buttonSuivant:hover{
+    -fx-cursor: hand;
+    -fx-border-width: 0 0 4 0; 
+    -fx-text-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+    -fx-border-color: transparent transparent linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243)) transparent;
+    -fx-background-color: linear-gradient(to top, rgb(43, 41, 73), transparent);
+}
+
+.buttonSuivant:hover FontAwesomeIcon{
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.saisieApt{
+    -fx-hgap: 20px;
+    -fx-background-color: rgb(82, 82, 125);
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-border-width: 2px;
+    -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+    -fx-text-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.smallBox{
+    -fx-hgap: 20px;
+    -fx-background-color: rgb(40, 40, 64);
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-width: 2px;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+}
+
+.quizUnitTxt{
+    -fx-fill: #71719f;
+    -fx-font-family: Georgia, serif;
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+}
+
+.objBox{
+    -fx-hgap: 20px;
+    -fx-background-color: rgb(40, 40, 64);
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-width: 2px;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+}
+
+.objBox:hover{
+    -fx-cursor: hand;
+    -fx-border-width: 4; 
+    -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+    -fx-background-color: linear-gradient(to top, rgb(43, 41, 73), transparent);
+}
+
+.objBox:hover FontAwesomeIcon{
+    -fx-cursor: hand;
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.objBox:hover Text{
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.objText{
+    -fx-font-size: 1.4em;
+    -fx-fill: white;
+    -fx-font-family: Georgia, serif;
+    -fx-font-weight: bold;
+}
+
+.boxSelected{
+    -fx-hgap: 20px;
+    -fx-background-color: rgb(40, 40, 64);
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+    -fx-border-radius: 15px;
+    -fx-border-width: 2px;
+    -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.boxSelected:hover{
+    -fx-cursor: hand;
+    -fx-border-width: 4; 
+    -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+    -fx-background-color: linear-gradient(to top, rgb(43, 41, 73), transparent);
+}
+
+.boxSelected:hover FontAwesomeIcon{
+    -fx-cursor: hand;
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.boxSelected:hover Text{
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.nbrbox{
+    -fx-hgap: 20px;
+    -fx-background-color: linear-gradient(to top, rgb(43, 41, 73), transparent);
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-width: 2px;
+    -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.nbrbox:hover{
+    -fx-cursor: hand;
+    -fx-border-width: 4; 
+    -fx-border-color: rgb(200, 191, 231);
+    -fx-background-color: linear-gradient(to top, rgb(43, 41, 73), transparent);
+}
+
+.nbrbox:hover .numberBox .Text{
+    -fx-text-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.nbrbox:hover .FontAwesomeIcon{
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.nbrboxDisabled:hover .FontAwesomeIcon{
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.numberBox{
+    -fx-hgap: 20px;
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
+    -fx-border-width: 2px;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 10, 0, 0, 0);
+}
+
+.numberBox:hover{
+    -fx-cursor: hand;
+}
+
+.numberBoxDisabled{
+    -fx-hgap: 20px;
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, rgb(61, 39, 190), rgb(102, 18, 183));
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
+    -fx-border-width: 2px;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 10, 0, 0, 0);
+}
+
+.nbrboxDisabled{
+    -fx-hgap: 20px;
+    -fx-background-color: rgb(40, 40, 64);
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-width: 2px;
+    -fx-border-color: transparent;
+}
+
+.nbrboxDisabled:hover{
+    -fx-cursor: hand;
+    -fx-border-width: 4; 
+    -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+    -fx-background-color: linear-gradient(to top, rgb(43, 41, 73), transparent);  
+}
+
+.nbrboxDisabled:hover .numberBoxDisabled{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.boxCompte{
+    -fx-hgap: 20px;
+    -fx-background-color: rgb(40, 40, 64);
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+    -fx-border-radius: 15px;
+    -fx-border-width: 2px;
+    -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}

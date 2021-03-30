@@ -69,8 +69,8 @@ public class ElixirAppController implements Initializable {
 
     @FXML
     void pressedhome(MouseEvent event) {
-		FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("./views/Produit");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("./views/myAccount");
         mainPane.setCenter(view);
     }
 
@@ -96,9 +96,19 @@ public class ElixirAppController implements Initializable {
         mainPane.setCenter(view);
     }
     
+    @FXML
+    void pressedAccount(MouseEvent event) {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("./views/Quiz");
+        mainPane.setCenter(view);
+    }
+
+    
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("./views/myAccount");
+        mainPane.setCenter(view);
     }    
 
     
