@@ -46,5 +46,6 @@
       </TextField>
       <ImageView fx:id="img" fitHeight="201.0" fitWidth="213.0" layoutX="52.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="128.0" layoutY="400.0" mnemonicParsing="false" onAction="#AjouterPhoto" prefHeight="30.0" prefWidth="61.0" text="choose" />
+      <Button fx:id="notif" layoutX="117.0" layoutY="475.0" mnemonicParsing="false" onAction="#notifbtn" text="notificarion" />
    </children>
 </AnchorPane>

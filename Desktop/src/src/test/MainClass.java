@@ -5,21 +5,20 @@
  */
 package test;
 
-import entities.Exercice;
-import services.ExerciceCRUD;
+import entities.Livreur;
+import services.LivreurCRUD;
 import tools.MyConnexion;
 
 /**
  *
- * @author dell
+ * @author dorra
  */
-public class MAinClass {
-    public static void main(String[] args) {
+public class MainClass {
+     public static void main(String[] args) {
         MyConnexion mc = new MyConnexion();
-        ExerciceCRUD ecd = new ExerciceCRUD();
-        Exercice e1 = new Exercice(10, "push-up","Poitrine","image1");
-        ecd.addExercice(e1);
+        LivreurCRUD lcd = new LivreurCRUD();
+        Livreur l1 = new Livreur(0, "Nom", "Prenom", 0,"image");
+        lcd.addLivreurs(l1);
         
     }
- 
 }

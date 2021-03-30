@@ -5,11 +5,13 @@
  */
 package entities;
 
+import com.itextpdf.text.Paragraph;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javafx.collections.ObservableList;
+import java.util.Map;
 
 /**
  *
@@ -24,7 +26,7 @@ public class Livreur {
 
     public Livreur() {
     }
-    
+
     
     public Livreur(int id, String Nom, String Prenom, int Num, String image) {
         this.id = id;
@@ -98,6 +100,6 @@ public class Livreur {
     public String toString() {
         return "Livreur{" + "id=" + id + ", nom=" + Nom + ", prenom=" + Prenom + ", num=" + Num + '}';
     }
-    
+
     
 }

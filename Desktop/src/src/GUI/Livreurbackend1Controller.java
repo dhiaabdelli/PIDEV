@@ -6,25 +6,43 @@
 package GUI;
 
 
-
+import com.github.plushaze.traynotification.notification.Notification;
+import com.github.plushaze.traynotification.notification.Notifications;
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import entities.Livreur;
 import entities.MyListener;
+import java.awt.Desktop;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static javafx.beans.binding.Bindings.not;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
@@ -43,6 +61,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javax.swing.text.Document;
+import services.JavaMailUtil;
 import services.LivreurCRUD;
 import static services.LivreurCRUD.AfficheLivreurs;
 
@@ -86,6 +106,8 @@ public class Livreurbackend1Controller implements Initializable {
     private String imageString;
     @FXML
     private ImageView img;
+    @FXML
+    private Button notif;
 
 
     /**
@@ -100,7 +122,7 @@ public class Livreurbackend1Controller implements Initializable {
         }   
     
 
-    private void handleButtonAction(ActionEvent event) {
+    private void handleButtonAction(ActionEvent event) throws Exception {
                if(event.getSource()== btnInsert ){
         addLivreur();
        }else if (event.getSource() == btnUpdate){
@@ -127,7 +149,7 @@ public class Livreurbackend1Controller implements Initializable {
 
         
         @FXML
-    private void addLivreur() {
+    private void addLivreur() throws Exception {
                 //1- SAVE PERSON IN DATABASE
         String rnom = tfNom.getText();
         String rprenom = tfPrenom.getText();
@@ -139,6 +161,9 @@ public class Livreurbackend1Controller implements Initializable {
         showLivreur();
 
 //        initEx();
+    JavaMailUtil.sendMail("dorra.bouchaddekh@esprit.tn");
+    
+
     }
     
 
@@ -240,5 +265,53 @@ public class Livreurbackend1Controller implements Initializable {
         imageString = tvLivreur.getSelectionModel().getSelectedItem().getImage();
     
     }
+    /* @FXML
+        
+    private void exportPDF(ActionEvent event) {
+        try {
+            String file_name = ("Livreur.pdf");
+            Document document = new Document() {};
+            
+            PdfWriter.getInstance(document, new FileOutputStream(file_name));
+            
+            document.open();
+            
+            
+            
+            Paragraph paraHeader1 = new Paragraph("TEST");
+            document.add(paraHeader1);
+            
+            
+            
+            document.close();
+            Desktop.getDesktop().open(new File(file_name));
+        } catch (IOException ex) {
+            Logger.getLogger(Livreurbackend1Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }*/
+
+
+ /*
+  public void notification(String text) {
+        Image img = new Image("images/tick_icon.png");
+        Notification not = Notification
+                .create()
+                .title("Notification")
+                .text("         " + text)
+                .graphic(new ImageView(img))
+                .hideAfter(Duration.seconds(5))
+                .position(Pos.BOTTOM_LEFT);
+        not.darkStyle();
+        not.show();
+        System.out.println(text);
+    }*/
+    @FXML
+    private void notifbtn(ActionEvent event) {
+    //    notification("Congratulation You delivred you package so well!");
+    }
+
     
+
+
+
 }
