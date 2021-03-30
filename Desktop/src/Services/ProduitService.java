@@ -15,6 +15,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.BasicConfigurator;
+
 /**
  *
  * @author ASUS
@@ -27,8 +31,10 @@ import java.util.logging.Logger;
 public class ProduitService implements IProduit {
     Connection connexion;
     PreparedStatement ps;
-
+    private static final Log log = LogFactory.getLog(ProduitService.class);
     public ProduitService() {
+        BasicConfigurator.configure();
+
         connexion = MyDB.getinstance().getConnexion();
     }
     
@@ -64,13 +70,16 @@ public class ProduitService implements IProduit {
             
             if(ps.executeUpdate() == 1){
                 System.out.println("Ajout effectué");
+                log.info("Ajout effectué");
                 return true;
             }else{
                 System.out.println("Echec d'ajout");
+                log.error("Echec d'ajout");
                 return false;
             }
         } catch (SQLException ex) {
             System.out.println("Echec d'ajout");
+             log.error("Echec d'ajout");
             return false;
         }
     }
@@ -112,13 +121,16 @@ public class ProduitService implements IProduit {
             }
             if(ps.executeUpdate() == 1){
                 System.out.println("Modification effectué");
+                log.info("Modification effectué");
                 return true;
             }else{
                 System.out.println("Echec de Modification");
+                log.error("Echec de modification");
                 return false;
             }
         } catch (SQLException ex) {
             System.out.println("Echec de modification");
+             log.error("Echec de modification");
             ex.printStackTrace();
             return false;
         }
@@ -130,14 +142,17 @@ public class ProduitService implements IProduit {
             ps = connexion.prepareStatement(req);
             if(ps.executeUpdate() == 1){
                 System.out.println("La supression du produit est effectuée");
+                log.error("La supression du produit est effectuée");
                 return true;
             }else{
                 System.out.println("Echec de supression");
+                log.error("Echec de supression");
                 return false;
             }
 
         } catch (SQLException ex) {
             System.out.println("Echec de supression");
+            log.error("Echec de supression");
         }
         return false;
     }
@@ -154,6 +169,7 @@ public class ProduitService implements IProduit {
             }
         } catch (SQLException ex) {
             System.out.println("erreur" + ex.getMessage());
+            log.error("erreur" + ex.getMessage());
         }
         return produit;
     }
@@ -177,6 +193,8 @@ public class ProduitService implements IProduit {
             }
         } catch (SQLException ex) {
             System.out.println("Echec");
+           log.error("Echec");
+
         }
         return produits;
     }
@@ -201,6 +219,7 @@ public class ProduitService implements IProduit {
             }
         } catch (SQLException ex) {
             System.out.println("Echec");
+            log.error("Echec");
         }
         return produits;
     }
@@ -226,6 +245,7 @@ public class ProduitService implements IProduit {
             }
         } catch (SQLException ex) {
             System.out.println("Echec");
+            log.error("Echec");
         }
         return produits;
     }
@@ -251,6 +271,7 @@ public class ProduitService implements IProduit {
             }
         } catch (SQLException ex) {
             System.out.println("Echec");
+            log.error("Echec");
         }
         return produits;
     }
@@ -277,6 +298,7 @@ public class ProduitService implements IProduit {
             }
         } catch (SQLException ex) {
             System.out.println("Echec");
+            log.error("Echec");
         }
         return produits;
     }
@@ -313,6 +335,7 @@ public class ProduitService implements IProduit {
             }
         } catch (SQLException ex) {
             System.out.println("Echec");
+            log.error("Echec");
         }
         return produits;
     }
@@ -349,6 +372,7 @@ public class ProduitService implements IProduit {
             }
         } catch (SQLException ex) {
             System.out.println("Echec");
+            log.error("Echec");
         }
         return produits;
     }
@@ -385,6 +409,7 @@ public class ProduitService implements IProduit {
             }
         } catch (SQLException ex) {
             System.out.println("Echec");
+            log.error("Echec");
         }
         return produits;
     }
@@ -410,6 +435,7 @@ public class ProduitService implements IProduit {
             }
         } catch (SQLException ex) {
             System.out.println("Echec");
+            log.error("Echec");
         }
         return produits;
     }
@@ -439,6 +465,7 @@ public class ProduitService implements IProduit {
             }
         } catch (SQLException ex) {
             System.out.println("Echec");
+            log.error("Echec");
         }
         return produits;
     }
@@ -474,6 +501,7 @@ public class ProduitService implements IProduit {
             }
         } catch (SQLException ex) {
             System.out.println("Echec");
+            log.error("Echec");
         }
         return produits;
     }

@@ -5,6 +5,11 @@
  */
 package Presentation.controllers.models;
 
+import Entities.Panier;
+import Entities.Produit;
+import Services.EvaluationService;
+import Services.PanierService;
+import com.sun.speech.freetts.Voice;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -16,6 +21,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import com.sun.speech.freetts.VoiceManager;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
+import Utils.Utils;
 /**
  * FXML Controller class
  *
@@ -23,13 +32,14 @@ import javafx.scene.input.MouseEvent;
  */
 public class ShopitemController implements Initializable {
 
-
-	@FXML
+    @FXML
     private VBox addToCard;
+    @FXML
+    private Button btnaj;
 
-	@FXML
+    @FXML
     private VBox ItemInfo;
-	
+
     @FXML
     private ImageView img;
 
@@ -41,7 +51,6 @@ public class ShopitemController implements Initializable {
 
     @FXML
     private Label note;
-
 
     @FXML
     private Label title1;
@@ -58,44 +67,64 @@ public class ShopitemController implements Initializable {
     @FXML
     private Label note1;
 
-	
+    private Produit pr;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-	addToCard.setVisible(true);
+        addToCard.setVisible(true);
         ItemInfo.setVisible(false);
+        btnaj.setVisible(true);
+
     }
-    
-    
+
     @FXML
     void backToCard(MouseEvent event) {
         addToCard.setVisible(true);
         ItemInfo.setVisible(false);
         System.out.println("testtttttttt");
     }
-    
+
+    @FXML
+    void ajouterp(MouseEvent event) {
+        PanierService ps = new PanierService();
+        Panier p = new Panier(pr.getId(), "dfgfgdfgdfg", 1);
+
+        if (ps.ajouterPanier(p)) {
+            btnaj.setVisible(false);
+            Utils.showTrayNotification(NotificationType.SUCCESS, "Informations", null, "Produit ajouter avec suc",null, 6000);
+            Voice v;
+            VoiceManager vm = VoiceManager.getInstance();
+            v = vm.getVoice("kevin16");
+            v.allocate();
+            v.speak(p.getLibelle() + "added succefully");
+        }
+    }
+
     @FXML
     void iteminfo(MouseEvent event) {
-	addToCard.setVisible(false);
+        addToCard.setVisible(false);
         ItemInfo.setVisible(true);
     }
-	
-    public void setData(String titletext,String prixtext,String imgurl){
+
+    public void setData(Produit pr, int id, String titletext, String prixtext, String imgurl) {
+        this.pr = pr;
         title.setText(titletext);
-		title1.setText(titletext);
-		desc.setText(titletext);
-		
-        prix.setText(prixtext+" DT");
-		prix1.setText(prixtext+" DT");
-                Image image;
-        //System.out.println(getClass().getResourceAsStream("../../views/resources/images/productNotFound.png"));        
-        if(imgurl.isEmpty()){
+        title1.setText(titletext);
+        desc.setText(titletext);
+
+        prix.setText(prixtext + " DT");
+        prix1.setText(prixtext + " DT");
+        Image image;
+        if (imgurl.isEmpty()) {
             image = new Image(getClass().getResourceAsStream("../../views/resources/images/productNotFound.png"));
-        }else{
+        } else if (getClass().getResourceAsStream(imgurl) == null) {
+            image = new Image(getClass().getResourceAsStream("../../views/resources/images/productNotFound.png"));
+        } else {
             image = new Image(getClass().getResourceAsStream(imgurl));
         }
-        //Image image = new Image(getClass().getResourceAsStream("/images/cards/As.png"));
-        //Image image = new Image("https://www.tunisianet.com.tn/175587-home/tablette-lenovo-tab-m10-tb-x505x-101-4g-noir-sim-orange-40-go-offert.jpg");
-
         img.setImage(image);
+        EvaluationService es = new EvaluationService();
+        note.setText(Float.toString(es.NoteEvaluationParIdProduit(id)));
+        note1.setText(Float.toString(es.NoteEvaluationParIdProduit(id)));
     }
 }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane onMousePressed="#click" style="-fx-border-color: #9e4be7; -fx-border-radius: 30;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.controllers.models.ItemController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="63.0" layoutY="8.0" onMouseClicked="#click" prefHeight="215.0" prefWidth="225.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="225.0">
+               <children>
+                  <Label text="Libelle" textFill="#71719f">
+                     <font>
+                        <Font name="Bodoni MT Bold Italic" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Pane prefHeight="36.0" prefWidth="51.0" />
+                  <Label text="Description" textFill="#71719f">
+                     <font>
+                        <Font name="Bodoni MT Bold Italic" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="48.0" prefWidth="215.0">
+               <children>
+                  <Label fx:id="contlibelle" prefHeight="48.0" prefWidth="93.0" textAlignment="CENTER">
+                     <font>
+                        <Font name="Bodoni MT Bold Italic" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Pane prefHeight="48.0" prefWidth="21.0" />
+                  <Label fx:id="contdescription" prefHeight="48.0" prefWidth="101.0" textAlignment="CENTER">
+                     <font>
+                        <Font name="Bodoni MT Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </HBox>
+            <ImageView fx:id="img" fitHeight="115.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></ImageView>
+         </children>
+      </VBox>
+   </children>
+   <styleClass>
+      <String fx:value="Exercice-item" />
+      <String fx:value="shadow" />
+   </styleClass>
+</AnchorPane>

@@ -24,7 +24,7 @@ public class AlimentService implements IAliment{
     @Override
     public boolean ajouterAliment(aliment a){
         try{
-            String req = "INSERT INTO `aliment`(`id`, `nom`, `fats`, `carbs`, `proteins`, `calories`) VALUES(?,?,?,?,?,?)";                                              
+            String req = "INSERT INTO `aliment`(`id`, `nom`, `fats`, `carbs`, `proteins`, `calories`, `type`) VALUES(?,?,?,?,?,?,?)";                                              
             ps = connexion.prepareStatement(req);
             ps.setString(1, a.getId());
             ps.setString(2, a.getNom());
@@ -32,6 +32,7 @@ public class AlimentService implements IAliment{
             ps.setInt(4, a.getCarbs());
             ps.setInt(5, a.getProteins());
             ps.setInt(6, a.getCalories());
+            ps.setInt(7, a.getType());
             ps.executeUpdate();
             System.out.println("Succes : Ajout Aliment");
             return true;
@@ -45,14 +46,15 @@ public class AlimentService implements IAliment{
     @Override
     public boolean modifierAliment(aliment a){
         try{
-            String req = "UPDATE aliment SET  nom=? , fats=? , carbs=? , proteins=? , calories=? WHERE id=?";
+            String req = "UPDATE aliment SET  nom=? , fats=? , carbs=? , proteins=? , calories=?, type=? WHERE id=?";
             ps = connexion.prepareStatement(req);
             ps.setString(1, a.getNom());
             ps.setInt(2, a.getFats());
             ps.setInt(3, a.getCarbs());
             ps.setInt(4, a.getProteins());
             ps.setInt(5, a.getCalories());
-            ps.setString(6, a.getId());
+            ps.setInt(6, a.getType());
+            ps.setString(7, a.getId());
             ps.executeUpdate();
             System.out.println("Succes : Modification Aliment");
             return true;
@@ -83,7 +85,7 @@ public class AlimentService implements IAliment{
         try{
             ResultSet result = connexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM aliment WHERE id = " + id);
             if(result.first()){
-                a = new aliment(result.getString("id"), result.getString("nom"), result.getInt("fats"), result.getInt("carbs"),result.getInt("proteins"), result.getInt("calories"));
+                a = new aliment(result.getString("id"), result.getString("nom"), result.getInt("fats"), result.getInt("carbs"),result.getInt("proteins"), result.getInt("calories"), result.getInt("type"));
                 return a;
             }
         }catch(SQLException ex){
@@ -125,6 +127,7 @@ public class AlimentService implements IAliment{
                 a.setCarbs(rs.getInt("carbs"));
                 a.setProteins(rs.getInt("proteins"));
                 a.setCalories(rs.getInt("calories"));
+                a.setType(rs.getInt("type"));
                 aliments.add(a);
             }
         }catch(SQLException ex){
@@ -149,13 +152,31 @@ public class AlimentService implements IAliment{
                 a.setCarbs(rs.getInt("carbs"));
                 a.setProteins(rs.getInt("proteins"));
                 a.setCalories(rs.getInt("calories"));
+                a.setCalories(rs.getInt("type"));
                 aliments.add(a);
             }
         }catch(SQLException ex){
             Logger.getLogger(AlimentService.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Echec : Lister Aliments");
+            System.out.println("Echec : Lister Aliments Tri Par Calories");
         }
         return aliments;
+    }
+    
+    @Override
+    public String getMaxId(){
+        String maxId = "0";
+        try{
+            String req = "SELECT MAX(CAST(id as signed)) FROM aliment";
+            ps = connexion.prepareStatement(req);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                maxId = Integer.toString((rs.getInt("MAX(CAST(id as signed))") + 1));
+            }
+        }catch(SQLException ex){
+            Logger.getLogger(AlimentService.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Echec : Get Max Id");
+        }
+        return maxId;  
     }
     
 }

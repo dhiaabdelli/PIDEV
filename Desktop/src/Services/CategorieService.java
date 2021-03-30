@@ -8,7 +8,9 @@ import DataStorage.MyDB;
 import Entities.Categorie;
 import Entities.Produit;
 import IServices.ICategorie;
-
+import org.apache.log4j.BasicConfigurator;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,8 +24,10 @@ import java.util.List;
 public class CategorieService implements ICategorie{
     Connection connexion;
     PreparedStatement ps;
+    private static final Log log = LogFactory.getLog(ProduitService.class);
 
     public CategorieService() {
+        BasicConfigurator.configure();
         connexion = MyDB.getinstance().getConnexion();
     }
     
@@ -38,13 +42,17 @@ public class CategorieService implements ICategorie{
             ps.setString(3, c.getDesc());
             if(ps.executeUpdate() == 1){
                 System.out.println("Ajout effectué");
+                log.info("Ajout effectué");
                 return true;
             }else{
                 System.out.println("Echec d'ajout");
+                log.error("Echec d'ajout");
                 return false;
             }
         } catch (SQLException ex) {
             System.out.println("Echec d'ajout");
+            log.error("Echec d'ajout");
+
             return false;
         }
     }
@@ -59,13 +67,16 @@ public class CategorieService implements ICategorie{
             ps.setString(2, c.getDesc());
             if(ps.executeUpdate() == 1){
                 System.out.println("Modification effectué");
+                log.info("Modification effectué");
                 return true;
             }else{
                 System.out.println("Echec de Modification");
+                log.error("Echec de modification");
                 return false;
             }
         } catch (SQLException ex) {
             System.out.println("Echec de modification");
+            log.error("Echec de modification");
             return false;
         }
     }
@@ -79,10 +90,13 @@ public class CategorieService implements ICategorie{
                 return true;
             }else{
                 System.out.println("Echec de supression");
+                log.error("Echec de supression");
                 return false;
             }
         } catch (SQLException ex) {
             System.out.println("Echec de supression");
+            log.error("Echec de supression");
+
         }
         return false;
     }
@@ -98,7 +112,7 @@ public class CategorieService implements ICategorie{
                 return categorie;
             }
         } catch (SQLException ex) {
-            System.out.println("erreur" + ex.getMessage());
+            log.error("erreur" + ex.getMessage());
         }
         return categorie;
     }   
@@ -119,6 +133,8 @@ public class CategorieService implements ICategorie{
             }
         } catch (SQLException ex) {
             System.out.println("Echec");
+            log.error("Echec");
+
         }
         return categories;
     }
@@ -138,6 +154,8 @@ public class CategorieService implements ICategorie{
             }
         } catch (SQLException ex) {
             System.out.println("Echec");
+            log.error("Echec");
+
         }
         return categories;
     }

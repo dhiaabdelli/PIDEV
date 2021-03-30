@@ -4,12 +4,22 @@
  * and open the template in the editor.
  */
 package Presentation.controllers;
-
+import com.itextpdf.text.Document;
+import com.itextpdf.text.pdf.PdfWriter;
 import Entities.Categorie;
 import Entities.Produit;
 import Services.CategorieService;
 import Services.ProduitService;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -111,6 +121,7 @@ public class ProduitController implements Initializable {
     @FXML
     private AnchorPane supbtn;
     
+    private List<Produit> listProduit;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.loadCategorie();
@@ -232,10 +243,61 @@ public class ProduitController implements Initializable {
             }
         }
     }
-	
+    
+    @FXML
+    void exportpdfbtn(MouseEvent event) throws FileNotFoundException, DocumentException {
+        //String file_name = "C:\\Users\\ASUS\\Documents\\categorie.pdf";
+        String file_name = "categorie.pdf";
+        Document document = new Document(PageSize.A4, 0, 0, 0, 0);
+        PdfWriter.getInstance(document, new FileOutputStream(file_name));
+        System.out.println("opening the document..");
+        document.open();
+       // document.add(new Paragraph("Hello World!"));
+       
+       
+        Paragraph p = new Paragraph("Liste Produits");
+        p.setAlignment(Element.ALIGN_CENTER);
+        document.add(p);
+        
+        PdfPTable table = new PdfPTable(5);
+        table.setWidthPercentage(100);
+        table.setSpacingBefore(0f);
+        table.setSpacingAfter(0f);
+        
+        
+        PdfPCell c1 = new PdfPCell(new Phrase("nomcategorie"));
+        table.addCell(c1);
+        
+        PdfPCell c2 = new PdfPCell(new Phrase("libelle"));
+        table.addCell(c2);
+        
+        PdfPCell c3 = new PdfPCell(new Phrase("description"));
+        table.addCell(c3);
+        
+        
+        PdfPCell c4 = new PdfPCell(new Phrase("prix"));
+        table.addCell(c4);
+        
+        PdfPCell c5 = new PdfPCell(new Phrase("qt"));
+        table.addCell(c5);
+
+        
+        for (int i = 0; i < listProduit.size(); i++) {
+            table.addCell(listProduit.get(i).getNomcategorie());
+            table.addCell(listProduit.get(i).getLibelle());
+            table.addCell(listProduit.get(i).getDescription());
+            table.addCell(String.valueOf(listProduit.get(i).getPrix())+" DT");
+            table.addCell(Integer.toString(listProduit.get(i).getQt()));
+        }
+        
+        document.add(table);
+        
+        document.close();
+        System.out.println("closing the document..");
+    }
     private void loadProduit(String rech){
        
-       List<Produit> listProduit;
+       
        ProduitService cs = new ProduitService();
         if(rech.isEmpty())
             listProduit = cs.listeProduitsBack();

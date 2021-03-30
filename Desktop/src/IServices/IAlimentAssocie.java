@@ -16,6 +16,8 @@ public interface IAlimentAssocie{
     public String getNextId();
     
     public List<alimentAssocie> listerAlimentsAssocies();
+    
+    public List<alimentAssocie> listerAlimentsAssociesParId(String idProfile);
  
     public void associerAliments(String idProfile);
     

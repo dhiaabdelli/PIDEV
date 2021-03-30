@@ -8,17 +8,19 @@ public class aliment{
     protected int carbs;
     protected int proteins;
     protected int calories;
+    protected int type;
     
     public aliment(){
     }
        
-    public aliment(String id, String nom, int fats, int carbs, int proteins, int calories){
+    public aliment(String id, String nom, int fats, int carbs, int proteins, int calories, int type){
         this.id = id;
         this.nom = nom;
         this.fats = fats;
         this.carbs = carbs;
         this.proteins = proteins;
         this.calories = calories;
+        this.type = type;
     }
     
     public void setId(String id){
@@ -45,6 +47,10 @@ public class aliment{
         this.calories = calories;
     }
     
+    public void setType(int type){
+        this.type = type;
+    }
+    
     public String getId(){
         return id;
     }
@@ -69,9 +75,13 @@ public class aliment{
         return calories;
     }
     
+    public int getType(){
+        return type;
+    }
+    
     @Override
     public String toString(){
-        return "\nId : " + id + "\nNom : " + nom + "\nFats : " + fats + "\nCarbs : " + carbs + "\nProteins : " + proteins + "\nCalories : " + calories + "\n";
+        return "\nId : " + id + "\nNom : " + nom + "\nFats : " + fats + "\nCarbs : " + carbs + "\nProteins : " + proteins + "\nCalories : " + calories + "\nType : " + type + "\n";
     }
     
 }

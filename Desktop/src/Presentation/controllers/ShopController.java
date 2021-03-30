@@ -76,7 +76,7 @@ public class ShopController implements Initializable {
                     loader.setLocation(getClass().getResource("../views/models/shopitem.fxml"));
                     AnchorPane anchorPane = loader.load();
                     ShopitemController shopItemController = loader.getController();
-                    shopItemController.setData(listProduit.get(i).getLibelle(),Float.toString(listProduit.get(i).getPrix()),listProduit.get(i).getImg());
+                    shopItemController.setData(listProduit.get(i),listProduit.get(i).getId(),listProduit.get(i).getLibelle(),Float.toString(listProduit.get(i).getPrix()),listProduit.get(i).getImg());
                     if(column == 3){
                         column = 0;
                         row++;
@@ -161,7 +161,7 @@ public class ShopController implements Initializable {
                     loader.setLocation(getClass().getResource("../views/models/shopitem.fxml"));
                     AnchorPane anchorPane = loader.load();
                     ShopitemController shopItemController = loader.getController();
-                    shopItemController.setData(listProduit.get(i).getLibelle(),Float.toString(listProduit.get(i).getPrix()),listProduit.get(i).getImg());
+                    shopItemController.setData(listProduit.get(i),listProduit.get(i).getId(),listProduit.get(i).getLibelle(),Float.toString(listProduit.get(i).getPrix()),listProduit.get(i).getImg());
                     if(column == 3){
                         column = 0;
                         row++;

@@ -25,5 +25,6 @@ public interface IEvaluation {
     public List<Evaluation> listeEvaluationParIdProduitRech(int id_produit,String str);
     public List<Evaluation> listeEvaluationParIdProduit(int id_produit);
     public List<Evaluation> listeEvaluationParIdUser(int id_user);
+    public float NoteEvaluationParIdProduit(int id);
     public String getNextId();
 }

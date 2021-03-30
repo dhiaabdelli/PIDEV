@@ -19,4 +19,6 @@ public interface IAliment{
     
     public List<aliment> listerAlimentsTriParCalorie(); 
         
+    public String getMaxId();
+    
 }

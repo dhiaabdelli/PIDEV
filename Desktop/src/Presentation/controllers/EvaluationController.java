@@ -9,8 +9,10 @@ import Entities.Categorie;
 import Entities.Evaluation;
 import Entities.Produit;
 import Services.CategorieService;
+import Services.CompteService;
 import Services.EvaluationService;
 import Services.ProduitService;
+import entities.Compte;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -67,7 +69,7 @@ public class EvaluationController implements Initializable {
     private TextField inputnoteadd;
 
     @FXML
-    private ChoiceBox<?> inputcompteadd;
+    private ChoiceBox<Compte> inputcompteadd;
 
     @FXML
     private HBox editPane;
@@ -79,10 +81,11 @@ public class EvaluationController implements Initializable {
     private TextField inputnotemod;
 
     @FXML
-    private ChoiceBox<?> inputcomptemod;
+    private ChoiceBox<Compte> inputcomptemod;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        this.loadaccounts();
         this.loadProduit();
         this.loadEvaluation(strrech.getText());
         modbtn.setVisible(false);
@@ -109,6 +112,14 @@ public class EvaluationController implements Initializable {
                      break;
                 }
             }
+            
+            for(int i = 0;i < inputcomptemod.getItems().size();i++){
+                if(inputcomptemod.getItems().get(i).getEmail().equals(selected.getId_User())){
+                    inputcomptemod.getSelectionModel().select(i);
+                    break;
+                }
+            }
+            
             modbtn.setVisible(true);
             supbtn.setVisible(true);
         }
@@ -159,8 +170,11 @@ public class EvaluationController implements Initializable {
 	int selectedIndex = inputproduitadd.getSelectionModel().getSelectedIndex();
         Object selectedItem = inputproduitadd.getSelectionModel().getSelectedItem();
         
+        int selectedIndex2 = inputcompteadd.getSelectionModel().getSelectedIndex();
+        Object selectedItem2 = inputcompteadd.getSelectionModel().getSelectedItem();
+        
         EvaluationService es = new EvaluationService();
-        Evaluation e = new Evaluation(Integer.parseInt(es.getNextId()),((Produit)selectedItem).getId(),0,Integer.parseInt(inputnoteadd.getText()));
+        Evaluation e = new Evaluation(Integer.parseInt(es.getNextId()),((Produit)selectedItem).getId(),((Compte)selectedItem2).getEmail(),Integer.parseInt(inputnoteadd.getText()));
 
         if(es.ajouterEvaluation(e)){
             this.loadEvaluation(strrech.getText());
@@ -177,10 +191,13 @@ public class EvaluationController implements Initializable {
            
             int selectedIndex = inputproduitmod.getSelectionModel().getSelectedIndex();
             Object selectedItem = inputproduitmod.getSelectionModel().getSelectedItem();
-                    System.out.println(((Produit)selectedItem).getId());
+            
+             int selectedIndex2 = inputcomptemod.getSelectionModel().getSelectedIndex();
+             Object selectedItem2 = inputcomptemod.getSelectionModel().getSelectedItem();
+            System.out.println(((Produit)selectedItem).getId());
 
             EvaluationService es = new EvaluationService();
-            Evaluation e = new Evaluation(selected.getId(),((Produit)selectedItem).getId(),0,Integer.parseInt(inputnotemod.getText()));            
+            Evaluation e = new Evaluation(selected.getId(),((Produit)selectedItem).getId(),((Compte)selectedItem2).getEmail(),Integer.parseInt(inputnotemod.getText()));            
             System.out.println(e);
             if(es.modifierEvaluationBack(e)){
                 this.loadEvaluation(strrech.getText());
@@ -202,10 +219,23 @@ public class EvaluationController implements Initializable {
         System.out.println(listEvaluation.size());
 
         ObservableList<Evaluation> data = FXCollections.observableArrayList(listEvaluation);
-	nomproduit.setCellValueFactory(new PropertyValueFactory<>("nomProduit"));   
+	nomproduit.setCellValueFactory(new PropertyValueFactory<>("nomProduit"));  
+        nomcompte.setCellValueFactory(new PropertyValueFactory<>("Id_User"));
 	note.setCellValueFactory(new PropertyValueFactory<>("note"));
         tableeval.setItems(data);
 
+    }
+    
+    private void loadaccounts(){
+          List<Compte> listCompte;
+          CompteService cs = new CompteService();
+          listCompte = cs.listeCompte();
+          System.out.println("listCompte size = "+listCompte.size());
+          for (int i = 0; i < listCompte.size(); i++) {
+            inputcompteadd.getItems().add(listCompte.get(i));
+            inputcomptemod.getItems().add(listCompte.get(i));
+          }
+          inputcompteadd.getSelectionModel().selectFirst();
     }
     
     private void loadProduit(){

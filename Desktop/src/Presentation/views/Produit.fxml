@@ -37,6 +37,14 @@
       </HBox>
       <HBox alignment="CENTER_RIGHT" layoutY="95.0" prefHeight="29.0" prefWidth="1208.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
+            <AnchorPane onMouseClicked="#exportpdfbtn" prefHeight="36.0" prefWidth="145.0" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243)); -fx-border-width: 4; -fx-border-radius: 0;" styleClass="btnclick">
+               <children>
+                  <Label alignment="CENTER" layoutX="6.0" layoutY="11.0" prefHeight="17.0" prefWidth="155.0" style="-fx-text-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243)); -fx-font-family: &quot;Montserrat ExtraBold&quot;;;" text="Export pdf" />
+               </children>
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </AnchorPane>
             <AnchorPane fx:id="modbtn" onMouseClicked="#edititembtn" prefHeight="13.0" prefWidth="155.0" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243)); -fx-border-width: 4; -fx-border-radius: 0;" styleClass="btnclick">
                <children>
                   <FontAwesomeIcon fill="#7963fa" iconName="PENCIL" layoutX="43.0" layoutY="24.0" />

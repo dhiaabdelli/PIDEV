@@ -17,6 +17,6 @@ public interface IProgrammeAlimentaire{
     
     public List<programmeAlimentaire> listerProgrammesAlimentaires();
     
-    public void calculerProgrammeAlimentaire(String email, String idProfile);
+    public void calculerProgrammeAlimentaire(String idProfile);
     
 }

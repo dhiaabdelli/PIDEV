@@ -136,10 +136,10 @@ public class ProgrammeAlimentaireService implements IProgrammeAlimentaire{
     }
     
     @Override
-    public void calculerProgrammeAlimentaire(String email, String idProfile){
+    public void calculerProgrammeAlimentaire(String idProfile){
         programmeAlimentaire pa = new programmeAlimentaire();
         try{
-            String req = "SELECT * FROM profile WHERE emailCompte = '" + email + "' AND id = " + idProfile;
+            String req = "SELECT * FROM profile WHERE id = " + idProfile;
             ps = connexion.prepareStatement(req);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
