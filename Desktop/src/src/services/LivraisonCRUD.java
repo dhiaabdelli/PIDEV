@@ -109,9 +109,9 @@ public class LivraisonCRUD {
             Alert alert = new Alert (Alert.AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
             alert.setHeaderText(null);
-            alert.setContentText("Exercice Supprimé!");
+            alert.setContentText("Livraison Supprimé!");
             alert.showAndWait();
-            System.out.println("Exercice Supprimé!");
+            System.out.println("Livraison Supprimé!");
         } catch (SQLException ex) {
             Logger.getLogger(LivraisonCRUD.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -18,9 +18,11 @@ import java.net.URL;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -65,14 +67,15 @@ public class Livraisonbackend1Controller implements Initializable {
     ObservableList<String> NomLivreur;
     ObservableList<String> Nom;
     ObservableList<Livraison> dataList;
-    @FXML
     private TextField tfetat;
-    @FXML
     private TextField tfNC;
+    @FXML
+    private TextField tfDate;
 
       private void setComboBox() {
         Libs = LivraisonCRUD.getLivNom();
         cbNomLivreur.setItems(Libs);
+        
     }
     
     
@@ -111,7 +114,9 @@ public class Livraisonbackend1Controller implements Initializable {
        
     List<Livreur> Livrs = new ArrayList<>();
 
+    @FXML
     private JFXComboBox cbEtat;
+    @FXML
     private JFXComboBox cbNomClient;
 
     @FXML
@@ -188,6 +193,7 @@ public class Livraisonbackend1Controller implements Initializable {
         LivraisonCRUD lcd = new LivraisonCRUD();
         lcd.addLivraisons(l);
         showLivraison();
+       
 
 //        initEx();
     }
