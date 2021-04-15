@@ -1,0 +1,19 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}New Commande{% endblock %}
+
+{% block header %}New Commande{% endblock %}
+
+{% block breadcrumb %}New Commande{% endblock %}
+
+{% block body %}
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Ajouter une Commande</h3>
+        </div>
+
+        <div class="box-body">
+            {{ include('commande/_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

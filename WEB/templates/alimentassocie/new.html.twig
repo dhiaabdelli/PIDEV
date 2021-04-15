@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Alimentassocie{% endblock %}
+
+{% block body %}
+    <h1>Create new Alimentassocie</h1>
+
+    {{ include('alimentassocie/_form.html.twig') }}
+
+    <a href="{{ path('alimentassocie_index') }}">back to list</a>
+{% endblock %}

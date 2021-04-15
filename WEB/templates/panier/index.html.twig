@@ -1,0 +1,52 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block header %}Panier{% endblock %}
+
+{% block breadcrumb %}Panier{% endblock %}
+
+{% block body %}
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Liste des Paniers</h3>
+            <div class="box-tools">
+                <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
+                    <div class="input-group-btn">
+                        <a  href="{{ path('panier_new') }}" class="btn bg-purple btn-flat"><i class="fa fa-plus"></i> Ajouter un Panier</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-body">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Idproduit</th>
+                        <th>Email</th>
+                        <th>Qt</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for panier in paniers %}
+                    <tr>
+                        <td>{{ panier.idproduit }}</td>
+                        <td>{{ panier.email }}</td>
+                        <td>{{ panier.qt }}</td>
+                        <td>
+                            <a href="{{ path('panier_show', {'idproduit': panier.idproduit}) }}"><i class="fa fa-eye"></i></a>
+                            <a href="{{ path('panier_edit', {'idproduit': panier.idproduit}) }}"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

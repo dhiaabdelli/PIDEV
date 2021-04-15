@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Programmealimentaire{% endblock %}
+
+{% block body %}
+    <h1>Programmealimentaire</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idprofile</th>
+                <td>{{ programmealimentaire.idprofile }}</td>
+            </tr>
+            <tr>
+                <th>Bmr</th>
+                <td>{{ programmealimentaire.bmr }}</td>
+            </tr>
+            <tr>
+                <th>Calrequis</th>
+                <td>{{ programmealimentaire.calrequis }}</td>
+            </tr>
+            <tr>
+                <th>Fatsrequis</th>
+                <td>{{ programmealimentaire.fatsrequis }}</td>
+            </tr>
+            <tr>
+                <th>Carbsrequis</th>
+                <td>{{ programmealimentaire.carbsrequis }}</td>
+            </tr>
+            <tr>
+                <th>Proteinsrequis</th>
+                <td>{{ programmealimentaire.proteinsrequis }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('programmealimentaire_index') }}">back to list</a>
+
+    <a href="{{ path('programmealimentaire_edit', {'idprofile': programmealimentaire.idprofile}) }}">edit</a>
+
+    {{ include('programmealimentaire/_delete_form.html.twig') }}
+{% endblock %}

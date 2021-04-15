@@ -1,0 +1,58 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Produit{% endblock %}
+
+{% block header %}Produit{% endblock %}
+
+{% block breadcrumb %}Produit{% endblock %}
+
+{% block body %}
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Liste des Produits</h3>
+            <div class="box-tools">
+                <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
+                    <div class="input-group-btn">
+                        <a  href="{{ path('produit_new') }}" class="btn bg-purple btn-flat"><i class="fa fa-plus"></i> Ajouter un panier</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-body">
+
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Libelle</th>
+                        <th>Prix</th>
+                        <th>Description</th>
+                        <th>Stock</th>
+                        <th>Img</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for produit in produits %}
+                    <tr>
+                        <td>{{ produit.id }}</td>
+                        <td>{{ produit.libelle }}</td>
+                        <td>{{ produit.prix }}</td>
+                        <td>{{ produit.description }}</td>
+                        <td>{{ produit.qt }}</td>
+                        <td>{{ produit.img }}</td>
+                        <td>
+                            <a href="{{ path('produit_show', {'id': produit.id}) }}"><i class="fa fa-eye"></i></a>
+                            <a href="{{ path('produit_edit', {'id': produit.id}) }}"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

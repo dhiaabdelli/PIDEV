@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Programmealimentaire index{% endblock %}
+
+{% block body %}
+    <h1>Programmealimentaire index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Idprofile</th>
+                <th>Bmr</th>
+                <th>Calrequis</th>
+                <th>Fatsrequis</th>
+                <th>Carbsrequis</th>
+                <th>Proteinsrequis</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for programmealimentaire in programmealimentaires %}
+            <tr>
+                <td>{{ programmealimentaire.idprofile }}</td>
+                <td>{{ programmealimentaire.bmr }}</td>
+                <td>{{ programmealimentaire.calrequis }}</td>
+                <td>{{ programmealimentaire.fatsrequis }}</td>
+                <td>{{ programmealimentaire.carbsrequis }}</td>
+                <td>{{ programmealimentaire.proteinsrequis }}</td>
+                <td>
+                    <a href="{{ path('programmealimentaire_show', {'idprofile': programmealimentaire.idprofile}) }}">show</a>
+                    <a href="{{ path('programmealimentaire_edit', {'idprofile': programmealimentaire.idprofile}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('programmealimentaire_new') }}">Create new</a>
+{% endblock %}

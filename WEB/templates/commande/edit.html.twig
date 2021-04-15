@@ -1,0 +1,19 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Edit Commande{% endblock %}
+
+{% block header %}Edit Commande{% endblock %}
+
+{% block breadcrumb %}Edit Commande{% endblock %}
+
+{% block body %}
+    <div class="box">
+
+        <div class="box-body">
+
+            {{ include('commande/_form.html.twig', {'button_label': 'Update'}) }}
+            {{ include('commande/_delete_form.html.twig') }}
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Exerciceassocie index{% endblock %}
+
+{% block body %}
+    <h1>Exerciceassocie index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Idexassocier</th>
+                <th>Idprofile</th>
+                <th>Libelleexercice</th>
+                <th>Nbseries</th>
+                <th>Nbrepetitions</th>
+                <th>Jour</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for exerciceassocie in exerciceassocies %}
+            <tr>
+                <td>{{ exerciceassocie.idexassocier }}</td>
+                <td>{{ exerciceassocie.idprofile }}</td>
+                <td>{{ exerciceassocie.libelleexercice }}</td>
+                <td>{{ exerciceassocie.nbseries }}</td>
+                <td>{{ exerciceassocie.nbrepetitions }}</td>
+                <td>{{ exerciceassocie.jour }}</td>
+                <td>
+                    <a href="{{ path('exerciceassocie_show', {'idexassocier': exerciceassocie.idexassocier}) }}">show</a>
+                    <a href="{{ path('exerciceassocie_edit', {'idexassocier': exerciceassocie.idexassocier}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('exerciceassocie_new') }}">Create new</a>
+{% endblock %}

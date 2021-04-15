@@ -1,0 +1,54 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Categorie{% endblock %}
+
+{% block header %}Categorie{% endblock %}
+
+{% block breadcrumb %}Categorie{% endblock %}
+
+{% block body %}
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Liste des Categories</h3>
+            <div class="box-tools">
+                <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
+                    <div class="input-group-btn">
+                        <a href="{{ path('categorie_new') }}" class="btn bg-purple btn-flat"><i class="fa fa-plus"></i> Ajouter une categorie</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-body">
+
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Description</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for categorie in categories %}
+                    <tr>
+                        <td>{{ categorie.id }}</td>
+                        <td>{{ categorie.nom }}</td>
+                        <td>{{ categorie.description }}</td>
+                        <td>
+                            <a href="{{ path('categorie_show', {'id': categorie.id}) }}"><i class="fa fa-eye"></i></a>
+                            <a href="{{ path('categorie_edit', {'id': categorie.id}) }}"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
