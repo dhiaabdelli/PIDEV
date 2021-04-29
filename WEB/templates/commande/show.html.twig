@@ -1,0 +1,46 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Commande{% endblock %}
+
+{% block header %}Commande{% endblock %}
+
+{% block breadcrumb %}Commande{% endblock %}
+
+{% block body %}
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Commande </h3>
+        </div>
+
+        <div class="box-body">
+
+            <table style="margin-bottom: 15px;" class="table">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ commande.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Idpanier</th>
+                        <td>{{ commande.idpanier }}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{ commande.email }}</td>
+                    </tr>
+                    <tr>
+                        <th>Traite</th>
+                        <td>{{ commande.traite ? 'Yes' : 'No' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a class="btn bg-purple btn-flat" href="{{ path('commande_index') }}"><i class="fa fa-fw fa-arrow-left"></i> back to list</a>
+
+            <a class="btn bg-purple btn-flat" href="{{ path('commande_edit', {'id': commande.id}) }}"><i class="fa fa-edit"></i> edit</a>
+
+            {{ include('commande/_delete_form.html.twig') }}
+
+        </div>
+    </div>
+{% endblock %}

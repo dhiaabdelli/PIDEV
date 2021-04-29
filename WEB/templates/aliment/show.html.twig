@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Aliment{% endblock %}
+
+{% block body %}
+    <h1>Aliment</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ aliment.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ aliment.nom }}</td>
+            </tr>
+            <tr>
+                <th>Fats</th>
+                <td>{{ aliment.fats }}</td>
+            </tr>
+            <tr>
+                <th>Carbs</th>
+                <td>{{ aliment.carbs }}</td>
+            </tr>
+            <tr>
+                <th>Proteins</th>
+                <td>{{ aliment.proteins }}</td>
+            </tr>
+            <tr>
+                <th>Calories</th>
+                <td>{{ aliment.calories }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ aliment.type }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('aliment_index') }}">back to list</a>
+
+    <a href="{{ path('aliment_edit', {'id': aliment.id}) }}">edit</a>
+
+    {{ include('aliment/_delete_form.html.twig') }}
+{% endblock %}

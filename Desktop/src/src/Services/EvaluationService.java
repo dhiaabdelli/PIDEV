@@ -70,6 +70,29 @@ public class EvaluationService implements IEvaluation{
             return false;
         }
     }
+    
+    @Override
+    public boolean modifierEvaluationBack(Evaluation e) {
+        try {
+            String req = "UPDATE evaluation SET note=?,id_produit =? WHERE id=? and id_user=?;";
+            ps = connexion.prepareStatement(req);
+            ps.setInt(1, e.getNote());
+            ps.setInt(2, e.getId_Produit());
+            ps.setInt(3, e.getId());
+            ps.setInt(4, e.getId_User());
+            if(ps.executeUpdate() == 1){
+                System.out.println("Modification effectué");
+                return true;
+            }else{
+                System.out.println("Echec de Modification");
+                return false;
+            }
+        } catch (SQLException ex) {
+            System.out.println("Echec de modification");
+            ex.printStackTrace();
+            return false;
+        }
+    }
     @Override
     public boolean supprimerEvaluation(int id) {
         try {
@@ -105,6 +128,7 @@ public class EvaluationService implements IEvaluation{
         return evaluation;
     }
     
+    @Override
     public Evaluation chercherEvaluationParIDProduit(int id) {
         Evaluation evaluation = null;
         try {
@@ -120,6 +144,7 @@ public class EvaluationService implements IEvaluation{
         }
         return evaluation;
     }
+    @Override
     public Evaluation chercherEvaluationParIDUser(int id) {
         Evaluation evaluation = null;
         try {
@@ -140,7 +165,51 @@ public class EvaluationService implements IEvaluation{
     public List<Evaluation> listeEvaluation() {
         List<Evaluation> evaluations = new ArrayList();
         try {
-            String req = "SELECT * FROM evaluation";
+            String req = "SELECT evaluation.*, produit.libelle AS 'produitLibelle' FROM evaluation,produit WHERE evaluation.id_produit = produit.id";
+            ps = connexion.prepareStatement(req);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Evaluation e = new Evaluation();
+                e.setId(rs.getInt("id"));
+                e.setId_Produit(rs.getInt("id_produit"));
+                e.setId_User(rs.getInt("id_user"));
+                e.setNote(rs.getInt("note"));
+                e.setNomProduit(rs.getString("produitLibelle"));
+                evaluations.add(e);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Echec");
+        }
+        return evaluations;
+    }
+    
+    @Override
+    public List<Evaluation> listeEvaluationRech(String str) {
+        List<Evaluation> evaluations = new ArrayList();
+        try {
+            String req = "SELECT evaluation.*, produit.libelle AS 'produitLibelle' FROM evaluation,produit WHERE evaluation.id_produit = produit.id AND (note like '%"+str+"%' OR  produit.libelle like '%"+str+"%')";
+            ps = connexion.prepareStatement(req);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Evaluation e = new Evaluation();
+                e.setId(rs.getInt("id"));
+                e.setId_Produit(rs.getInt("id_produit"));
+                e.setId_User(rs.getInt("id_user"));
+                e.setNote(rs.getInt("note"));
+                e.setNomProduit(rs.getString("produitLibelle"));
+                evaluations.add(e);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Echec");
+        }
+        return evaluations;
+    }
+    
+    @Override
+    public List<Evaluation> listeEvaluationParIdProduitRech(int id,String str) {
+        List<Evaluation> evaluations = new ArrayList();
+        try {
+            String req = "SELECT * FROM evaluation WHERE id_produit = " + id+" and note like '%"+str+"%' and id_produit like '%"+str+"%';";
             ps = connexion.prepareStatement(req);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -156,6 +225,7 @@ public class EvaluationService implements IEvaluation{
         }
         return evaluations;
     }
+    
     @Override
     public List<Evaluation> listeEvaluationParIdProduit(int id_produit) {
         List<Evaluation> evaluations = new ArrayList();
@@ -176,6 +246,7 @@ public class EvaluationService implements IEvaluation{
         }
         return evaluations;
     }
+    @Override
     public List<Evaluation> listeEvaluationParIdUser(int id_user) {
         List<Evaluation> evaluations = new ArrayList();
         try {

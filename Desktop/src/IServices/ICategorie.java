@@ -19,6 +19,7 @@ public interface ICategorie {
    public boolean modifierCategorie(Categorie c);
    public Categorie chercherCategorieParID(int id);
    public List<Categorie> listeCategorie();
+   public List<Categorie> listeCategorieRech(String str);
    public String getNextId();
 
 }

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="350.0" style="-fx-background-color: #211F48; -fx-border-radius: 50; -fx-background-radius: 50;" stylesheets="@../resources/css/shop.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.controllers.models.ShopitemController">
+   <children>
+      <Pane>
+         <children>
+            <VBox fx:id="addToCard" alignment="CENTER" prefHeight="200.0" prefWidth="350.0">
+               <children>
+                  <ImageView fx:id="img" fitHeight="135.0" fitWidth="255.0" onMouseClicked="#iteminfo" pickOnBounds="true" preserveRatio="true" styleClass="clickhover">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label fx:id="title" alignment="CENTER" onMouseClicked="#iteminfo" prefHeight="29.0" prefWidth="300.0" style="-fx-font-family: &quot;Poppins Black&quot;;" styleClass="clickhover" text="Title" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="prix" alignment="CENTER" onMouseClicked="#iteminfo" prefHeight="29.0" prefWidth="300.0" style="-fx-font-family: &quot;Play&quot;;" styleClass="clickhover" text="Prix" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="25.0" prefWidth="332.0">
+                     <children>
+                        <Button fx:id="btnaj" mnemonicParsing="false" onMouseClicked="#ajouterp" prefHeight="25.0" prefWidth="214.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243)); -fx-font-family: &quot;Poppins Black&quot;;" text="Ajouter au panier" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <FontAwesomeIcon fill="GOLD" iconName="STAR" size="1.23em">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </FontAwesomeIcon>
+                        <Label fx:id="note" contentDisplay="CENTER" style="-fx-font-family: &quot;Poppins Black&quot;;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="ItemInfo" alignment="CENTER" prefHeight="200.0" prefWidth="350.0">
+               <children>
+                  <Label fx:id="title1" alignment="CENTER" prefHeight="29.0" prefWidth="300.0" style="-fx-font-family: &quot;Poppins Black&quot;;" text="Title" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="desc" alignment="TOP_CENTER" minHeight="115.0" minWidth="255.0" prefHeight="135.0" prefWidth="267.0" style="-fx-background-color: transparent; -fx-font-family: &quot;Play&quot;; -fx-text-fill: white;" text="Description">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label fx:id="prix1" alignment="CENTER" prefHeight="29.0" prefWidth="300.0" style="-fx-font-family: &quot;Play&quot;;" text="Prix" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="25.0" prefWidth="332.0">
+                     <children>
+                        <Button fx:id="back" mnemonicParsing="false" onMouseClicked="#backToCard" prefHeight="25.0" prefWidth="214.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243)); -fx-font-family: &quot;Poppins Black&quot;;" text="Back" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <FontAwesomeIcon fill="GOLD" iconName="STAR" size="1.23em">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </FontAwesomeIcon>
+                        <Label fx:id="note1" contentDisplay="CENTER" style="-fx-font-family: &quot;Poppins Black&quot;;" text="0" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

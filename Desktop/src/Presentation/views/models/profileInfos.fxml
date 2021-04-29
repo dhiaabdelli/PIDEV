@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="303.0" prefWidth="218.0" style="-fx-background-color: transparent;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.controllers.models.ProfileInfosController">
+   <children>
+      <StackPane layoutX="14.0" layoutY="43.0" prefHeight="245.0" prefWidth="190.0" style="-fx-background-color: rgb(42, 42, 85);" styleClass="boxCompte">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="186.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="quizTitle" text="Profile" textAlignment="CENTER" wrappingWidth="143.91015625">
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="8.0" />
+                     </VBox.margin>
+                  </Text>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox prefHeight="73.0" prefWidth="111.0">
+                                 <children>
+                                    <Text fx:id="age" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.1em;" styleClass="quizTitle" text="21" textAlignment="RIGHT" wrappingWidth="54.91015625" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.1em;" styleClass="quizTitle" text="ans" wrappingWidth="37.91015625">
+                                       <HBox.margin>
+                                          <Insets left="3.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="73.0" prefWidth="111.0">
+                                 <children>
+                                    <Text fx:id="poids" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.1em;" styleClass="quizTitle" text="80" textAlignment="RIGHT" wrappingWidth="54.91015625" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.1em;" styleClass="quizTitle" text="kg" wrappingWidth="37.91015625">
+                                       <HBox.margin>
+                                          <Insets left="3.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="73.0" prefWidth="111.0">
+                                 <children>
+                                    <Text fx:id="taille" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.1em;" styleClass="quizTitle" text="180" textAlignment="RIGHT" wrappingWidth="55.91015625" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.1em;" styleClass="quizTitle" text="cm" wrappingWidth="37.91015625">
+                                       <HBox.margin>
+                                          <Insets left="3.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets top="7.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <StackPane fx:id="male" layoutX="-13.0" layoutY="-38.0" prefHeight="150.0" prefWidth="116.0">
+                                 <children>
+                                    <FontAwesomeIcon fill="#c8bfe7" iconName="MALE" size="6em" wrappingWidth="63.28571319580078" />
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="female" layoutX="-5.0" layoutY="-7.0" prefHeight="90.0" prefWidth="67.0">
+                                 <children>
+                                    <FontAwesomeIcon fill="#c8bfe7" iconName="FEMALE" size="6em" wrappingWidth="45.28571319580078" />
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Text fx:id="objectif" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.4em;" styleClass="quizTitle" text="Prise de masse" textAlignment="CENTER" wrappingWidth="160.91015625">
+                           <VBox.margin>
+                              <Insets left="12.0" top="15.0" />
+                           </VBox.margin>
+                        </Text>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Text fx:id="nbr" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.4em;" styleClass="quizTitle" text="5" textAlignment="CENTER" wrappingWidth="35.91015625">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <FontAwesomeIcon fill="#c8bfe7" iconName="CUTLERY" size="2em" wrappingWidth="27.28571319580078" />
+                           </children>
+                           <VBox.margin>
+                              <Insets left="30.0" top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+      <StackPane layoutX="132.0" layoutY="15.0" prefHeight="60.0" prefWidth="60.0" styleClass="numberBox">
+         <children>
+            <Text fx:id="n" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgb(200, 191, 231); -fx-font-size: 2.25em;" styleClass="quizTitle" text="1" />
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alimentassocie index{% endblock %}
+
+{% block body %}
+    <h1>Alimentassocie index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Idaliment</th>
+                <th>Idprofile</th>
+                <th>Qte</th>
+                <th>Repas</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for alimentassocie in alimentassocies %}
+            <tr>
+                <td>{{ alimentassocie.idaliment }}</td>
+                <td>{{ alimentassocie.idprofile }}</td>
+                <td>{{ alimentassocie.qte }}</td>
+                <td>{{ alimentassocie.repas }}</td>
+                <td>
+                    <a href="{{ path('alimentassocie_show', {'idaliment': alimentassocie.idaliment}) }}">show</a>
+                    <a href="{{ path('alimentassocie_edit', {'idaliment': alimentassocie.idaliment}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('alimentassocie_new') }}">Create new</a>
+{% endblock %}

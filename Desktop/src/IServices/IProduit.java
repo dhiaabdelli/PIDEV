@@ -18,8 +18,15 @@ public interface IProduit {
     public boolean modifierProduit(Produit p);
     public Produit chercherProduitParID(int id);
     public List<Produit> listeProduits();
-    public List<Produit> listeProduitsTrie();
+    public List<Produit> listeProduitsRech(String str);
+	public List<Produit> listeProduitsBack();
+	public List<Produit> listeProduitsRechBack(String str);
+    public List<Produit> listeProduitsTrie(int tri);
+    public List<Produit> listeProduitsTrieRech(int tri,String str);
     public List<Produit> listeProduitsParIdCategorie(int id);
-
+    public List<Produit> listeProduitsParIdCategorieTri(int id,int tri);
+    public List<Produit> listeProduitsParIdCategorieTriRech(int id,int tri,String str);
+    public List<Produit> listeProduitsParIdCategorieRech(int id,String str);
+    public List<Produit> listeProduitsParIdCategorieRechTri(int id,String str);
     public String getNextId();
 }

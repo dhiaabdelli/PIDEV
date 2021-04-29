@@ -12,13 +12,14 @@ package Entities;
 public class Evaluation {
     protected int id;
     protected int id_produit;
-    protected int id_user;
+    protected String id_user;
+    protected String nomProduit;
     protected int note;
     
     public Evaluation(){
     }
     
-    public Evaluation(int id,int id_produit,int id_user,int note){
+    public Evaluation(int id,int id_produit,String id_user,int note){
         this.id = id;
         this.id_produit = id_produit;
         this.id_user = id_user;
@@ -41,20 +42,28 @@ public class Evaluation {
         this.id_produit = id_produit;
     }
     
-    public int getId_User(){
+    public String getId_User(){
         return this.id_user;
     }
     
-    public void setId_User(int id_user){
-        this.id_produit = id_user;
+    public void setId_User(String id_user){
+        this.id_user = id_user;
     }
     
     public int getNote(){
         return this.note;
     }
     
-    public void setNote(int id_user){
-        this.id_produit = note;
+    public void setNote(int note){
+        this.note = note;
+    }
+    
+    public String getNomProduit(){
+        return this.nomProduit;
+    }
+    
+    public void setNomProduit(String nomProduit){
+        this.nomProduit = nomProduit;
     }
     
     @Override

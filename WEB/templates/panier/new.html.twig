@@ -1,0 +1,19 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}New Panier{% endblock %}
+
+{% block header %}New Panier{% endblock %}
+
+{% block breadcrumb %}New Panier{% endblock %}
+
+{% block body %}
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Ajouter un Produit</h3>
+        </div>
+
+        <div class="box-body">
+            {{ include('panier/_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

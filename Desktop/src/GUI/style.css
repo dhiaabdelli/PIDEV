@@ -1,0 +1,52 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.buttonBox{
+    -fx-border-width: 0 0 0 4;
+    -fx-border-color: transparent transparent transparent transparent;
+}
+
+.buttonBox:hover{
+    -fx-cursor: hand;
+    -fx-border-width: 0 0 0 4; 
+    -fx-border-color: transparent transparent transparent linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+    -fx-background-color: linear-gradient(to right, rgb(43, 41, 73), transparent);
+}
+
+.buttonBox:hover FontAwesomeIcon{
+    -fx-cursor: hand;
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+FontAwesomeIcon:hover{
+    -fx-cursor: hand;
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.buttonBoxBottom:hover{
+    -fx-cursor: hand;
+}
+
+.buttonBoxBottom:hover FontAwesomeIcon{
+    -fx-cursor: hand;
+    -fx-fill: linear-gradient(from 25% 25% to 100% 100%, rgb(121, 99, 250), rgb(162, 78, 243));
+}
+
+.pictureIcon{
+    -fx-background-image: url("../images/testPicture.jpg");
+    -fx-background-size: 100%;
+}
+
+.elixirLogo{
+    -fx-background-image: url("../images/elixir.png");
+    -fx-background-size: 100%;
+}
+
+.backgroundcolor{
+     -fx-background-color: #202249;
+}
