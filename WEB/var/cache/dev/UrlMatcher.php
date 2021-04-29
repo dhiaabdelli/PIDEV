@@ -29,7 +29,8 @@ return [
         '/exercice/new' => [[['_route' => 'exercice_new', '_controller' => 'App\\Controller\\ExerciceController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/exerciceassocie' => [[['_route' => 'exerciceassocie_index', '_controller' => 'App\\Controller\\ExerciceassocieController::index'], null, ['GET' => 0], null, true, false, null]],
         '/exerciceassocie/new' => [[['_route' => 'exerciceassocie_new', '_controller' => 'App\\Controller\\ExerciceassocieController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/' => [[['_route' => 'front', '_controller' => 'App\\Controller\\FrontController::index'], null, null, null, false, false, null]],
+        '/shop' => [[['_route' => 'shop', '_controller' => 'App\\Controller\\FrontController::index'], null, null, null, false, false, null]],
+        '/progalim' => [[['_route' => 'progalim', '_controller' => 'App\\Controller\\FrontController::progalim'], null, null, null, false, false, null]],
         '/livraison' => [[['_route' => 'livraison_index', '_controller' => 'App\\Controller\\LivraisonController::index'], null, ['GET' => 0], null, true, false, null]],
         '/livraison/new' => [[['_route' => 'livraison_new', '_controller' => 'App\\Controller\\LivraisonController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/livreur' => [[['_route' => 'livreur_index', '_controller' => 'App\\Controller\\LivreurController::index'], null, ['GET' => 0], null, true, false, null]],
@@ -68,90 +69,97 @@ return [
                         .'|/edit(*:205)'
                         .'|(*:213)'
                     .')'
-                    .'|associe/([^/]++)(?'
-                        .'|(*:241)'
-                        .'|/edit(*:254)'
-                        .'|(*:262)'
+                    .'|associe/(?'
+                        .'|([^/]++)(?'
+                            .'|(*:244)'
+                            .'|/edit(*:257)'
+                            .'|(*:265)'
+                        .')'
+                        .'|associerAliments/([^/]++)(*:299)'
                     .')'
                 .')'
                 .'|/c(?'
                     .'|ategorie/([^/]++)(?'
-                        .'|(*:297)'
-                        .'|/edit(*:310)'
-                        .'|(*:318)'
+                        .'|(*:334)'
+                        .'|/edit(*:347)'
+                        .'|(*:355)'
                     .')'
                     .'|om(?'
                         .'|mande/([^/]++)(?'
-                            .'|(*:349)'
-                            .'|/edit(*:362)'
-                            .'|(*:370)'
+                            .'|(*:386)'
+                            .'|/edit(*:399)'
+                            .'|(*:407)'
                         .')'
                         .'|pte/([^/]++)(?'
-                            .'|(*:394)'
-                            .'|/edit(*:407)'
-                            .'|(*:415)'
+                            .'|(*:431)'
+                            .'|/edit(*:444)'
+                            .'|(*:452)'
                         .')'
                     .')'
                 .')'
                 .'|/e(?'
                     .'|valuation/([^/]++)(?'
-                        .'|(*:452)'
-                        .'|/edit(*:465)'
-                        .'|(*:473)'
+                        .'|(*:489)'
+                        .'|/edit(*:502)'
+                        .'|(*:510)'
                     .')'
                     .'|xercice(?'
                         .'|/([^/]++)(?'
-                            .'|(*:504)'
-                            .'|/edit(*:517)'
-                            .'|(*:525)'
+                            .'|(*:541)'
+                            .'|/edit(*:554)'
+                            .'|(*:562)'
                         .')'
                         .'|associe/([^/]++)(?'
-                            .'|(*:553)'
-                            .'|/edit(*:566)'
-                            .'|(*:574)'
+                            .'|(*:590)'
+                            .'|/edit(*:603)'
+                            .'|(*:611)'
                         .')'
                     .')'
                 .')'
+                .'|/shop/([^/]++)(*:636)'
                 .'|/livr(?'
                     .'|aison/([^/]++)(?'
-                        .'|(*:610)'
-                        .'|/edit(*:623)'
-                        .'|(*:631)'
+                        .'|(*:669)'
+                        .'|/edit(*:682)'
+                        .'|(*:690)'
                     .')'
                     .'|eur/([^/]++)(?'
-                        .'|(*:655)'
-                        .'|/edit(*:668)'
-                        .'|(*:676)'
+                        .'|(*:714)'
+                        .'|/edit(*:727)'
+                        .'|(*:735)'
                     .')'
                 .')'
                 .'|/p(?'
                     .'|anier/([^/]++)(?'
-                        .'|(*:708)'
-                        .'|/edit(*:721)'
-                        .'|(*:729)'
+                        .'|(*:767)'
+                        .'|/edit(*:780)'
+                        .'|(*:788)'
                     .')'
                     .'|ro(?'
                         .'|duit(?'
                             .'|/([^/]++)(?'
-                                .'|(*:762)'
-                                .'|/edit(*:775)'
-                                .'|(*:783)'
+                                .'|(*:821)'
+                                .'|/edit(*:834)'
+                                .'|(*:842)'
                             .')'
                             .'|scommand/([^/]++)(?'
-                                .'|(*:812)'
-                                .'|/edit(*:825)'
-                                .'|(*:833)'
+                                .'|(*:871)'
+                                .'|/edit(*:884)'
+                                .'|(*:892)'
                             .')'
                         .')'
                         .'|file/([^/]++)(?'
-                            .'|(*:859)'
-                            .'|/edit(*:872)'
-                            .'|(*:880)'
-                        .')'
-                        .'|grammealimentaire/([^/]++)(?'
                             .'|(*:918)'
                             .'|/edit(*:931)'
                             .'|(*:939)'
+                        .')'
+                        .'|grammealimentaire/(?'
+                            .'|([^/]++)(?'
+                                .'|(*:980)'
+                                .'|/edit(*:993)'
+                                .'|(*:1001)'
+                            .')'
+                            .'|calculerProgrammeAlimentaire/([^/]++)(*:1048)'
                         .')'
                     .')'
                 .')'
@@ -168,49 +176,52 @@ return [
         192 => [[['_route' => 'aliment_show', '_controller' => 'App\\Controller\\AlimentController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         205 => [[['_route' => 'aliment_edit', '_controller' => 'App\\Controller\\AlimentController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         213 => [[['_route' => 'aliment_delete', '_controller' => 'App\\Controller\\AlimentController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        241 => [[['_route' => 'alimentassocie_show', '_controller' => 'App\\Controller\\AlimentassocieController::show'], ['idaliment'], ['GET' => 0], null, false, true, null]],
-        254 => [[['_route' => 'alimentassocie_edit', '_controller' => 'App\\Controller\\AlimentassocieController::edit'], ['idaliment'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        262 => [[['_route' => 'alimentassocie_delete', '_controller' => 'App\\Controller\\AlimentassocieController::delete'], ['idaliment'], ['POST' => 0], null, false, true, null]],
-        297 => [[['_route' => 'categorie_show', '_controller' => 'App\\Controller\\CategorieController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        310 => [[['_route' => 'categorie_edit', '_controller' => 'App\\Controller\\CategorieController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        318 => [[['_route' => 'categorie_delete', '_controller' => 'App\\Controller\\CategorieController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        349 => [[['_route' => 'commande_show', '_controller' => 'App\\Controller\\CommandeController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        362 => [[['_route' => 'commande_edit', '_controller' => 'App\\Controller\\CommandeController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        370 => [[['_route' => 'commande_delete', '_controller' => 'App\\Controller\\CommandeController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        394 => [[['_route' => 'compte_show', '_controller' => 'App\\Controller\\CompteController::show'], ['email'], ['GET' => 0], null, false, true, null]],
-        407 => [[['_route' => 'compte_edit', '_controller' => 'App\\Controller\\CompteController::edit'], ['email'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        415 => [[['_route' => 'compte_delete', '_controller' => 'App\\Controller\\CompteController::delete'], ['email'], ['POST' => 0], null, false, true, null]],
-        452 => [[['_route' => 'evaluation_show', '_controller' => 'App\\Controller\\EvaluationController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        465 => [[['_route' => 'evaluation_edit', '_controller' => 'App\\Controller\\EvaluationController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        473 => [[['_route' => 'evaluation_delete', '_controller' => 'App\\Controller\\EvaluationController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        504 => [[['_route' => 'exercice_show', '_controller' => 'App\\Controller\\ExerciceController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        517 => [[['_route' => 'exercice_edit', '_controller' => 'App\\Controller\\ExerciceController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        525 => [[['_route' => 'exercice_delete', '_controller' => 'App\\Controller\\ExerciceController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        553 => [[['_route' => 'exerciceassocie_show', '_controller' => 'App\\Controller\\ExerciceassocieController::show'], ['idexassocier'], ['GET' => 0], null, false, true, null]],
-        566 => [[['_route' => 'exerciceassocie_edit', '_controller' => 'App\\Controller\\ExerciceassocieController::edit'], ['idexassocier'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        574 => [[['_route' => 'exerciceassocie_delete', '_controller' => 'App\\Controller\\ExerciceassocieController::delete'], ['idexassocier'], ['POST' => 0], null, false, true, null]],
-        610 => [[['_route' => 'livraison_show', '_controller' => 'App\\Controller\\LivraisonController::show'], ['idlivraison'], ['GET' => 0], null, false, true, null]],
-        623 => [[['_route' => 'livraison_edit', '_controller' => 'App\\Controller\\LivraisonController::edit'], ['idlivraison'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        631 => [[['_route' => 'livraison_delete', '_controller' => 'App\\Controller\\LivraisonController::delete'], ['idlivraison'], ['POST' => 0], null, false, true, null]],
-        655 => [[['_route' => 'livreur_show', '_controller' => 'App\\Controller\\LivreurController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        668 => [[['_route' => 'livreur_edit', '_controller' => 'App\\Controller\\LivreurController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        676 => [[['_route' => 'livreur_delete', '_controller' => 'App\\Controller\\LivreurController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        708 => [[['_route' => 'panier_show', '_controller' => 'App\\Controller\\PanierController::show'], ['idproduit'], ['GET' => 0], null, false, true, null]],
-        721 => [[['_route' => 'panier_edit', '_controller' => 'App\\Controller\\PanierController::edit'], ['idproduit'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        729 => [[['_route' => 'panier_delete', '_controller' => 'App\\Controller\\PanierController::delete'], ['idproduit'], ['POST' => 0], null, false, true, null]],
-        762 => [[['_route' => 'produit_show', '_controller' => 'App\\Controller\\ProduitController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        775 => [[['_route' => 'produit_edit', '_controller' => 'App\\Controller\\ProduitController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        783 => [[['_route' => 'produit_delete', '_controller' => 'App\\Controller\\ProduitController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        812 => [[['_route' => 'produitscommand_show', '_controller' => 'App\\Controller\\ProduitscommandController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        825 => [[['_route' => 'produitscommand_edit', '_controller' => 'App\\Controller\\ProduitscommandController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        833 => [[['_route' => 'produitscommand_delete', '_controller' => 'App\\Controller\\ProduitscommandController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        859 => [[['_route' => 'profile_show', '_controller' => 'App\\Controller\\ProfileController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        872 => [[['_route' => 'profile_edit', '_controller' => 'App\\Controller\\ProfileController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        880 => [[['_route' => 'profile_delete', '_controller' => 'App\\Controller\\ProfileController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        918 => [[['_route' => 'programmealimentaire_show', '_controller' => 'App\\Controller\\ProgrammealimentaireController::show'], ['idprofile'], ['GET' => 0], null, false, true, null]],
-        931 => [[['_route' => 'programmealimentaire_edit', '_controller' => 'App\\Controller\\ProgrammealimentaireController::edit'], ['idprofile'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        939 => [
-            [['_route' => 'programmealimentaire_delete', '_controller' => 'App\\Controller\\ProgrammealimentaireController::delete'], ['idprofile'], ['POST' => 0], null, false, true, null],
+        244 => [[['_route' => 'alimentassocie_show', '_controller' => 'App\\Controller\\AlimentassocieController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        257 => [[['_route' => 'alimentassocie_edit', '_controller' => 'App\\Controller\\AlimentassocieController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        265 => [[['_route' => 'alimentassocie_delete', '_controller' => 'App\\Controller\\AlimentassocieController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        299 => [[['_route' => 'associerAliments', '_controller' => 'App\\Controller\\AlimentassocieController::associerAliments'], ['idp'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        334 => [[['_route' => 'categorie_show', '_controller' => 'App\\Controller\\CategorieController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        347 => [[['_route' => 'categorie_edit', '_controller' => 'App\\Controller\\CategorieController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        355 => [[['_route' => 'categorie_delete', '_controller' => 'App\\Controller\\CategorieController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        386 => [[['_route' => 'commande_show', '_controller' => 'App\\Controller\\CommandeController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        399 => [[['_route' => 'commande_edit', '_controller' => 'App\\Controller\\CommandeController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        407 => [[['_route' => 'commande_delete', '_controller' => 'App\\Controller\\CommandeController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        431 => [[['_route' => 'compte_show', '_controller' => 'App\\Controller\\CompteController::show'], ['email'], ['GET' => 0], null, false, true, null]],
+        444 => [[['_route' => 'compte_edit', '_controller' => 'App\\Controller\\CompteController::edit'], ['email'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        452 => [[['_route' => 'compte_delete', '_controller' => 'App\\Controller\\CompteController::delete'], ['email'], ['POST' => 0], null, false, true, null]],
+        489 => [[['_route' => 'evaluation_show', '_controller' => 'App\\Controller\\EvaluationController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        502 => [[['_route' => 'evaluation_edit', '_controller' => 'App\\Controller\\EvaluationController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        510 => [[['_route' => 'evaluation_delete', '_controller' => 'App\\Controller\\EvaluationController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        541 => [[['_route' => 'exercice_show', '_controller' => 'App\\Controller\\ExerciceController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        554 => [[['_route' => 'exercice_edit', '_controller' => 'App\\Controller\\ExerciceController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        562 => [[['_route' => 'exercice_delete', '_controller' => 'App\\Controller\\ExerciceController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        590 => [[['_route' => 'exerciceassocie_show', '_controller' => 'App\\Controller\\ExerciceassocieController::show'], ['idexassocier'], ['GET' => 0], null, false, true, null]],
+        603 => [[['_route' => 'exerciceassocie_edit', '_controller' => 'App\\Controller\\ExerciceassocieController::edit'], ['idexassocier'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        611 => [[['_route' => 'exerciceassocie_delete', '_controller' => 'App\\Controller\\ExerciceassocieController::delete'], ['idexassocier'], ['POST' => 0], null, false, true, null]],
+        636 => [[['_route' => 'shop_showcat', '_controller' => 'App\\Controller\\FrontController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        669 => [[['_route' => 'livraison_show', '_controller' => 'App\\Controller\\LivraisonController::show'], ['idlivraison'], ['GET' => 0], null, false, true, null]],
+        682 => [[['_route' => 'livraison_edit', '_controller' => 'App\\Controller\\LivraisonController::edit'], ['idlivraison'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        690 => [[['_route' => 'livraison_delete', '_controller' => 'App\\Controller\\LivraisonController::delete'], ['idlivraison'], ['POST' => 0], null, false, true, null]],
+        714 => [[['_route' => 'livreur_show', '_controller' => 'App\\Controller\\LivreurController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        727 => [[['_route' => 'livreur_edit', '_controller' => 'App\\Controller\\LivreurController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        735 => [[['_route' => 'livreur_delete', '_controller' => 'App\\Controller\\LivreurController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        767 => [[['_route' => 'panier_show', '_controller' => 'App\\Controller\\PanierController::show'], ['idproduit'], ['GET' => 0], null, false, true, null]],
+        780 => [[['_route' => 'panier_edit', '_controller' => 'App\\Controller\\PanierController::edit'], ['idproduit'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        788 => [[['_route' => 'panier_delete', '_controller' => 'App\\Controller\\PanierController::delete'], ['idproduit'], ['POST' => 0], null, false, true, null]],
+        821 => [[['_route' => 'produit_show', '_controller' => 'App\\Controller\\ProduitController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        834 => [[['_route' => 'produit_edit', '_controller' => 'App\\Controller\\ProduitController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        842 => [[['_route' => 'produit_delete', '_controller' => 'App\\Controller\\ProduitController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        871 => [[['_route' => 'produitscommand_show', '_controller' => 'App\\Controller\\ProduitscommandController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        884 => [[['_route' => 'produitscommand_edit', '_controller' => 'App\\Controller\\ProduitscommandController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        892 => [[['_route' => 'produitscommand_delete', '_controller' => 'App\\Controller\\ProduitscommandController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        918 => [[['_route' => 'profile_show', '_controller' => 'App\\Controller\\ProfileController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        931 => [[['_route' => 'profile_edit', '_controller' => 'App\\Controller\\ProfileController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        939 => [[['_route' => 'profile_delete', '_controller' => 'App\\Controller\\ProfileController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        980 => [[['_route' => 'programmealimentaire_show', '_controller' => 'App\\Controller\\ProgrammealimentaireController::show'], ['idprofile'], ['GET' => 0], null, false, true, null]],
+        993 => [[['_route' => 'programmealimentaire_edit', '_controller' => 'App\\Controller\\ProgrammealimentaireController::edit'], ['idprofile'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1001 => [[['_route' => 'programmealimentaire_delete', '_controller' => 'App\\Controller\\ProgrammealimentaireController::delete'], ['idprofile'], ['POST' => 0], null, false, true, null]],
+        1048 => [
+            [['_route' => 'calculerProgrammeAlimentaire', '_controller' => 'App\\Controller\\ProgrammealimentaireController::calculerProgrammeAlimentaire'], ['idp'], ['GET' => 0, 'POST' => 1], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

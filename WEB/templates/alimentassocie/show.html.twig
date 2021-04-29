@@ -1,34 +1,44 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
-{% block title %}Alimentassocie{% endblock %}
+{% block title %}Aliment Associé{% endblock %}
+
+{% block header %}Aliment Associé{% endblock %}
+
+{% block breadcrumb %}Aliment Associé{% endblock %}
 
 {% block body %}
-    <h1>Alimentassocie</h1>
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Aliment Associé</h3>
+        </div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Idaliment</th>
-                <td>{{ alimentassocie.idaliment }}</td>
-            </tr>
-            <tr>
-                <th>Idprofile</th>
-                <td>{{ alimentassocie.idprofile }}</td>
-            </tr>
-            <tr>
-                <th>Qte</th>
-                <td>{{ alimentassocie.qte }}</td>
-            </tr>
-            <tr>
-                <th>Repas</th>
-                <td>{{ alimentassocie.repas }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="box-body">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>Nom Aliment</th>
+                    <td>{{ alimentassocie.idaliment.nom }}</td>
+                </tr>
+                <tr>
+                    <th>Email Compte & N° Profile</th>
+                    <td>{{ alimentassocie.idprofile.emailcompte.email }} : {{ alimentassocie.idprofile.id }}</td>
+                </tr>
+                <tr>
+                    <th>Quantitée (Grammes)</th>
+                    <td>{{ alimentassocie.qte }}</td>
+                </tr>
+                <tr>
+                    <th>N° Repas</th>
+                    <td>{{ alimentassocie.repas }}</td>
+                </tr>
+                </tbody>
+            </table>
 
-    <a href="{{ path('alimentassocie_index') }}">back to list</a>
+            <a class="btn bg-purple btn-flat" href="{{ path('alimentassocie_index') }}"><i class="fa fa-fw fa-arrow-left"></i> Retour à la liste </a>
 
-    <a href="{{ path('alimentassocie_edit', {'idaliment': alimentassocie.idaliment}) }}">edit</a>
+            <a class="btn bg-purple btn-flat" href="{{ path('alimentassocie_edit', {'id': alimentassocie.id}) }}"><i class="fa fa-edit"></i> Modifier </a>
 
-    {{ include('alimentassocie/_delete_form.html.twig') }}
+            {{ include('alimentassocie/_delete_form.html.twig') }}
+        </div>
+    </div>
 {% endblock %}

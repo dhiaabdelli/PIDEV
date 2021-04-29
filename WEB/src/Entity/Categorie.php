@@ -35,37 +35,34 @@ class Categorie
      */
     private $description;
 
-
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    public function getNom()
+    public function getNom(): ?string
     {
         return $this->nom;
     }
 
-
-    public function setNom($nom)
+    public function setNom(?string $nom): self
     {
         $this->nom = $nom;
+
+        return $this;
     }
 
-
-    public function getDescription()
+    public function getDescription(): ?string
     {
         return $this->description;
     }
 
-
-    public function setDescription($description)
+    public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
     }
+
+
 }

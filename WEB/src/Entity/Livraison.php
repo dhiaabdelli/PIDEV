@@ -56,5 +56,70 @@ class Livraison
      */
     private $nomclient;
 
+    public function getIdlivraison(): ?int
+    {
+        return $this->idlivraison;
+    }
+
+    public function getReference(): ?int
+    {
+        return $this->reference;
+    }
+
+    public function setReference(int $reference): self
+    {
+        $this->reference = $reference;
+
+        return $this;
+    }
+
+    public function getDatelivraison(): ?string
+    {
+        return $this->datelivraison;
+    }
+
+    public function setDatelivraison(string $datelivraison): self
+    {
+        $this->datelivraison = $datelivraison;
+
+        return $this;
+    }
+
+    public function getNomlivreur(): ?string
+    {
+        return $this->nomlivreur;
+    }
+
+    public function setNomlivreur(?string $nomlivreur): self
+    {
+        $this->nomlivreur = $nomlivreur;
+
+        return $this;
+    }
+
+    public function getEtat(): ?string
+    {
+        return $this->etat;
+    }
+
+    public function setEtat(?string $etat): self
+    {
+        $this->etat = $etat;
+
+        return $this;
+    }
+
+    public function getNomclient(): ?string
+    {
+        return $this->nomclient;
+    }
+
+    public function setNomclient(?string $nomclient): self
+    {
+        $this->nomclient = $nomclient;
+
+        return $this;
+    }
+
 
 }

@@ -1,11 +1,20 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
-{% block title %}New Alimentassocie{% endblock %}
+{% block title %}Nouvel Aliment Associé{% endblock %}
+
+{% block header %}Nouvel Aliment Associé{% endblock %}
+
+{% block breadcrumb %}Nouvel Aliment Associé{% endblock %}
 
 {% block body %}
-    <h1>Create new Alimentassocie</h1>
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Ajouter un Aliment Associé</h3>
+        </div>
 
-    {{ include('alimentassocie/_form.html.twig') }}
+        <div class="box-body">
+            {{ include('alimentassocie/_form.html.twig') }}
+        </div>
+    </div>
 
-    <a href="{{ path('alimentassocie_index') }}">back to list</a>
 {% endblock %}

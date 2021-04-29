@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Evaluation
  *
- * @ORM\Table(name="evaluation", indexes={@ORM\Index(name="fk_idprodevaldel", columns={"id_produit"})})
+ * @ORM\Table(name="evaluation", indexes={@ORM\Index(name="fk_idprodevaldel", columns={"id_produit"}), @ORM\Index(name="fk_iduser", columns={"id_user"})})
  * @ORM\Entity
  */
 class Evaluation
@@ -20,13 +20,6 @@ class Evaluation
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="id_user", type="string", length=80, nullable=false)
-     */
-    private $idUser;
 
     /**
      * @var int
@@ -44,6 +37,57 @@ class Evaluation
      * })
      */
     private $idProduit;
+
+    /**
+     * @var \Compte
+     *
+     * @ORM\ManyToOne(targetEntity="Compte")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="email")
+     * })
+     */
+    private $idUser;
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getNote(): ?int
+    {
+        return $this->note;
+    }
+
+    public function setNote(int $note): self
+    {
+        $this->note = $note;
+
+        return $this;
+    }
+
+    public function getIdProduit(): ?Produit
+    {
+        return $this->idProduit;
+    }
+
+    public function setIdProduit(?Produit $idProduit): self
+    {
+        $this->idProduit = $idProduit;
+
+        return $this;
+    }
+
+    public function getIdUser(): ?Compte
+    {
+        return $this->idUser;
+    }
+
+    public function setIdUser(?Compte $idUser): self
+    {
+        $this->idUser = $idUser;
+
+        return $this;
+    }
 
 
 }

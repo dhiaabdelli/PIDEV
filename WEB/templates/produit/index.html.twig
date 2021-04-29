@@ -24,6 +24,7 @@
                 <thead>
                     <tr>
                         <th>Id</th>
+                        <th>Categorie</th>
                         <th>Libelle</th>
                         <th>Prix</th>
                         <th>Description</th>
@@ -36,6 +37,7 @@
                 {% for produit in produits %}
                     <tr>
                         <td>{{ produit.id }}</td>
+                        <td>{{ produit.idcategorie.nom }}</td>
                         <td>{{ produit.libelle }}</td>
                         <td>{{ produit.prix }}</td>
                         <td>{{ produit.description }}</td>

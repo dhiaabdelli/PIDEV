@@ -1,11 +1,19 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
-{% block title %}New Programmealimentaire{% endblock %}
+{% block title %}Nouveau Programme Alimentaire{% endblock %}
 
+{% block header %}Nouveau Programme Alimentaire{% endblock %}
+
+{% block breadcrumb %}Nouveau Programme Alimentaire{% endblock %}
 {% block body %}
-    <h1>Create new Programmealimentaire</h1>
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Ajouter un Programme Alimentaire</h3>
+        </div>
 
-    {{ include('programmealimentaire/_form.html.twig') }}
+        <div class="box-body">
+            {{ include('programmealimentaire/_form.html.twig') }}
+        </div>
+    </div>
 
-    <a href="{{ path('programmealimentaire_index') }}">back to list</a>
 {% endblock %}

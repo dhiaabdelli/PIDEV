@@ -40,14 +40,14 @@ class __TwigTemplate_71b2202c97ba793e381ba5af59d2e389ffd8f279e1d760bf397e20ff0b9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "evaluation/_delete_form.html.twig"));
 
         // line 1
-        echo "<form method=\"post\" action=\"";
+        echo "<form style=\"float: right;right: 10px;margin-top: -35px;position: absolute;\" method=\"post\"  action=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("evaluation_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["evaluation"]) || array_key_exists("evaluation", $context) ? $context["evaluation"] : (function () { throw new RuntimeError('Variable "evaluation" does not exist.', 1, $this->source); })()), "id", [], "any", false, false, false, 1)]), "html", null, true);
         echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
     <input type=\"hidden\" name=\"_token\" value=\"";
         // line 2
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["evaluation"]) || array_key_exists("evaluation", $context) ? $context["evaluation"] : (function () { throw new RuntimeError('Variable "evaluation" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2))), "html", null, true);
         echo "\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn bg-purple btn-flat\"><i class=\"fa fa-fw fa-trash-o\"></i> Delete</button>
 </form>
 ";
         
@@ -75,9 +75,9 @@ class __TwigTemplate_71b2202c97ba793e381ba5af59d2e389ffd8f279e1d760bf397e20ff0b9
 
     public function getSourceContext()
     {
-        return new Source("<form method=\"post\" action=\"{{ path('evaluation_delete', {'id': evaluation.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+        return new Source("<form style=\"float: right;right: 10px;margin-top: -35px;position: absolute;\" method=\"post\"  action=\"{{ path('evaluation_delete', {'id': evaluation.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ evaluation.id) }}\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn bg-purple btn-flat\"><i class=\"fa fa-fw fa-trash-o\"></i> Delete</button>
 </form>
 ", "evaluation/_delete_form.html.twig", "C:\\xampp\\htdocs\\pidev\\templates\\evaluation\\_delete_form.html.twig");
     }

@@ -35,5 +35,34 @@ class Produitscommand
      */
     private $qt;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getIdproduit(): ?int
+    {
+        return $this->idproduit;
+    }
+
+    public function setIdproduit(int $idproduit): self
+    {
+        $this->idproduit = $idproduit;
+
+        return $this;
+    }
+
+    public function getQt(): ?int
+    {
+        return $this->qt;
+    }
+
+    public function setQt(int $qt): self
+    {
+        $this->qt = $qt;
+
+        return $this;
+    }
+
 
 }

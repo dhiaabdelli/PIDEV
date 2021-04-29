@@ -1,13 +1,22 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
-{% block title %}Edit Programmealimentaire{% endblock %}
+{% block title %}Modifier Programme Alimentaire{% endblock %}
+
+{% block header %}Modifier Programme Alimentaire{% endblock %}
+
+{% block breadcrumb %}Modifier Programme Alimentaire{% endblock %}
 
 {% block body %}
-    <h1>Edit Programmealimentaire</h1>
+    <div class="box">
+        <div class="box">
 
-    {{ include('programmealimentaire/_form.html.twig', {'button_label': 'Update'}) }}
+            <div class="box-body">
 
-    <a href="{{ path('programmealimentaire_index') }}">back to list</a>
+                {{ include('programmealimentaire/_form.html.twig', {'button_label': 'Update'}) }}
 
-    {{ include('programmealimentaire/_delete_form.html.twig') }}
+                {{ include('programmealimentaire/_delete_form.html.twig') }}
+
+            </div>
+        </div>
+    </div>
 {% endblock %}

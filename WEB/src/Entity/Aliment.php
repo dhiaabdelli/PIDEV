@@ -13,125 +13,13 @@ use Doctrine\ORM\Mapping as ORM;
 class Aliment
 {
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="id", type="string", length=20, nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
-
-    /**
-     * @return string
-     */
-    public function getId(): string
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param string $id
-     */
-    public function setId(string $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getNom(): ?string
-    {
-        return $this->nom;
-    }
-
-    /**
-     * @param string|null $nom
-     */
-    public function setNom(?string $nom): void
-    {
-        $this->nom = $nom;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getFats(): ?int
-    {
-        return $this->fats;
-    }
-
-    /**
-     * @param int|null $fats
-     */
-    public function setFats(?int $fats): void
-    {
-        $this->fats = $fats;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getCarbs(): ?int
-    {
-        return $this->carbs;
-    }
-
-    /**
-     * @param int|null $carbs
-     */
-    public function setCarbs(?int $carbs): void
-    {
-        $this->carbs = $carbs;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getProteins(): ?int
-    {
-        return $this->proteins;
-    }
-
-    /**
-     * @param int|null $proteins
-     */
-    public function setProteins(?int $proteins): void
-    {
-        $this->proteins = $proteins;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getCalories(): ?int
-    {
-        return $this->calories;
-    }
-
-    /**
-     * @param int|null $calories
-     */
-    public function setCalories(?int $calories): void
-    {
-        $this->calories = $calories;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getType(): ?int
-    {
-        return $this->type;
-    }
-
-    /**
-     * @param int|null $type
-     */
-    public function setType(?int $type): void
-    {
-        $this->type = $type;
-    }
 
     /**
      * @var string|null
@@ -175,5 +63,86 @@ class Aliment
      */
     private $type;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(?string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getFats(): ?int
+    {
+        return $this->fats;
+    }
+
+    public function setFats(?int $fats): self
+    {
+        $this->fats = $fats;
+
+        return $this;
+    }
+
+    public function getCarbs(): ?int
+    {
+        return $this->carbs;
+    }
+
+    public function setCarbs(?int $carbs): self
+    {
+        $this->carbs = $carbs;
+
+        return $this;
+    }
+
+    public function getProteins(): ?int
+    {
+        return $this->proteins;
+    }
+
+    public function setProteins(?int $proteins): self
+    {
+        $this->proteins = $proteins;
+
+        return $this;
+    }
+
+    public function getCalories(): ?int
+    {
+        return $this->calories;
+    }
+
+    public function setCalories(?int $calories): self
+    {
+        $this->calories = $calories;
+
+        return $this;
+    }
+
+    public function getType(): ?int
+    {
+        return $this->type;
+    }
+
+    public function setType(?int $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return strval($this->id);
+    }
 
 }

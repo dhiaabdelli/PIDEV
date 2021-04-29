@@ -85,29 +85,56 @@ class __TwigTemplate_15517163fb9ee86bbd0e91934701ab0c81310cc9d6be2c5d7a80d84a80c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/xampp/htdocs/pidev/src/Controller/FrontController.php", 0), "html", null, true);
-        echo "\">src/Controller/FrontController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/xampp/htdocs/pidev/templates/front/index.html.twig", 0), "html", null, true);
-        echo "\">templates/front/index.html.twig</a></code></li>
-    </ul>
-</div>
+        echo "    <div class=\"slider-area2\">
+        <div class=\"slider-height2 d-flex align-items-center\">
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"col-xl-12\">
+                        <div class=\"hero-cap hero-cap2 text-center pt-70\">
+                            <h2>Shop</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class=\"services-area pt-100 pb-150\">
+        <!--? Want To work -->
+        <section class=\"wantToWork-area w-padding\">
+            <div class=\"container\">
+                <div class=\"row align-items-end justify-content-between\">
+                    <div class=\"col-lg-6 col-md-10 col-sm-10\">
+                        <div class=\"section-tittle\">
+                            <span>oUR sERVICES FOR YOU</span>
+                            <h2>PUSH YOUR LIMITS FORWARD We Offer to you</h2>
+                        </div>
+                    </div>
+                    <div class=\"col-xl-2 col-lg-2 col-md-3\">
+                        <a href=\"services.html\" class=\"btn wantToWork-btn f-right\">More Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Want To work End -->
+        <div class=\"container\">
+            <div class=\"row\">
+                <div class=\"col-lg-4 col-md-4 col-sm-6\">
+                    <div class=\"single-cat single-cat2 text-center mb-50\">
+                        <div class=\"cat-icon\">
+                            <i class=\"flaticon-fitness\"></i>
+                        </div>
+                        <div class=\"cat-cap\">
+                            <h5><a href=\"services.html\">QUALITY EQUIPMENT</a></h5>
+                            <p>The sea freight service has grown consider ably in recent years. We spend timetting to kn.</p>
+                        </div>
+                        <div class=\"img-cap\">
+                            <a href=\"services.html\" class=\"\">Discover More About Us <i class=\"ti-arrow-right\"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -129,7 +156,7 @@ class __TwigTemplate_15517163fb9ee86bbd0e91934701ab0c81310cc9d6be2c5d7a80d84a80c
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -139,20 +166,56 @@ class __TwigTemplate_15517163fb9ee86bbd0e91934701ab0c81310cc9d6be2c5d7a80d84a80c
 {% block title %}Hello FrontController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ 'C:/xampp/htdocs/pidev/src/Controller/FrontController.php'|file_link(0) }}\">src/Controller/FrontController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ 'C:/xampp/htdocs/pidev/templates/front/index.html.twig'|file_link(0) }}\">templates/front/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class=\"slider-area2\">
+        <div class=\"slider-height2 d-flex align-items-center\">
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"col-xl-12\">
+                        <div class=\"hero-cap hero-cap2 text-center pt-70\">
+                            <h2>Shop</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class=\"services-area pt-100 pb-150\">
+        <!--? Want To work -->
+        <section class=\"wantToWork-area w-padding\">
+            <div class=\"container\">
+                <div class=\"row align-items-end justify-content-between\">
+                    <div class=\"col-lg-6 col-md-10 col-sm-10\">
+                        <div class=\"section-tittle\">
+                            <span>oUR sERVICES FOR YOU</span>
+                            <h2>PUSH YOUR LIMITS FORWARD We Offer to you</h2>
+                        </div>
+                    </div>
+                    <div class=\"col-xl-2 col-lg-2 col-md-3\">
+                        <a href=\"services.html\" class=\"btn wantToWork-btn f-right\">More Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Want To work End -->
+        <div class=\"container\">
+            <div class=\"row\">
+                <div class=\"col-lg-4 col-md-4 col-sm-6\">
+                    <div class=\"single-cat single-cat2 text-center mb-50\">
+                        <div class=\"cat-icon\">
+                            <i class=\"flaticon-fitness\"></i>
+                        </div>
+                        <div class=\"cat-cap\">
+                            <h5><a href=\"services.html\">QUALITY EQUIPMENT</a></h5>
+                            <p>The sea freight service has grown consider ably in recent years. We spend timetting to kn.</p>
+                        </div>
+                        <div class=\"img-cap\">
+                            <a href=\"services.html\" class=\"\">Discover More About Us <i class=\"ti-arrow-right\"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
 ", "front/index.html.twig", "C:\\xampp\\htdocs\\pidev\\templates\\front\\index.html.twig");
     }

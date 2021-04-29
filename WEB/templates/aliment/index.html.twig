@@ -1,45 +1,65 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
-{% block title %}Aliment index{% endblock %}
+{% block title %}Aliments{% endblock %}
+
+{% block header %}Aliments{% endblock %}
+
+{% block breadcrumb %}Aliments{% endblock %}
 
 {% block body %}
-    <h1>Aliment index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Fats</th>
-                <th>Carbs</th>
-                <th>Proteins</th>
-                <th>Calories</th>
-                <th>Type</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for aliment in aliments %}
-            <tr>
-                <td>{{ aliment.id }}</td>
-                <td>{{ aliment.nom }}</td>
-                <td>{{ aliment.fats }}</td>
-                <td>{{ aliment.carbs }}</td>
-                <td>{{ aliment.proteins }}</td>
-                <td>{{ aliment.calories }}</td>
-                <td>{{ aliment.type }}</td>
-                <td>
-                    <a href="{{ path('aliment_show', {'id': aliment.id}) }}">show</a>
-                    <a href="{{ path('aliment_edit', {'id': aliment.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('aliment_new') }}">Create new</a>
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Liste des Aliments</h3>
+            <div class="box-tools">
+                <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
+                    <div class="input-group-btn">
+                        <a  href="{{ path('aliment_new') }}" class="btn bg-purple btn-flat"><i class="fa fa-plus"></i> Ajouter un Aliment </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-body">
+            <table class="table table-bordered table-hover" style="text-align: center">
+                <thead>
+                <tr>
+                    <th style="text-align: center">Nom Aliment</th>
+                    <th style="text-align: center">Lipides</th>
+                    <th style="text-align: center">Glucides</th>
+                    <th style="text-align: center">Proteines</th>
+                    <th style="text-align: center">Calories</th>
+                    <th style="text-align: center">Source Type</th>
+                    <th style="text-align: center">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for aliment in aliments %}
+                    <tr>
+                        <td>{{ aliment.nom }}</td>
+                        <td>{{ aliment.fats }}</td>
+                        <td>{{ aliment.carbs }}</td>
+                        <td>{{ aliment.proteins }}</td>
+                        <td>{{ aliment.calories }}</td>
+                        {% if aliment.type == 0 %}
+                            <td>Proteins</td>
+                        {% endif %}
+                        {% if aliment.type == 1 %}
+                            <td>Carbs</td>
+                        {% endif %}
+                        {% if aliment.type == 2 %}
+                            <td>Fats</td>
+                        {% endif %}
+                        <td>
+                            <a href="{{ path('aliment_show', {'id': aliment.id}) }}"><i class="fa fa-eye"></i></a>
+                            <a href="{{ path('aliment_edit', {'id': aliment.id}) }}"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="8">Aucun résultat trouvé</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}

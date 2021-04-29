@@ -42,51 +42,45 @@ class Commande
      */
     private $traite;
 
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-
-    public function getIdpanier()
+    public function getIdpanier(): ?int
     {
         return $this->idpanier;
     }
 
-
-    public function setIdpanier($idpanier)
+    public function setIdpanier(int $idpanier): self
     {
         $this->idpanier = $idpanier;
+
+        return $this;
     }
 
-
-    public function getEmail()
+    public function getEmail(): ?string
     {
         return $this->email;
     }
 
-
-    public function setEmail($email)
+    public function setEmail(string $email): self
     {
         $this->email = $email;
+
+        return $this;
     }
 
-
-    public function getTraite()
+    public function getTraite(): ?bool
     {
         return $this->traite;
     }
 
-
-    public function setTraite($traite)
+    public function setTraite(?bool $traite): self
     {
         $this->traite = $traite;
+
+        return $this;
     }
 
 

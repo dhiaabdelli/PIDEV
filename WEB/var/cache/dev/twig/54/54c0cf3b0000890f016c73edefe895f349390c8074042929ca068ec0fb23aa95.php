@@ -40,14 +40,14 @@ class __TwigTemplate_e2199c3cee4d81e019aa662c545350045aac9ee7eb69367820390d4a007
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "programmealimentaire/_delete_form.html.twig"));
 
         // line 1
-        echo "<form method=\"post\" action=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("programmealimentaire_delete", ["idprofile" => twig_get_attribute($this->env, $this->source, (isset($context["programmealimentaire"]) || array_key_exists("programmealimentaire", $context) ? $context["programmealimentaire"] : (function () { throw new RuntimeError('Variable "programmealimentaire" does not exist.', 1, $this->source); })()), "idprofile", [], "any", false, false, false, 1)]), "html", null, true);
-        echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+        echo "<form style=\"float: right;right: 10px;margin-top: -35px;position: absolute;\" method=\"post\" action=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("programmealimentaire_delete", ["idprofile" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["programmealimentaire"]) || array_key_exists("programmealimentaire", $context) ? $context["programmealimentaire"] : (function () { throw new RuntimeError('Variable "programmealimentaire" does not exist.', 1, $this->source); })()), "idprofile", [], "any", false, false, false, 1), "id", [], "any", false, false, false, 1)]), "html", null, true);
+        echo "\" onsubmit=\"return confirm('Étes-vous sûr de vouloir supprimer cet élément?');\">
     <input type=\"hidden\" name=\"_token\" value=\"";
         // line 2
-        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["programmealimentaire"]) || array_key_exists("programmealimentaire", $context) ? $context["programmealimentaire"] : (function () { throw new RuntimeError('Variable "programmealimentaire" does not exist.', 2, $this->source); })()), "idprofile", [], "any", false, false, false, 2))), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["programmealimentaire"]) || array_key_exists("programmealimentaire", $context) ? $context["programmealimentaire"] : (function () { throw new RuntimeError('Variable "programmealimentaire" does not exist.', 2, $this->source); })()), "idprofile", [], "any", false, false, false, 2), "id", [], "any", false, false, false, 2))), "html", null, true);
         echo "\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn bg-purple btn-flat\"><i class=\"fa fa-fw fa-trash-o\"></i> Supprimer </button>
 </form>
 ";
         
@@ -75,10 +75,10 @@ class __TwigTemplate_e2199c3cee4d81e019aa662c545350045aac9ee7eb69367820390d4a007
 
     public function getSourceContext()
     {
-        return new Source("<form method=\"post\" action=\"{{ path('programmealimentaire_delete', {'idprofile': programmealimentaire.idprofile}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
-    <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ programmealimentaire.idprofile) }}\">
-    <button class=\"btn\">Delete</button>
+        return new Source("<form style=\"float: right;right: 10px;margin-top: -35px;position: absolute;\" method=\"post\" action=\"{{ path('programmealimentaire_delete', {'idprofile': programmealimentaire.idprofile.id}) }}\" onsubmit=\"return confirm('Étes-vous sûr de vouloir supprimer cet élément?');\">
+    <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ programmealimentaire.idprofile.id) }}\">
+    <button class=\"btn bg-purple btn-flat\"><i class=\"fa fa-fw fa-trash-o\"></i> Supprimer </button>
 </form>
-", "programmealimentaire/_delete_form.html.twig", "C:\\xampp\\htdocs\\pidev\\templates\\programmealimentaire\\_delete_form.html.twig");
+", "programmealimentaire/_delete_form.html.twig", "C:\\wamp64\\www\\pidev\\templates\\programmealimentaire\\_delete_form.html.twig");
     }
 }

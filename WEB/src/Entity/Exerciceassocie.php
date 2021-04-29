@@ -56,5 +56,70 @@ class Exerciceassocie
      */
     private $jour;
 
+    public function getIdexassocier(): ?int
+    {
+        return $this->idexassocier;
+    }
+
+    public function getIdprofile(): ?int
+    {
+        return $this->idprofile;
+    }
+
+    public function setIdprofile(int $idprofile): self
+    {
+        $this->idprofile = $idprofile;
+
+        return $this;
+    }
+
+    public function getLibelleexercice(): ?string
+    {
+        return $this->libelleexercice;
+    }
+
+    public function setLibelleexercice(string $libelleexercice): self
+    {
+        $this->libelleexercice = $libelleexercice;
+
+        return $this;
+    }
+
+    public function getNbseries(): ?int
+    {
+        return $this->nbseries;
+    }
+
+    public function setNbseries(?int $nbseries): self
+    {
+        $this->nbseries = $nbseries;
+
+        return $this;
+    }
+
+    public function getNbrepetitions(): ?int
+    {
+        return $this->nbrepetitions;
+    }
+
+    public function setNbrepetitions(?int $nbrepetitions): self
+    {
+        $this->nbrepetitions = $nbrepetitions;
+
+        return $this;
+    }
+
+    public function getJour(): ?int
+    {
+        return $this->jour;
+    }
+
+    public function setJour(?int $jour): self
+    {
+        $this->jour = $jour;
+
+        return $this;
+    }
+
 
 }

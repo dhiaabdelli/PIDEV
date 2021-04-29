@@ -1,0 +1,139 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Programme Alimentaire{% endblock %}
+
+{% block header %}Programme Alimentaire{% endblock %}
+
+{% block breadcrumb %}Programme Alimentaire{% endblock %}
+
+{% block body %}
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap hero-cap2 text-center pt-70">
+                            <h2>Programme Alimentaire</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .topText{
+            font-size: 2.5em;
+            font-family: Georgia, serif;
+            font-weight: bold;
+        }
+        .topBox{
+            background-color: rgb(40, 40, 64);
+            border-radius: 15px;
+            border-width: 2px;
+            border-color: transparent;
+        }
+        .thisHr{
+            margin: 5px;
+            width: 65%;
+            margin-top: 15px;
+            border-bottom: 2px solid rgb(162, 78, 243);
+        }
+        .topBoxes{
+            background-color: rgb(42, 42, 85);
+            border-radius: 15px;
+            border-width: 2px;
+            border-color: rgb(162, 78, 243);
+        }
+        .topBoxesTitle{
+            font-size: 2.75em;
+            color: white;
+            font-family: Georgia, serif;
+            font-weight: bold;
+        }
+    </style>
+
+    <section class="services-area pt-100 pb-150" style="background: rgb(29, 27, 59)">
+        <div class="row justify-content-md-center mb-20 mt-10">
+            <div class="col-md-7">
+                <div class="card" style="border: 0; background: transparent">
+                    <div class="card-body topBox" style="padding-top: 27px">
+                        <center>
+                            <span class="topText" style="color: white;"><span class="mr-3">Votre métabolisme de base </span>  <span style="color: rgb(162, 78, 243)">{{ progalims.bmr }} <span style="color: rgb(102, 102, 145); font-style: italic; font-size: 0.8em">calories</span></span></span>
+                            <hr class="thisHr mb-3">
+                            <p class="topText" style="color: rgb(200, 191, 231); font-size: 2.85em">Selon votre morphologie et vos objectifs</p>
+                        </center>
+                        <div class="row mr-4 ml-4 mt-5 mb-4">
+                            <div class="col-md-3">
+                                <div class="card topBoxes">
+                                    <div class="card-body">
+                                        <center>
+                                            <span class="topBoxesTitle" style="font-size: 2.6">Calories</span>
+                                            <hr class="thisHr" style="margin: 0px">
+                                            <span class="topBoxesTitle" style="color: rgb(167, 76, 242); font-size: 2.3em">{{ progalims.calRequis }}</span><br>
+                                            <span class="topBoxesTitle" style="font-size: 1.5em;color: rgb(102, 102, 145); font-style: italic;">Calories/jour</span>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card topBoxes">
+                                    <div class="card-body">
+                                        <center>
+                                            <span class="topBoxesTitle" style="font-size: 2.6">Proteines</span>
+                                            <hr class="thisHr" style="margin: 0px">
+                                            <span class="topBoxesTitle" style="color: rgb(167, 76, 242); font-size: 2.3em">{{ progalims.proteinsrequis }}</span><br>
+                                            <span class="topBoxesTitle" style="font-size: 1.5em;color: rgb(102, 102, 145); font-style: italic;">Grammes/jour</span>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card topBoxes">
+                                    <div class="card-body">
+                                        <center>
+                                            <span class="topBoxesTitle" style="font-size: 2.6">Glucides</span>
+                                            <hr class="thisHr" style="margin: 0px">
+                                            <span class="topBoxesTitle" style="color: rgb(167, 76, 242); font-size: 2.3em">{{ progalims.carbsrequis }}</span><br>
+                                            <span class="topBoxesTitle" style="font-size: 1.5em; color: rgb(102, 102, 145); font-style: italic;">Grammes/jour</span>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card topBoxes">
+                                    <div class="card-body">
+                                        <center>
+                                            <span class="topBoxesTitle" style="font-size: 2.6">Lipides</span>
+                                            <hr class="thisHr" style="margin: 0px">
+                                            <span class="topBoxesTitle" style="color: rgb(167, 76, 242); font-size: 2.3em">{{ progalims.fatsrequis }}</span><br>
+                                            <span class="topBoxesTitle" style="font-size: 1.5em;color: rgb(102, 102, 145); font-style: italic;">Grammes/jour</span>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center mt-125">
+            {% for i in 0..prf.nbrepas %}
+                <div class="col-md-2">
+                    <div class="card topBoxes">
+                        <div class="card-body mb-15">
+                            <center>
+                                <span class="topBoxesTitle" style="font-size: 2.6em">Repas <span style="font-size: 1.55em; color: rgb(162, 78, 243); margin-left: 13px"> {{ i+1 }}</span>
+                                <hr class="thisHr" style="margin-bottom: 27px">
+                                    {% for j in 0..2 %}
+                                        </label><span class="topBoxesTitle" style="font-size: 0.7em";> <span style="text-align: left">Huilde dOlive</span> <span style="font-size: 1.1em;text-align: right; color: rgb(167, 76, 242)">9999</span> <span style="text-align: right; color: rgb(102, 102, 145); font-style: italic;">g</span> </span> <br>
+                                    {% endfor %}
+                            </center>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

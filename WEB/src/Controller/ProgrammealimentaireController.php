@@ -2,8 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Profile;
 use App\Entity\Programmealimentaire;
 use App\Form\ProgrammealimentaireType;
+use App\Repository\ProfileRepository;
+use App\Repository\ProgrammealimentaireRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,6 +23,7 @@ class ProgrammealimentaireController extends AbstractController
      */
     public function index(): Response
     {
+
         $programmealimentaires = $this->getDoctrine()
             ->getRepository(Programmealimentaire::class)
             ->findAll();
@@ -86,7 +91,7 @@ class ProgrammealimentaireController extends AbstractController
      */
     public function delete(Request $request, Programmealimentaire $programmealimentaire): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$programmealimentaire->getIdprofile(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$programmealimentaire->getIdprofile()->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($programmealimentaire);
             $entityManager->flush();
@@ -94,4 +99,37 @@ class ProgrammealimentaireController extends AbstractController
 
         return $this->redirectToRoute('programmealimentaire_index');
     }
+
+    /**
+     * @Route("/calculerProgrammeAlimentaire/{idp}", name="calculerProgrammeAlimentaire", methods={"GET","POST"})
+     */
+    public function calculerProgrammeAlimentaire($idp, ProfileRepository $repository): Response
+    {
+        $pr = $repository->find($idp);
+        $pa = new Programmealimentaire();
+        $pa->setIdprofile($pr);
+        if($pr->getSexe() == 0){
+            $pa->setBmr(round((13.397 * $pr->getPoids() + 4.799 * $pr->getTaille()- 5.677 * $pr->getAge() + 88.362)));
+        }
+        if($pr->getSexe() == 1){
+            $pa->setBmr(round((9.247 * $pr->getPoids() + 3.098 * $pr->getTaille() - 4.330 * $pr->getAge() + 447.593)));
+        }
+        if($pr->getObjectif() == 0){
+            $pa->setCalRequis($pa->getBmr() - 500);
+            $pa->setCarbsRequis($pa->getCalRequis() / 2 / 4);
+            $pa->setFatsRequis($pa->getCalRequis() * 20 / 100 / 9);
+            $pa->setProteinsRequis($pa->getCalRequis() * 30 / 100 / 4);
+        }
+        if($pr->getObjectif() == 1){
+            $pa->setCalRequis($pa->getBmr() + 500);
+            $pa->setCarbsRequis($pa->getCalRequis() * 40 / 100 / 4);
+            $pa->setFatsRequis($pa->getCalRequis() * 20 / 100 / 9);
+            $pa->setProteinsRequis($pa->getCalRequis() * 40 / 100 / 4);
+        }
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($pa);
+        $entityManager->flush();
+        return $this->redirectToRoute('associerAliments',['idp'=>$idp]);
+    }
+
 }

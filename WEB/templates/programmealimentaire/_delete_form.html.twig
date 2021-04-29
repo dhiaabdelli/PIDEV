@@ -1,4 +1,4 @@
-<form method="post" action="{{ path('programmealimentaire_delete', {'idprofile': programmealimentaire.idprofile}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
-    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ programmealimentaire.idprofile) }}">
-    <button class="btn">Delete</button>
+<form style="float: right;right: 10px;margin-top: -35px;position: absolute;" method="post" action="{{ path('programmealimentaire_delete', {'idprofile': programmealimentaire.idprofile.id}) }}" onsubmit="return confirm('Étes-vous sûr de vouloir supprimer cet élément?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ programmealimentaire.idprofile.id) }}">
+    <button class="btn bg-purple btn-flat"><i class="fa fa-fw fa-trash-o"></i> Supprimer </button>
 </form>

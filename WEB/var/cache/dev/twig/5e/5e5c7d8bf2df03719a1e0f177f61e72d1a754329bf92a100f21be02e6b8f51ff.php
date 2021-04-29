@@ -145,6 +145,7 @@ class __TwigTemplate_1549445b4f95a2e7600e760eb64c0ba1d065b2c9eeb5d4f8ff38b596d8f
                 <thead>
                     <tr>
                         <th>Id</th>
+                        <th>Categorie</th>
                         <th>Libelle</th>
                         <th>Prix</th>
                         <th>Description</th>
@@ -155,45 +156,49 @@ class __TwigTemplate_1549445b4f95a2e7600e760eb64c0ba1d065b2c9eeb5d4f8ff38b596d8f
                 </thead>
                 <tbody>
                 ";
-        // line 36
+        // line 37
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 36, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 37, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["produit"]) {
-            // line 37
+            // line 38
             echo "                    <tr>
                         <td>";
-            // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 38), "html", null, true);
-            echo "</td>
-                        <td>";
             // line 39
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "libelle", [], "any", false, false, false, 39), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 39), "html", null, true);
             echo "</td>
                         <td>";
             // line 40
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 40), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["produit"], "idcategorie", [], "any", false, false, false, 40), "nom", [], "any", false, false, false, 40), "html", null, true);
             echo "</td>
                         <td>";
             // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "description", [], "any", false, false, false, 41), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "libelle", [], "any", false, false, false, 41), "html", null, true);
             echo "</td>
                         <td>";
             // line 42
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "qt", [], "any", false, false, false, 42), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 42), "html", null, true);
             echo "</td>
                         <td>";
             // line 43
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "img", [], "any", false, false, false, 43), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "description", [], "any", false, false, false, 43), "html", null, true);
+            echo "</td>
+                        <td>";
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "qt", [], "any", false, false, false, 44), "html", null, true);
+            echo "</td>
+                        <td>";
+            // line 45
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "img", [], "any", false, false, false, 45), "html", null, true);
             echo "</td>
                         <td>
                             <a href=\"";
-            // line 45
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_show", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 45)]), "html", null, true);
+            // line 47
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_show", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 47)]), "html", null, true);
             echo "\"><i class=\"fa fa-eye\"></i></a>
                             <a href=\"";
-            // line 46
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 46)]), "html", null, true);
+            // line 48
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 48)]), "html", null, true);
             echo "\"><i class=\"fa fa-edit\"></i></a>
                         </td>
                     </tr>
@@ -201,7 +206,7 @@ class __TwigTemplate_1549445b4f95a2e7600e760eb64c0ba1d065b2c9eeb5d4f8ff38b596d8f
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 50
+            // line 52
             echo "                    <tr>
                         <td colspan=\"7\">no records found</td>
                     </tr>
@@ -210,7 +215,7 @@ class __TwigTemplate_1549445b4f95a2e7600e760eb64c0ba1d065b2c9eeb5d4f8ff38b596d8f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['produit'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 54
+        // line 56
         echo "                </tbody>
             </table>
         </div>
@@ -236,7 +241,7 @@ class __TwigTemplate_1549445b4f95a2e7600e760eb64c0ba1d065b2c9eeb5d4f8ff38b596d8f
 
     public function getDebugInfo()
     {
-        return array (  214 => 54,  205 => 50,  196 => 46,  192 => 45,  187 => 43,  183 => 42,  179 => 41,  175 => 40,  171 => 39,  167 => 38,  164 => 37,  159 => 36,  136 => 16,  128 => 10,  118 => 9,  99 => 7,  80 => 5,  61 => 3,  38 => 1,);
+        return array (  219 => 56,  210 => 52,  201 => 48,  197 => 47,  192 => 45,  188 => 44,  184 => 43,  180 => 42,  176 => 41,  172 => 40,  168 => 39,  165 => 38,  160 => 37,  136 => 16,  128 => 10,  118 => 9,  99 => 7,  80 => 5,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -267,6 +272,7 @@ class __TwigTemplate_1549445b4f95a2e7600e760eb64c0ba1d065b2c9eeb5d4f8ff38b596d8f
                 <thead>
                     <tr>
                         <th>Id</th>
+                        <th>Categorie</th>
                         <th>Libelle</th>
                         <th>Prix</th>
                         <th>Description</th>
@@ -279,6 +285,7 @@ class __TwigTemplate_1549445b4f95a2e7600e760eb64c0ba1d065b2c9eeb5d4f8ff38b596d8f
                 {% for produit in produits %}
                     <tr>
                         <td>{{ produit.id }}</td>
+                        <td>{{ produit.idcategorie.nom }}</td>
                         <td>{{ produit.libelle }}</td>
                         <td>{{ produit.prix }}</td>
                         <td>{{ produit.description }}</td>

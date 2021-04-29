@@ -179,7 +179,7 @@ class Categorie extends \App\Entity\Categorie implements \Doctrine\ORM\Proxy\Pro
     /**
      * {@inheritDoc}
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         if ($this->__isInitialized__ === false) {
             return (int)  parent::getId();
@@ -189,17 +189,6 @@ class Categorie extends \App\Entity\Categorie implements \Doctrine\ORM\Proxy\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
 
         return parent::getId();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setId(int $id): void
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setId', [$id]);
-
-        parent::setId($id);
     }
 
     /**
@@ -216,18 +205,18 @@ class Categorie extends \App\Entity\Categorie implements \Doctrine\ORM\Proxy\Pro
     /**
      * {@inheritDoc}
      */
-    public function setNom(?string $nom): void
+    public function setNom(?string $nom): \App\Entity\Categorie
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNom', [$nom]);
 
-        parent::setNom($nom);
+        return parent::setNom($nom);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDescription', []);
@@ -238,12 +227,12 @@ class Categorie extends \App\Entity\Categorie implements \Doctrine\ORM\Proxy\Pro
     /**
      * {@inheritDoc}
      */
-    public function setDescription(string $description): void
+    public function setDescription(string $description): \App\Entity\Categorie
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDescription', [$description]);
 
-        parent::setDescription($description);
+        return parent::setDescription($description);
     }
 
 }

@@ -1,42 +1,52 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
-{% block title %}Programmealimentaire{% endblock %}
+{% block title %}Programme Alimentaire{% endblock %}
+
+{% block header %}Programme Alimentaire{% endblock %}
+
+{% block breadcrumb %}Programme Alimentaire{% endblock %}
 
 {% block body %}
-    <h1>Programmealimentaire</h1>
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Programme Alimentaire</h3>
+        </div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Idprofile</th>
-                <td>{{ programmealimentaire.idprofile }}</td>
-            </tr>
-            <tr>
-                <th>Bmr</th>
-                <td>{{ programmealimentaire.bmr }}</td>
-            </tr>
-            <tr>
-                <th>Calrequis</th>
-                <td>{{ programmealimentaire.calrequis }}</td>
-            </tr>
-            <tr>
-                <th>Fatsrequis</th>
-                <td>{{ programmealimentaire.fatsrequis }}</td>
-            </tr>
-            <tr>
-                <th>Carbsrequis</th>
-                <td>{{ programmealimentaire.carbsrequis }}</td>
-            </tr>
-            <tr>
-                <th>Proteinsrequis</th>
-                <td>{{ programmealimentaire.proteinsrequis }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="box-body">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>Email Compte & N° Profile</th>
+                    <td>{{ programmealimentaire.idprofile.emailcompte.email }} : {{ programmealimentaire.idprofile.id }}</td>
+                </tr>
+                <tr>
+                    <th>Métabolisme de base (BMR)</th>
+                    <td>{{ programmealimentaire.bmr }}</td>
+                </tr>
+                <tr>
+                    <th>Calories Requis</th>
+                    <td>{{ programmealimentaire.calrequis }}</td>
+                </tr>
+                <tr>
+                    <th>Lipides Requis</th>
+                    <td>{{ programmealimentaire.fatsrequis }}</td>
+                </tr>
+                <tr>
+                    <th>Glucides Requis</th>
+                    <td>{{ programmealimentaire.carbsrequis }}</td>
+                </tr>
+                <tr>
+                    <th>Proteines Requis</th>
+                    <td>{{ programmealimentaire.proteinsrequis }}</td>
+                </tr>
+                </tbody>
+            </table>
 
-    <a href="{{ path('programmealimentaire_index') }}">back to list</a>
+            <a class="btn bg-purple btn-flat" href="{{ path('programmealimentaire_index') }}"><i class="fa fa-fw fa-arrow-left"></i> Retour à la liste </a>
 
-    <a href="{{ path('programmealimentaire_edit', {'idprofile': programmealimentaire.idprofile}) }}">edit</a>
+            <a class="btn bg-purple btn-flat" href="{{ path('programmealimentaire_edit', {'idprofile': programmealimentaire.idprofile.id}) }}"><i class="fa fa-edit"></i> Modifier </a>
 
-    {{ include('programmealimentaire/_delete_form.html.twig') }}
+            {{ include('programmealimentaire/_delete_form.html.twig') }}
+        </div>
+    </div>
 {% endblock %}

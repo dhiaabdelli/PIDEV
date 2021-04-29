@@ -41,7 +41,7 @@ class __TwigTemplate_db4cfb307461872098c33b0f63e94bbd14843f5e29ee464a6b2c96b3caa
 
         // line 1
         echo "<style>
-    input{
+    input,select{
         display: block;
         width: 100%;
         height: 34px;
@@ -112,7 +112,7 @@ class __TwigTemplate_db4cfb307461872098c33b0f63e94bbd14843f5e29ee464a6b2c96b3caa
     public function getSourceContext()
     {
         return new Source("<style>
-    input{
+    input,select{
         display: block;
         width: 100%;
         height: 34px;

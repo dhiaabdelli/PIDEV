@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Profile;
 use App\Form\ProfileType;
+use App\Repository\ProfileRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -94,4 +96,5 @@ class ProfileController extends AbstractController
 
         return $this->redirectToRoute('profile_index');
     }
+
 }

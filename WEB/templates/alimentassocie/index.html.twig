@@ -1,39 +1,53 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
-{% block title %}Alimentassocie index{% endblock %}
+{% block title %}Aliments Associés{% endblock %}
+
+{% block header %}Aliments Associés{% endblock %}
+
+{% block breadcrumb %}Aliments Associés{% endblock %}
 
 {% block body %}
-    <h1>Alimentassocie index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Idaliment</th>
-                <th>Idprofile</th>
-                <th>Qte</th>
-                <th>Repas</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for alimentassocie in alimentassocies %}
-            <tr>
-                <td>{{ alimentassocie.idaliment }}</td>
-                <td>{{ alimentassocie.idprofile }}</td>
-                <td>{{ alimentassocie.qte }}</td>
-                <td>{{ alimentassocie.repas }}</td>
-                <td>
-                    <a href="{{ path('alimentassocie_show', {'idaliment': alimentassocie.idaliment}) }}">show</a>
-                    <a href="{{ path('alimentassocie_edit', {'idaliment': alimentassocie.idaliment}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('alimentassocie_new') }}">Create new</a>
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Liste des Aliments Associés</h3>
+            <div class="box-tools">
+                <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
+                    <div class="input-group-btn">
+                        <a  href="{{ path('alimentassocie_new') }}" class="btn bg-purple btn-flat"><i class="fa fa-plus"></i> Ajouter un Aliment Associé </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-body">
+            <table class="table" style="text-align: center">
+                <thead>
+                <tr>
+                    <th style="text-align: center">Nom Aliment</th>
+                    <th style="text-align: center">Email Compte & N° Profile</th>
+                    <th style="text-align: center">Quantitée (Gramme)</th>
+                    <th style="text-align: center">N° Repas</th>
+                    <th style="text-align: center">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for alimentassocie in alimentassocies %}
+                    <tr>
+                        <td>{{ alimentassocie.idaliment.nom }}</td>
+                        <td>{{ alimentassocie.idprofile.emailcompte.email }} : {{ alimentassocie.idprofile.id }}</td>
+                        <td>{{ alimentassocie.qte }}</td>
+                        <td>{{ alimentassocie.repas }}</td>
+                        <td>
+                            <a href="{{ path('alimentassocie_show', {'id': alimentassocie.id}) }}"><i class="fa fa-eye"></i></a>
+                            <a href="{{ path('alimentassocie_edit', {'id': alimentassocie.id}) }}"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4">Aucun résultat trouvé</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}

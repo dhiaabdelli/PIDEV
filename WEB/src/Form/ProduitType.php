@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+
 use App\Entity\Produit;
+use App\Entity\Categorie;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -12,6 +14,7 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\GreaterThan;
 use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class ProduitType extends AbstractType
 {
@@ -45,7 +48,10 @@ class ProduitType extends AbstractType
                 )),
             ])
             ->add('img')
-            ->add('idcategorie')
+            ->add('idcategorie', EntityType::class, [
+                'class' => Categorie::class,
+                'choice_label' => 'nom',
+            ])
         ;
     }
 

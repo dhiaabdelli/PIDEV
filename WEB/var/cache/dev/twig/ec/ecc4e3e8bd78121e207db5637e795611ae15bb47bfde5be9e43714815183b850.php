@@ -167,8 +167,8 @@ class __TwigTemplate_79bea2406db6d532df3e1d6b4cc613ecf480a7f23bff4bc1ba7c1cd6a55
                     </li>
                     <li class=\"";
         // line 118
-        if (twig_in_filter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 118, $this->source); })()), "request", [], "any", false, false, false, 118), "attributes", [], "any", false, false, false, 118), "get", [0 => "_route"], "method", false, false, false, 118), [0 => "categorie_index", 1 => "categorie_new", 2 => "categorie_show", 3 => "categorie_edit", 4 => "categorie_delete", 5 => "produit_index", 6 => "produit_new", 7 => "produit_show", 8 => "produit_edit", 9 => "produit_delete"])) {
-            // line 129
+        if (twig_in_filter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 118, $this->source); })()), "request", [], "any", false, false, false, 118), "attributes", [], "any", false, false, false, 118), "get", [0 => "_route"], "method", false, false, false, 118), [0 => "categorie_index", 1 => "categorie_new", 2 => "categorie_show", 3 => "categorie_edit", 4 => "categorie_delete", 5 => "produit_index", 6 => "produit_new", 7 => "produit_show", 8 => "produit_edit", 9 => "produit_delete", 10 => "evaluation_index", 11 => "evaluation_new", 12 => "evaluation_show", 13 => "evaluation_edit", 14 => "evaluation_delete"])) {
+            // line 134
             echo " active";
         }
         echo " treeview\">
@@ -178,23 +178,29 @@ class __TwigTemplate_79bea2406db6d532df3e1d6b4cc613ecf480a7f23bff4bc1ba7c1cd6a55
                         </a>
                         <ul class=\"treeview-menu\">
                             <li class=\"";
-        // line 135
-        if ((is_string($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 135, $this->source); })()), "request", [], "any", false, false, false, 135), "attributes", [], "any", false, false, false, 135), "get", [0 => "_route"], "method", false, false, false, 135)) && is_string($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 = "categorie") && ('' === $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 || 0 === strpos($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4, $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144)))) {
+        // line 140
+        if ((is_string($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 140, $this->source); })()), "request", [], "any", false, false, false, 140), "attributes", [], "any", false, false, false, 140), "get", [0 => "_route"], "method", false, false, false, 140)) && is_string($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 = "categorie") && ('' === $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 || 0 === strpos($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4, $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144)))) {
             echo " active";
         }
         echo "\"><a href=\"/categorie\"><i class=\"fa fa-circle-o\"></i> Categorie</a></li>
                             <li class=\"";
-        // line 136
-        if ((is_string($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 136, $this->source); })()), "request", [], "any", false, false, false, 136), "attributes", [], "any", false, false, false, 136), "get", [0 => "_route"], "method", false, false, false, 136)) && is_string($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 = "produit") && ('' === $__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 || 0 === strpos($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b, $__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002)))) {
+        // line 141
+        if ((is_string($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 141, $this->source); })()), "request", [], "any", false, false, false, 141), "attributes", [], "any", false, false, false, 141), "get", [0 => "_route"], "method", false, false, false, 141)) && is_string($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 = "produit") && ('' === $__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 || 0 === strpos($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b, $__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002)))) {
             echo " active";
         }
         echo "\"><a href=\"/produit\"><i class=\"fa fa-circle-o\"></i>Produit</a></li>
+                            <li class=\"";
+        // line 142
+        if ((is_string($__internal_d7fc55f1a54b629533d60b43063289db62e68921ee7a5f8de562bd9d4a2b7ad4 = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 142, $this->source); })()), "request", [], "any", false, false, false, 142), "attributes", [], "any", false, false, false, 142), "get", [0 => "_route"], "method", false, false, false, 142)) && is_string($__internal_01476f8db28655ee4ee02ea2d17dd5a92599be76304f08cd8bc0e05aced30666 = "evaluation") && ('' === $__internal_01476f8db28655ee4ee02ea2d17dd5a92599be76304f08cd8bc0e05aced30666 || 0 === strpos($__internal_d7fc55f1a54b629533d60b43063289db62e68921ee7a5f8de562bd9d4a2b7ad4, $__internal_01476f8db28655ee4ee02ea2d17dd5a92599be76304f08cd8bc0e05aced30666)))) {
+            echo " active";
+        }
+        echo "\"><a href=\"/evaluation\"><i class=\"fa fa-circle-o\"></i>Evaluation</a></li>
                         </ul>
                     </li>
                     <li class=\"";
-        // line 139
-        if (twig_in_filter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 139, $this->source); })()), "request", [], "any", false, false, false, 139), "attributes", [], "any", false, false, false, 139), "get", [0 => "_route"], "method", false, false, false, 139), [0 => "commande_index", 1 => "commande_new", 2 => "commande_show", 3 => "commande_edit", 4 => "commande_delete", 5 => "panier_index", 6 => "panier_new", 7 => "panier_show", 8 => "panier_edit", 9 => "panierdelete"])) {
-            // line 150
+        // line 145
+        if (twig_in_filter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 145, $this->source); })()), "request", [], "any", false, false, false, 145), "attributes", [], "any", false, false, false, 145), "get", [0 => "_route"], "method", false, false, false, 145), [0 => "commande_index", 1 => "commande_new", 2 => "commande_show", 3 => "commande_edit", 4 => "commande_delete", 5 => "panier_index", 6 => "panier_new", 7 => "panier_show", 8 => "panier_edit", 9 => "panierdelete"])) {
+            // line 156
             echo " active";
         }
         echo " treeview\">
@@ -204,17 +210,49 @@ class __TwigTemplate_79bea2406db6d532df3e1d6b4cc613ecf480a7f23bff4bc1ba7c1cd6a55
                         </a>
                         <ul class=\"treeview-menu\">
                             <li class=\"";
-        // line 156
-        if ((is_string($__internal_d7fc55f1a54b629533d60b43063289db62e68921ee7a5f8de562bd9d4a2b7ad4 = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 156, $this->source); })()), "request", [], "any", false, false, false, 156), "attributes", [], "any", false, false, false, 156), "get", [0 => "_route"], "method", false, false, false, 156)) && is_string($__internal_01476f8db28655ee4ee02ea2d17dd5a92599be76304f08cd8bc0e05aced30666 = "commande") && ('' === $__internal_01476f8db28655ee4ee02ea2d17dd5a92599be76304f08cd8bc0e05aced30666 || 0 === strpos($__internal_d7fc55f1a54b629533d60b43063289db62e68921ee7a5f8de562bd9d4a2b7ad4, $__internal_01476f8db28655ee4ee02ea2d17dd5a92599be76304f08cd8bc0e05aced30666)))) {
+        // line 162
+        if ((is_string($__internal_01c35b74bd85735098add188b3f8372ba465b232ab8298cb582c60f493d3c22e = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 162, $this->source); })()), "request", [], "any", false, false, false, 162), "attributes", [], "any", false, false, false, 162), "get", [0 => "_route"], "method", false, false, false, 162)) && is_string($__internal_63ad1f9a2bf4db4af64b010785e9665558fdcac0e8db8b5b413ed986c62dbb52 = "commande") && ('' === $__internal_63ad1f9a2bf4db4af64b010785e9665558fdcac0e8db8b5b413ed986c62dbb52 || 0 === strpos($__internal_01c35b74bd85735098add188b3f8372ba465b232ab8298cb582c60f493d3c22e, $__internal_63ad1f9a2bf4db4af64b010785e9665558fdcac0e8db8b5b413ed986c62dbb52)))) {
             echo " active";
         }
         echo "\"><a href=\"/commande\"><i class=\"fa fa-circle-o\"></i> Commande</a></li>
                             <li class=\"";
-        // line 157
-        if ((is_string($__internal_01c35b74bd85735098add188b3f8372ba465b232ab8298cb582c60f493d3c22e = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 157, $this->source); })()), "request", [], "any", false, false, false, 157), "attributes", [], "any", false, false, false, 157), "get", [0 => "_route"], "method", false, false, false, 157)) && is_string($__internal_63ad1f9a2bf4db4af64b010785e9665558fdcac0e8db8b5b413ed986c62dbb52 = "panier") && ('' === $__internal_63ad1f9a2bf4db4af64b010785e9665558fdcac0e8db8b5b413ed986c62dbb52 || 0 === strpos($__internal_01c35b74bd85735098add188b3f8372ba465b232ab8298cb582c60f493d3c22e, $__internal_63ad1f9a2bf4db4af64b010785e9665558fdcac0e8db8b5b413ed986c62dbb52)))) {
+        // line 163
+        if ((is_string($__internal_f10a4cc339617934220127f034125576ed229e948660ebac906a15846d52f136 = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 163, $this->source); })()), "request", [], "any", false, false, false, 163), "attributes", [], "any", false, false, false, 163), "get", [0 => "_route"], "method", false, false, false, 163)) && is_string($__internal_887a873a4dc3cf8bd4f99c487b4c7727999c350cc3a772414714e49a195e4386 = "panier") && ('' === $__internal_887a873a4dc3cf8bd4f99c487b4c7727999c350cc3a772414714e49a195e4386 || 0 === strpos($__internal_f10a4cc339617934220127f034125576ed229e948660ebac906a15846d52f136, $__internal_887a873a4dc3cf8bd4f99c487b4c7727999c350cc3a772414714e49a195e4386)))) {
             echo " active";
         }
         echo "\"><a href=\"/panier\"><i class=\"fa fa-circle-o\"></i>Panier</a></li>
+                        </ul>
+                    </li>
+                    <li class=\"";
+        // line 166
+        if (twig_in_filter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 166, $this->source); })()), "request", [], "any", false, false, false, 166), "attributes", [], "any", false, false, false, 166), "get", [0 => "_route"], "method", false, false, false, 166), [0 => "aliment_index", 1 => "aliment_new", 2 => "aliment_show", 3 => "aliment_edit", 4 => "aliment_delete", 5 => "alimentassocie_index", 6 => "alimentassocie_new", 7 => "alimentassocie_show", 8 => "alimentassocie_edit", 9 => "alimentassocie_delete", 10 => "programmealimentaire_index", 11 => "programmealimentaire_new", 12 => "programmealimentaire_show", 13 => "programmealimentaire_edit", 14 => "programmealimentaire_delete"])) {
+            // line 182
+            echo " active";
+        }
+        echo " treeview\">
+                        <a href=\"#\">
+                            <i class=\"fa fa-cutlery\"></i> <span>Gestion de l'Alimentation</span>
+                            <span class=\"pull-right-container\"><i class=\"fa fa-angle-left pull-right\"></i></span>
+                        </a>
+                        <ul class=\"treeview-menu\">
+                            <li class=\"";
+        // line 188
+        if ((is_string($__internal_d527c24a729d38501d770b40a0d25e1ce8a7f0bff897cc4f8f449ba71fcff3d9 = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 188, $this->source); })()), "request", [], "any", false, false, false, 188), "attributes", [], "any", false, false, false, 188), "get", [0 => "_route"], "method", false, false, false, 188)) && is_string($__internal_f6dde3a1020453fdf35e718e94f93ce8eb8803b28cc77a665308e14bbe8572ae = "aliment") && ('' === $__internal_f6dde3a1020453fdf35e718e94f93ce8eb8803b28cc77a665308e14bbe8572ae || 0 === strpos($__internal_d527c24a729d38501d770b40a0d25e1ce8a7f0bff897cc4f8f449ba71fcff3d9, $__internal_f6dde3a1020453fdf35e718e94f93ce8eb8803b28cc77a665308e14bbe8572ae)))) {
+            echo " active";
+        }
+        echo "\"><a href=\"/aliment\"><i class=\"fa fa-circle-o\"></i> Aliments</a></li>
+                            <li class=\"";
+        // line 189
+        if ((is_string($__internal_25c0fab8152b8dd6b90603159c0f2e8a936a09ab76edb5e4d7bc95d9a8d2dc8f = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 189, $this->source); })()), "request", [], "any", false, false, false, 189), "attributes", [], "any", false, false, false, 189), "get", [0 => "_route"], "method", false, false, false, 189)) && is_string($__internal_f769f712f3484f00110c86425acea59f5af2752239e2e8596bcb6effeb425b40 = "alimentassocie") && ('' === $__internal_f769f712f3484f00110c86425acea59f5af2752239e2e8596bcb6effeb425b40 || 0 === strpos($__internal_25c0fab8152b8dd6b90603159c0f2e8a936a09ab76edb5e4d7bc95d9a8d2dc8f, $__internal_f769f712f3484f00110c86425acea59f5af2752239e2e8596bcb6effeb425b40)))) {
+            echo " active";
+        }
+        echo "\"><a href=\"/alimentassocie\"><i class=\"fa fa-circle-o\"></i> Aliments Associés</a></li>
+                            <li class=\"";
+        // line 190
+        if ((is_string($__internal_98e944456c0f58b2585e4aa36e3a7e43f4b7c9038088f0f056004af41f4a007f = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 190, $this->source); })()), "request", [], "any", false, false, false, 190), "attributes", [], "any", false, false, false, 190), "get", [0 => "_route"], "method", false, false, false, 190)) && is_string($__internal_a06a70691a7ca361709a372174fa669f5ee1c1e4ed302b3a5b61c10c80c02760 = "programmealimentaire") && ('' === $__internal_a06a70691a7ca361709a372174fa669f5ee1c1e4ed302b3a5b61c10c80c02760 || 0 === strpos($__internal_98e944456c0f58b2585e4aa36e3a7e43f4b7c9038088f0f056004af41f4a007f, $__internal_a06a70691a7ca361709a372174fa669f5ee1c1e4ed302b3a5b61c10c80c02760)))) {
+            echo " active";
+        }
+        echo "\"><a href=\"/programmealimentaire\"><i class=\"fa fa-circle-o\"></i> Programmes Alimentaires</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -226,15 +264,15 @@ class __TwigTemplate_79bea2406db6d532df3e1d6b4cc613ecf480a7f23bff4bc1ba7c1cd6a55
             <section class=\"content-header\">
                 <h1>
                     ";
-        // line 168
+        // line 201
         $this->displayBlock('header', $context, $blocks);
-        // line 169
+        // line 202
         echo "                    <small>Control panel</small>
                 </h1>
                 <ol class=\"breadcrumb\">
                     <li><a href=\"#\"><i class=\"fa fa-dashboard\"></i> Home</a></li>
                     <li class=\"active\">";
-        // line 173
+        // line 206
         $this->displayBlock('breadcrumb', $context, $blocks);
         echo "</li>
                 </ol>
@@ -242,9 +280,9 @@ class __TwigTemplate_79bea2406db6d532df3e1d6b4cc613ecf480a7f23bff4bc1ba7c1cd6a55
             <!-- Main content -->
             <section class=\"content\">
                 ";
-        // line 178
+        // line 211
         $this->displayBlock('body', $context, $blocks);
-        // line 179
+        // line 212
         echo "            </section>
         </div>
     </div>
@@ -317,7 +355,7 @@ class __TwigTemplate_79bea2406db6d532df3e1d6b4cc613ecf480a7f23bff4bc1ba7c1cd6a55
 
     }
 
-    // line 168
+    // line 201
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -336,7 +374,7 @@ class __TwigTemplate_79bea2406db6d532df3e1d6b4cc613ecf480a7f23bff4bc1ba7c1cd6a55
 
     }
 
-    // line 173
+    // line 206
     public function block_breadcrumb($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -354,7 +392,7 @@ class __TwigTemplate_79bea2406db6d532df3e1d6b4cc613ecf480a7f23bff4bc1ba7c1cd6a55
 
     }
 
-    // line 178
+    // line 211
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -384,7 +422,7 @@ class __TwigTemplate_79bea2406db6d532df3e1d6b4cc613ecf480a7f23bff4bc1ba7c1cd6a55
 
     public function getDebugInfo()
     {
-        return array (  358 => 178,  340 => 173,  321 => 168,  302 => 8,  248 => 179,  246 => 178,  238 => 173,  232 => 169,  230 => 168,  214 => 157,  208 => 156,  198 => 150,  196 => 139,  188 => 136,  182 => 135,  172 => 129,  170 => 118,  57 => 8,  49 => 2,  47 => 1,);
+        return array (  396 => 211,  378 => 206,  359 => 201,  340 => 8,  286 => 212,  284 => 211,  276 => 206,  270 => 202,  268 => 201,  252 => 190,  246 => 189,  240 => 188,  230 => 182,  228 => 166,  220 => 163,  214 => 162,  204 => 156,  202 => 145,  194 => 142,  188 => 141,  182 => 140,  172 => 134,  170 => 118,  57 => 8,  49 => 2,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -517,6 +555,11 @@ class __TwigTemplate_79bea2406db6d532df3e1d6b4cc613ecf480a7f23bff4bc1ba7c1cd6a55
                         'produit_show',
                         'produit_edit',
                         'produit_delete',
+                        'evaluation_index',
+                        'evaluation_new',
+                        'evaluation_show',
+                        'evaluation_edit',
+                        'evaluation_delete',
                     ] %} active{% endif %} treeview\">
                         <a href=\"#\">
                             <i class=\"fa fa-book\"></i> <span>Gestion des Produits</span>
@@ -525,6 +568,7 @@ class __TwigTemplate_79bea2406db6d532df3e1d6b4cc613ecf480a7f23bff4bc1ba7c1cd6a55
                         <ul class=\"treeview-menu\">
                             <li class=\"{% if app.request.attributes.get( '_route' ) starts with 'categorie' %} active{% endif %}\"><a href=\"/categorie\"><i class=\"fa fa-circle-o\"></i> Categorie</a></li>
                             <li class=\"{% if app.request.attributes.get( '_route' ) starts with 'produit' %} active{% endif %}\"><a href=\"/produit\"><i class=\"fa fa-circle-o\"></i>Produit</a></li>
+                            <li class=\"{% if app.request.attributes.get( '_route' ) starts with 'evaluation' %} active{% endif %}\"><a href=\"/evaluation\"><i class=\"fa fa-circle-o\"></i>Evaluation</a></li>
                         </ul>
                     </li>
                     <li class=\"{% if app.request.attributes.get('_route') in [
@@ -546,6 +590,33 @@ class __TwigTemplate_79bea2406db6d532df3e1d6b4cc613ecf480a7f23bff4bc1ba7c1cd6a55
                         <ul class=\"treeview-menu\">
                             <li class=\"{% if app.request.attributes.get( '_route' ) starts with 'commande' %} active{% endif %}\"><a href=\"/commande\"><i class=\"fa fa-circle-o\"></i> Commande</a></li>
                             <li class=\"{% if app.request.attributes.get( '_route' ) starts with 'panier' %} active{% endif %}\"><a href=\"/panier\"><i class=\"fa fa-circle-o\"></i>Panier</a></li>
+                        </ul>
+                    </li>
+                    <li class=\"{% if app.request.attributes.get('_route') in [
+                        'aliment_index',
+                        'aliment_new',
+                        'aliment_show',
+                        'aliment_edit',
+                        'aliment_delete',
+                        'alimentassocie_index',
+                        'alimentassocie_new',
+                        'alimentassocie_show',
+                        'alimentassocie_edit',
+                        'alimentassocie_delete',
+                        'programmealimentaire_index',
+                        'programmealimentaire_new',
+                        'programmealimentaire_show',
+                        'programmealimentaire_edit',
+                        'programmealimentaire_delete',
+                    ] %} active{% endif %} treeview\">
+                        <a href=\"#\">
+                            <i class=\"fa fa-cutlery\"></i> <span>Gestion de l'Alimentation</span>
+                            <span class=\"pull-right-container\"><i class=\"fa fa-angle-left pull-right\"></i></span>
+                        </a>
+                        <ul class=\"treeview-menu\">
+                            <li class=\"{% if app.request.attributes.get( '_route' ) starts with 'aliment' %} active{% endif %}\"><a href=\"/aliment\"><i class=\"fa fa-circle-o\"></i> Aliments</a></li>
+                            <li class=\"{% if app.request.attributes.get( '_route' ) starts with \"alimentassocie\" %} active{% endif %}\"><a href=\"/alimentassocie\"><i class=\"fa fa-circle-o\"></i> Aliments Associés</a></li>
+                            <li class=\"{% if app.request.attributes.get( '_route' ) starts with 'programmealimentaire' %} active{% endif %}\"><a href=\"/programmealimentaire\"><i class=\"fa fa-circle-o\"></i> Programmes Alimentaires</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -611,6 +682,6 @@ class __TwigTemplate_79bea2406db6d532df3e1d6b4cc613ecf480a7f23bff4bc1ba7c1cd6a55
     <script src=\"/back/dist/js/demo.js\"></script>
 </body>
 </html>
-", "back.html.twig", "C:\\xampp\\htdocs\\pidev\\templates\\back.html.twig");
+", "back.html.twig", "C:\\wamp64\\www\\pidev\\templates\\back.html.twig");
     }
 }

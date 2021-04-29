@@ -126,6 +126,11 @@
                         'produit_show',
                         'produit_edit',
                         'produit_delete',
+                        'evaluation_index',
+                        'evaluation_new',
+                        'evaluation_show',
+                        'evaluation_edit',
+                        'evaluation_delete',
                     ] %} active{% endif %} treeview">
                         <a href="#">
                             <i class="fa fa-book"></i> <span>Gestion des Produits</span>
@@ -134,6 +139,7 @@
                         <ul class="treeview-menu">
                             <li class="{% if app.request.attributes.get( '_route' ) starts with 'categorie' %} active{% endif %}"><a href="/categorie"><i class="fa fa-circle-o"></i> Categorie</a></li>
                             <li class="{% if app.request.attributes.get( '_route' ) starts with 'produit' %} active{% endif %}"><a href="/produit"><i class="fa fa-circle-o"></i>Produit</a></li>
+                            <li class="{% if app.request.attributes.get( '_route' ) starts with 'evaluation' %} active{% endif %}"><a href="/evaluation"><i class="fa fa-circle-o"></i>Evaluation</a></li>
                         </ul>
                     </li>
                     <li class="{% if app.request.attributes.get('_route') in [
@@ -155,6 +161,33 @@
                         <ul class="treeview-menu">
                             <li class="{% if app.request.attributes.get( '_route' ) starts with 'commande' %} active{% endif %}"><a href="/commande"><i class="fa fa-circle-o"></i> Commande</a></li>
                             <li class="{% if app.request.attributes.get( '_route' ) starts with 'panier' %} active{% endif %}"><a href="/panier"><i class="fa fa-circle-o"></i>Panier</a></li>
+                        </ul>
+                    </li>
+                    <li class="{% if app.request.attributes.get('_route') in [
+                        'aliment_index',
+                        'aliment_new',
+                        'aliment_show',
+                        'aliment_edit',
+                        'aliment_delete',
+                        'alimentassocie_index',
+                        'alimentassocie_new',
+                        'alimentassocie_show',
+                        'alimentassocie_edit',
+                        'alimentassocie_delete',
+                        'programmealimentaire_index',
+                        'programmealimentaire_new',
+                        'programmealimentaire_show',
+                        'programmealimentaire_edit',
+                        'programmealimentaire_delete',
+                    ] %} active{% endif %} treeview">
+                        <a href="#">
+                            <i class="fa fa-cutlery"></i> <span>Gestion de l'Alimentation</span>
+                            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="{% if app.request.attributes.get( '_route' ) starts with 'aliment' %} active{% endif %}"><a href="/aliment"><i class="fa fa-circle-o"></i> Aliments</a></li>
+                            <li class="{% if app.request.attributes.get( '_route' ) starts with "alimentassocie" %} active{% endif %}"><a href="/alimentassocie"><i class="fa fa-circle-o"></i> Aliments Associés</a></li>
+                            <li class="{% if app.request.attributes.get( '_route' ) starts with 'programmealimentaire' %} active{% endif %}"><a href="/programmealimentaire"><i class="fa fa-circle-o"></i> Programmes Alimentaires</a></li>
                         </ul>
                     </li>
                 </ul>

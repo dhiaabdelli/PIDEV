@@ -37,38 +37,26 @@ class Panier
      */
     private $qt;
 
-
-    public function getIdproduit()
+    public function getIdproduit(): ?string
     {
         return $this->idproduit;
     }
 
-    public function setIdproduit($idproduit)
-    {
-        $this->idproduit = $idproduit;
-    }
-
-
-    public function getEmail()
+    public function getEmail(): ?string
     {
         return $this->email;
     }
 
-
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
-
-    public function getQt()
+    public function getQt(): ?int
     {
         return $this->qt;
     }
 
-
-    public function setQt($qt)
+    public function setQt(?int $qt): self
     {
         $this->qt = $qt;
+
+        return $this;
     }
 
 

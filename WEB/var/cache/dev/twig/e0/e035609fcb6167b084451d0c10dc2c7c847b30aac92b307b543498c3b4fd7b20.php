@@ -127,16 +127,15 @@ class __TwigTemplate_d2f88c9aab025e5195d5f19c94d45d463eef5556db9f06a2ac1de86a5f1
         // line 11
         echo "
     <div class=\"box\">
-    <div class=\"box\">
 
         <div class=\"box-body\">
 
             ";
-        // line 17
+        // line 16
         echo twig_include($this->env, $context, "categorie/_form.html.twig", ["button_label" => "Update"]);
         echo "
             ";
-        // line 18
+        // line 17
         echo twig_include($this->env, $context, "categorie/_delete_form.html.twig");
         echo "
 
@@ -163,7 +162,7 @@ class __TwigTemplate_d2f88c9aab025e5195d5f19c94d45d463eef5556db9f06a2ac1de86a5f1
 
     public function getDebugInfo()
     {
-        return array (  140 => 18,  136 => 17,  128 => 11,  118 => 10,  99 => 8,  80 => 6,  61 => 4,  38 => 1,);
+        return array (  139 => 17,  135 => 16,  128 => 11,  118 => 10,  99 => 8,  80 => 6,  61 => 4,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -179,7 +178,6 @@ class __TwigTemplate_d2f88c9aab025e5195d5f19c94d45d463eef5556db9f06a2ac1de86a5f1
 
 {% block body %}
 
-    <div class=\"box\">
     <div class=\"box\">
 
         <div class=\"box-body\">

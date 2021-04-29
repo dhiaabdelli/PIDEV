@@ -40,14 +40,14 @@ class __TwigTemplate_120521ac7fb8776258141b5ef38422cec54ece4c9e3cc4d9cddcb8863a6
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "alimentassocie/_delete_form.html.twig"));
 
         // line 1
-        echo "<form method=\"post\" action=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("alimentassocie_delete", ["idaliment" => twig_get_attribute($this->env, $this->source, (isset($context["alimentassocie"]) || array_key_exists("alimentassocie", $context) ? $context["alimentassocie"] : (function () { throw new RuntimeError('Variable "alimentassocie" does not exist.', 1, $this->source); })()), "idaliment", [], "any", false, false, false, 1)]), "html", null, true);
-        echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+        echo "<form style=\"float: right;right: 10px;margin-top: -35px;position: absolute;\" method=\"post\" action=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("alimentassocie_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["alimentassocie"]) || array_key_exists("alimentassocie", $context) ? $context["alimentassocie"] : (function () { throw new RuntimeError('Variable "alimentassocie" does not exist.', 1, $this->source); })()), "id", [], "any", false, false, false, 1)]), "html", null, true);
+        echo "\" onsubmit=\"return confirm('Étes-vous sûr de vouloir supprimer cet élément?');\">
     <input type=\"hidden\" name=\"_token\" value=\"";
         // line 2
-        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["alimentassocie"]) || array_key_exists("alimentassocie", $context) ? $context["alimentassocie"] : (function () { throw new RuntimeError('Variable "alimentassocie" does not exist.', 2, $this->source); })()), "idaliment", [], "any", false, false, false, 2))), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["alimentassocie"]) || array_key_exists("alimentassocie", $context) ? $context["alimentassocie"] : (function () { throw new RuntimeError('Variable "alimentassocie" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2))), "html", null, true);
         echo "\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn bg-purple btn-flat\"><i class=\"fa fa-fw fa-trash-o\"></i> Supprimer </button>
 </form>
 ";
         
@@ -75,10 +75,10 @@ class __TwigTemplate_120521ac7fb8776258141b5ef38422cec54ece4c9e3cc4d9cddcb8863a6
 
     public function getSourceContext()
     {
-        return new Source("<form method=\"post\" action=\"{{ path('alimentassocie_delete', {'idaliment': alimentassocie.idaliment}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
-    <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ alimentassocie.idaliment) }}\">
-    <button class=\"btn\">Delete</button>
+        return new Source("<form style=\"float: right;right: 10px;margin-top: -35px;position: absolute;\" method=\"post\" action=\"{{ path('alimentassocie_delete', {'id': alimentassocie.id}) }}\" onsubmit=\"return confirm('Étes-vous sûr de vouloir supprimer cet élément?');\">
+    <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ alimentassocie.id) }}\">
+    <button class=\"btn bg-purple btn-flat\"><i class=\"fa fa-fw fa-trash-o\"></i> Supprimer </button>
 </form>
-", "alimentassocie/_delete_form.html.twig", "C:\\xampp\\htdocs\\pidev\\templates\\alimentassocie\\_delete_form.html.twig");
+", "alimentassocie/_delete_form.html.twig", "C:\\wamp64\\www\\pidev\\templates\\alimentassocie\\_delete_form.html.twig");
     }
 }
