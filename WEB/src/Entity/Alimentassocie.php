@@ -7,19 +7,28 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Alimentassocie
  *
- * @ORM\Table(name="alimentassocie", indexes={@ORM\Index(name="fk_idaliment", columns={"idAliment"}), @ORM\Index(name="fk_idprofile", columns={"idProfile"})})
+ * @ORM\Table(name="alimentassocie")
  * @ORM\Entity
  */
 class Alimentassocie
 {
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Column(name="idAliment", type="string", length=20, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="NONE")
      */
-    private $id;
+    private $idaliment;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="idProfile", type="string", length=20, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $idprofile;
 
     /**
      * @var int|null
@@ -35,30 +44,14 @@ class Alimentassocie
      */
     private $repas;
 
-    /**
-     * @var \Aliment
-     *
-     * @ORM\ManyToOne(targetEntity="Aliment", fetch="EAGER")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idAliment", referencedColumnName="id")
-     * })
-     */
-    private $idaliment;
-
-    /**
-     * @var \Profile
-     *
-     * @ORM\ManyToOne(targetEntity="Profile", fetch="EAGER")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idProfile", referencedColumnName="id")
-     * })
-     */
-    private $idprofile;
-
-
-    public function getId(): ?int
+    public function getIdaliment(): ?string
     {
-        return $this->id;
+        return $this->idaliment;
+    }
+
+    public function getIdprofile(): ?string
+    {
+        return $this->idprofile;
     }
 
     public function getQte(): ?int
@@ -81,30 +74,6 @@ class Alimentassocie
     public function setRepas(int $repas): self
     {
         $this->repas = $repas;
-
-        return $this;
-    }
-
-    public function getIdaliment(): ?Aliment
-    {
-        return $this->idaliment;
-    }
-
-    public function setIdaliment(?Aliment $idaliment): self
-    {
-        $this->idaliment = $idaliment;
-
-        return $this;
-    }
-
-    public function getIdprofile(): ?Profile
-    {
-        return $this->idprofile;
-    }
-
-    public function setIdprofile(?Profile $idprofile): self
-    {
-        $this->idprofile = $idprofile;
 
         return $this;
     }

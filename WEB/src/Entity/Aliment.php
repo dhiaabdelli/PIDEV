@@ -13,9 +13,9 @@ use Doctrine\ORM\Mapping as ORM;
 class Aliment
 {
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="string", length=20, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -63,7 +63,7 @@ class Aliment
      */
     private $type;
 
-    public function getId(): ?int
+    public function getId(): ?string
     {
         return $this->id;
     }
@@ -140,9 +140,5 @@ class Aliment
         return $this;
     }
 
-    public function __toString()
-    {
-        return strval($this->id);
-    }
 
 }

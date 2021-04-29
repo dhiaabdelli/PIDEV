@@ -13,6 +13,15 @@ use Doctrine\ORM\Mapping as ORM;
 class Programmealimentaire
 {
     /**
+     * @var string
+     *
+     * @ORM\Column(name="idProfile", type="string", length=20, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idprofile;
+
+    /**
      * @var int|null
      *
      * @ORM\Column(name="bmr", type="integer", nullable=true)
@@ -47,17 +56,10 @@ class Programmealimentaire
      */
     private $proteinsrequis;
 
-    /**
-     * @var \Profile
-     *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Profile")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idProfile", referencedColumnName="id")
-     * })
-     */
-    private $idprofile;
+    public function getIdprofile(): ?string
+    {
+        return $this->idprofile;
+    }
 
     public function getBmr(): ?int
     {
@@ -115,18 +117,6 @@ class Programmealimentaire
     public function setProteinsrequis(?int $proteinsrequis): self
     {
         $this->proteinsrequis = $proteinsrequis;
-
-        return $this;
-    }
-
-    public function getIdprofile(): ?Profile
-    {
-        return $this->idprofile;
-    }
-
-    public function setIdprofile(?Profile $idprofile): self
-    {
-        $this->idprofile = $idprofile;
 
         return $this;
     }

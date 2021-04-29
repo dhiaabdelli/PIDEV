@@ -82,6 +82,9 @@ class Compte
 
         return $this;
     }
-
+    public function __toString()
+    {
+        return $this->getEmail();
+    }
 
 }

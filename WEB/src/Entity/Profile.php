@@ -8,15 +8,14 @@ use Doctrine\ORM\Mapping as ORM;
  * Profile
  *
  * @ORM\Table(name="profile", indexes={@ORM\Index(name="fk_idemail", columns={"emailCompte"})})
- * @ORM\Entity(repositoryClass="App\Repository\ProfileRepository")
+ * @ORM\Entity
  */
-
 class Profile
 {
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="string", length=20, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -74,7 +73,7 @@ class Profile
      */
     private $emailcompte;
 
-    public function getId(): ?int
+    public function getId(): ?string
     {
         return $this->id;
     }
